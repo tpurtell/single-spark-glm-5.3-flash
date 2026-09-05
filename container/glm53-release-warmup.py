@@ -1,0 +1,342 @@
+#!/usr/bin/env python3
+"""Exercise real GLM+DFlash serving paths before Docker reports healthy."""
+
+from __future__ import annotations
+
+import argparse
+import concurrent.futures
+import json
+import os
+import time
+import urllib.error
+import urllib.request
+
+
+PROMPT = """You are editing an async Python worker pool. Return only a complete
+replacement Python module that preserves input ordering, cancels sibling tasks
+after any exception, awaits every cancellation, and includes precise type hints.
+"""
+
+# One token per repetition with the pinned GLM tokenizer.  This exceeds a
+# scheduler chunk, forcing the long-prefill DCP owner-merge path to resolve
+# before readiness without tying the image to a benchmark or vision fixture.
+LONG_PREFILL_PROMPT = " warm" * 4096
+
+
+def request_json(
+    base_url: str,
+    path: str,
+    payload: dict | None,
+    timeout: float,
+) -> dict:
+    data = None if payload is None else json.dumps(payload).encode()
+    request = urllib.request.Request(
+        base_url.rstrip("/") + path,
+        data=data,
+        headers={"Content-Type": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return json.load(response)
+
+
+def request_ok(base_url: str, path: str, timeout: float) -> None:
+    request = urllib.request.Request(base_url.rstrip("/") + path)
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        response.read()
+
+
+def server_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--server-pid", type=int, required=True)
+    parser.add_argument("--base-url", required=True)
+    parser.add_argument(
+        "--ready-timeout",
+        type=float,
+        default=float(os.getenv("VLLM_ENGINE_READY_TIMEOUT_S", "3600")),
+    )
+    parser.add_argument(
+        "--request-timeout",
+        type=float,
+        default=float(os.getenv("GLM53_STARTUP_WARMUP_TIMEOUT_S", "1800")),
+    )
+    parser.add_argument("--passes", type=int, default=4)
+    args = parser.parse_args()
+
+    deadline = time.monotonic() + args.ready_timeout
+    while True:
+        if not server_alive(args.server_pid):
+            raise SystemExit("vLLM exited before startup warmup")
+        try:
+            request_ok(args.base_url, "/health", 3)
+            break
+        except (OSError, urllib.error.URLError):
+            if time.monotonic() >= deadline:
+                raise SystemExit("timed out waiting for the internal vLLM health endpoint")
+            time.sleep(2)
+
+    models = request_json(args.base_url, "/v1/models", None, 30).get("data") or []
+    if not models or not isinstance(models[0].get("id"), str):
+        raise SystemExit("vLLM returned no served model for startup warmup")
+    model = models[0]["id"]
+
+    started = time.perf_counter()
+    greedy = request_json(
+        args.base_url,
+        "/v1/completions",
+        {
+            "model": model,
+            "prompt": PROMPT,
+            "n": 1,
+            "max_tokens": 32,
+            "min_tokens": 32,
+            "ignore_eos": True,
+            "temperature": 0,
+            "seed": 20260901,
+            "cache_prompt": False,
+            "cache_salt": "glm53-release-warmup-greedy-c1",
+        },
+        args.request_timeout,
+    )
+    if len(greedy.get("choices") or []) != 1:
+        raise SystemExit("startup greedy C1 warmup did not return one choice")
+    print(
+        "GLM release startup greedy C1 warmup completed in "
+        f"{time.perf_counter() - started:.2f}s",
+        flush=True,
+    )
+
+    # Exercise the normal rendered-chat token-id path as well.  Its greedy
+    # DFlash verification specialization differs from the fixed-length raw
+    # completion above and otherwise JITs on the first chat/tool request.
+    close_think = request_json(
+        args.base_url,
+        "/tokenize",
+        {"model": model, "prompt": "</think>", "add_special_tokens": False},
+        30,
+    ).get("tokens")
+    rendered = request_json(
+        args.base_url,
+        "/v1/chat/completions/render",
+        {
+            "model": model,
+            "messages": [{"role": "user", "content": PROMPT}],
+            "reasoning_effort": "low",
+        },
+        30,
+    ).get("token_ids")
+    if not isinstance(close_think, list) or not isinstance(rendered, list):
+        raise SystemExit("startup rendered-chat warmup did not return token ids")
+    started = time.perf_counter()
+    rendered_greedy = request_json(
+        args.base_url,
+        "/v1/completions",
+        {
+            "model": model,
+            "prompt": rendered + close_think,
+            "n": 1,
+            "max_tokens": 64,
+            "temperature": 0,
+            "seed": 20260901,
+            "add_special_tokens": False,
+        },
+        args.request_timeout,
+    )
+    if len(rendered_greedy.get("choices") or []) != 1:
+        raise SystemExit("startup rendered-chat warmup did not return one choice")
+    print(
+        "GLM release startup rendered-chat warmup completed in "
+        f"{time.perf_counter() - started:.2f}s",
+        flush=True,
+    )
+
+    started = time.perf_counter()
+    long_prefill = request_json(
+        args.base_url,
+        "/v1/completions",
+        {
+            "model": model,
+            "prompt": LONG_PREFILL_PROMPT,
+            "n": 1,
+            "max_tokens": 1,
+            "min_tokens": 1,
+            "ignore_eos": True,
+            "temperature": 0,
+            "seed": 20260901,
+            "cache_prompt": False,
+            "cache_salt": "glm53-release-warmup-long-prefill",
+        },
+        args.request_timeout,
+    )
+    if len(long_prefill.get("choices") or []) != 1:
+        raise SystemExit("startup long-prefill warmup did not return one choice")
+    print(
+        "GLM release startup long-prefill warmup completed in "
+        f"{time.perf_counter() - started:.2f}s",
+        flush=True,
+    )
+
+    # When a DFlash2 or MTP compact-ReplaySSM profile is selected,
+    # replay the same cached prefix before readiness so its cursor reset and
+    # state reconstruction kernels cannot first-JIT on a user's request.
+    if os.getenv("GLM53_REPLAYSSM_ACTIVE", "0") == "1":
+        started = time.perf_counter()
+        replay = request_json(
+            args.base_url,
+            "/v1/completions",
+            {
+                "model": model,
+                "prompt": LONG_PREFILL_PROMPT,
+                "n": 1,
+                "max_tokens": 1,
+                "min_tokens": 1,
+                "ignore_eos": True,
+                "temperature": 0,
+                "seed": 20260901,
+                "cache_salt": "glm53-release-warmup-replayssm-prefix",
+            },
+            args.request_timeout,
+        )
+        replay_again = request_json(
+            args.base_url,
+            "/v1/completions",
+            {
+                "model": model,
+                "prompt": LONG_PREFILL_PROMPT,
+                "n": 1,
+                "max_tokens": 1,
+                "min_tokens": 1,
+                "ignore_eos": True,
+                "temperature": 0,
+                "seed": 20260901,
+                "cache_salt": "glm53-release-warmup-replayssm-prefix",
+            },
+            args.request_timeout,
+        )
+        if len(replay.get("choices") or []) != 1 or len(
+            replay_again.get("choices") or []
+        ) != 1:
+            raise SystemExit("startup ReplaySSM prefix warmup returned bad choices")
+        print(
+            "GLM release startup ReplaySSM prefix warmup completed in "
+            f"{time.perf_counter() - started:.2f}s",
+            flush=True,
+        )
+
+        # Stagger prompt lengths so a short request is decoding while later
+        # requests are still prefilling. ReplaySSM deliberately keeps this
+        # mixed lifecycle eager; exercising it here both checks the dispatch
+        # and resolves its real-shape kernels before the ready marker.
+        def mixed_request(item: tuple[int, int]) -> dict:
+            request_index, repetitions = item
+            time.sleep(request_index * 0.15)
+            return request_json(
+                args.base_url,
+                "/v1/completions",
+                {
+                    "model": model,
+                    "prompt": " mixed" * repetitions + PROMPT,
+                    "n": 1,
+                    "max_tokens": 128,
+                    "min_tokens": 128,
+                    "ignore_eos": True,
+                    "temperature": 0,
+                    "seed": 20260901,
+                    "cache_salt": (
+                        f"glm53-release-warmup-replayssm-mixed-{request_index}"
+                    ),
+                },
+                args.request_timeout,
+            )
+
+        started = time.perf_counter()
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+            mixed_results = list(
+                pool.map(mixed_request, enumerate((64, 1024, 2048, 4096)))
+            )
+        if any(len(result.get("choices") or []) != 1 for result in mixed_results):
+            raise SystemExit("startup ReplaySSM mixed warmup returned bad choices")
+        print(
+            "GLM release startup ReplaySSM mixed prefill/decode warmup completed in "
+            f"{time.perf_counter() - started:.2f}s",
+            flush=True,
+        )
+
+    for pass_index in range(args.passes):
+        started = time.perf_counter()
+        result = request_json(
+            args.base_url,
+            "/v1/completions",
+            {
+                "model": model,
+                "prompt": PROMPT,
+                "n": 6,
+                "max_tokens": 256,
+                "min_tokens": 256,
+                "ignore_eos": True,
+                "temperature": 0.2,
+                "seed": 20260901,
+                "cache_prompt": False,
+                "cache_salt": f"glm53-release-warmup-{pass_index}",
+            },
+            args.request_timeout,
+        )
+        choices = result.get("choices") or []
+        if len(choices) != 6:
+            raise SystemExit(
+                f"startup warmup pass {pass_index + 1} returned "
+                f"{len(choices)} choices, expected 6"
+            )
+        print(
+            f"GLM release startup warmup {pass_index + 1}/{args.passes} "
+            f"completed in {time.perf_counter() - started:.2f}s",
+            flush=True,
+        )
+        time.sleep(1)
+
+    # Tools exercise prefix-tail seeding and grammar/termination routes that
+    # plain completions do not. The small exact-value check also prevents
+    # mere HTTP success from being mistaken for a healthy tool path.
+    def tool_request(index: int) -> None:
+        label = f'glm53-warmup-{index}'
+        function = {
+            'name': 'record_event', 'description': 'Record one event', 'strict': True,
+            'parameters': {'type': 'object', 'properties': {
+                'event_id': {'type': 'string'}, 'count': {'type': 'integer'},
+            }, 'required': ['event_id', 'count'], 'additionalProperties': False},
+        }
+        choice = {'type': 'function', 'function': {'name': 'record_event'}} if index % 2 else 'required'
+        result = request_json(args.base_url, '/v1/chat/completions', {
+            'model': model,
+            'messages': [{'role': 'user', 'content': f'Record event {label} with count 7.'}],
+            'tools': [{'type': 'function', 'function': function}],
+            'tool_choice': choice, 'parallel_tool_calls': False,
+            'reasoning_effort': 'low', 'temperature': 0, 'max_tokens': 256,
+        }, args.request_timeout)
+        choices = result.get('choices') or []
+        if len(choices) != 1 or choices[0].get('finish_reason') not in ('stop', 'tool_calls'):
+            raise RuntimeError('startup tool warmup did not complete')
+        calls = choices[0]['message'].get('tool_calls') or []
+        if len(calls) != 1 or calls[0]['function']['name'] != 'record_event':
+            raise RuntimeError('startup tool warmup returned the wrong call')
+        if json.loads(calls[0]['function']['arguments']) != {'event_id': label, 'count': 7}:
+            raise RuntimeError('startup tool warmup returned the wrong argument values')
+
+    started = time.perf_counter()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+        list(pool.map(tool_request, range(6)))
+    print('GLM release startup C6 strict-tool warmup completed in '
+          f'{time.perf_counter() - started:.2f}s', flush=True)
+
+
+if __name__ == "__main__":
+    main()
