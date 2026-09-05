@@ -248,3 +248,22 @@ had zero post-ready JIT events and zero restarts. Before/after environment
 receipts and full serving logs share `20260905-content-repeat-*` prefixes.
 The repetition client has a CPU-only regression test proving warmup exclusion,
 strict word/count/finish scoring, unique nonces, and unresolved-rate exclusion.
+
+Final kernel reruns close the earlier-image provenance gap: the published
+image passes all 36 projection-mixed cases, and its equivalent frozen runtime
+passes six wide-MLA plus four convolution-state oracle cases. Exact image
+IDs and matching script hashes are in
+`20260905-published-projection-oracle-dodo.log` and
+`20260905-frozen-wide-conv-oracle-ostrich.log`. The two one-shot test jobs
+exited successfully and removed their own temporary containers.
+
+The published emu 1.01x-capacity startup passed cold near-1M retrieval
+(TTFT 1,393.874 s), but the identical replay recorded zero additional prefix
+hits and is recomputing. This does not qualify tight-fit fast replay, unlike
+the earlier 1.17x-capacity run. The original four-pass client remains live;
+its partial JSON is explicitly `complete: false`. In-flight metrics and
+serving state/logs are preserved as `20260905-published-default-emu-tight-replay-inflight.*`.
+Additional cache headroom is a hypothesis, not a proven root cause yet.
+An explicit 0.86 utilization fallback is being qualified on dodo, using the
+same published image and otherwise-default launch settings. It does not
+change the launcher default of 0.85 or bypass the 0.87 hard cap.

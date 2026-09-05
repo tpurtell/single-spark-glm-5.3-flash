@@ -10,7 +10,10 @@ the KV admission check (6.72 GiB available versus 6.75 GiB required), despite
 the identical command/environment passing earlier. A diagnostic retry fits
 at 0.85; a fresh registry pull on emu also starts with unmodified defaults,
 but with only 1.01 request-equivalents of cache. Its 128K/512K retrieval and
-cancellation checks passed; the near-1M repeat is still underway. The launcher does not silently
+cancellation checks passed. Its cold near-1M answer also passed, but the
+identical replay has recorded **zero cache hits** and is recomputing the
+prompt; this tight-fit startup is not qualified for fast 1M replay. The earlier
+1.17x-capacity run did reuse the prefix. The launcher does not silently
 raise utilization or reduce context after a failed admission.
 
 Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
@@ -74,6 +77,8 @@ then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
 identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
 before/after snapshots. Published-default stress/context checks remain open.
+An explicit 0.86 fallback is being tested for additional 1M cache headroom;
+it is not the default or a qualified recommendation yet.
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context

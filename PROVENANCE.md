@@ -40,6 +40,9 @@ the source-revision label changed. The full receipt is
 `results/20260905-release-equivalence.json`; the registry push receipt is
 `results/20260905-release-push-dodo.log`. Clean pull/start qualification is
 recorded separately, not inferred merely from successful upload.
+The clean registry pull receipt is
+`results/20260905-published-default-emu-pull-launch.log`; it records the same
+manifest digest and a successful pull, followed by healthy default startup.
 
 ## K2 manifest repair
 
@@ -110,6 +113,17 @@ Its NumPy oracle is vectorized across tiles and checked against the original
 scalar-tile reconstruction. See `results/20260905-projection-glm-geometry-emu.log`.
 A future full mixed GLM checkpoint still needs its own loading and model-level
 quality qualification; these synthetic checks do not substitute for that.
+
+The published image `b5ae51f7…` subsequently repeated the projection oracle:
+**36/36 cases passed**, comprising 12 full-GLM-geometry K2/3 and K3/4 cases
+and 24 smaller-geometry K4/5 and K5/6 cases at 4/288 experts. All graph replay
+and stable-allocation checks passed; maximum relative error was 0.000683576
+and minimum cosine 0.999999702 across the full set. The receipt includes
+image ID, architecture, and script hash:
+`results/20260905-published-projection-oracle-dodo.log`.
+The frozen runtime `94711456…` also repeated all six wide-MLA cases and all
+four convolution-window cases successfully, with negative controls intact:
+`results/20260905-frozen-wide-conv-oracle-ostrich.log`.
 
 ## Credits and licenses
 
