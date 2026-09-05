@@ -1,0 +1,22 @@
+{
+  "schema": "glm53-release-startup-jit-audit.v1",
+  "container": "glm53-spark",
+  "image": "ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev",
+  "image_id": "sha256:94711456c8e9f17b849a9294fbb021245fc8a65b55d9e76a67fa8a0c77309095",
+  "container_state": "running",
+  "health_status_at_audit": "healthy",
+  "container_stopped_after_test": false,
+  "ready_marker": "2026-09-05T14:36:24.394976643Z GLM release startup warmup complete; container is ready.",
+  "pre_ready_jit_count": 3,
+  "pre_ready_jit_kernels": [
+    "_gumbel_sample_kernel",
+    "_kpool_softmax_rotate_write_cache_kernel",
+    "_kpool_tail_seed_kernel"
+  ],
+  "post_ready_request_count": 10,
+  "post_ready_health_200_count": 14,
+  "post_ready_http_404_count": 0,
+  "post_ready_jit_count": 0,
+  "post_ready_jit_kernels": [],
+  "passed": true
+}

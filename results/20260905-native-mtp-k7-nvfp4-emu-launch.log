@@ -1,0 +1,11 @@
+Stopped glm53-spark (container retained; start.sh replaces it on the next launch).
+Validated 120 checkpoint shards
+e2b0ad5e4fff7d56ebee09f26087302a1e0413f0ace2fd6f7e528d4416c282f4
+Started glm53-spark on http://127.0.0.1:8001/v1. Initial B12x/CuTe compilation can take several minutes.
+Target: k2 profile, vcruz305/GLM-5.3-Flash-EXL3-K2@ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b
+Profile: nvfp4, KV cache: nvfp4_ds_mla, max length: 262144, max sequences: 6, GPU memory utilization: 0.85
+MoE topology: TP1, EP1
+MTP: 7 tokens with compact KDA ReplaySSM (buffer 10)
+MTP policy: static K=7
+Vision: disabled (language-model-only mode)
+Follow startup: docker logs -f glm53-spark

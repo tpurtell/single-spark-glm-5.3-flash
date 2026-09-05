@@ -1,0 +1,4 @@
+{"drafts": 5, "dim": 128, "lengths": [1, 6, 3], "state_index_stride": 2, "relative_output_error": 0.0029726640786975622, "correct_saved_state": true, "negative_control_stale_elements": 640, "graph_replay": true, "stable_allocation": true}
+{"drafts": 5, "dim": 24576, "lengths": [1, 6, 3], "state_index_stride": 2, "relative_output_error": 0.002694019116461277, "correct_saved_state": true, "negative_control_stale_elements": 122750, "graph_replay": true, "stable_allocation": true}
+{"drafts": 7, "dim": 128, "lengths": [1, 8, 3], "state_index_stride": 2, "relative_output_error": 0.0025480089243501425, "correct_saved_state": true, "negative_control_stale_elements": 895, "graph_replay": true, "stable_allocation": true}
+{"drafts": 7, "dim": 24576, "lengths": [1, 8, 3], "state_index_stride": 2, "relative_output_error": 0.002699856646358967, "correct_saved_state": true, "negative_control_stale_elements": 171839, "graph_replay": true, "stable_allocation": true}

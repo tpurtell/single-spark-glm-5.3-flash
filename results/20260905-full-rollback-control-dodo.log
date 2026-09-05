@@ -1,0 +1,689 @@
+2026-09-05T12:28:48.864056882Z {
+2026-09-05T12:28:48.864085970Z   "repository": "zai-org/GLM-5.3-Flash",
+2026-09-05T12:28:48.864087586Z   "revision": "690b705278a3a58e538fcb37c2ca8b5f9511213c",
+2026-09-05T12:28:48.864088882Z   "source": "official-current",
+2026-09-05T12:28:48.864089986Z   "sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5",
+2026-09-05T12:28:48.864091714Z   "checked_utc": "2026-09-05T12:28:48.863538+00:00",
+2026-09-05T12:28:48.864092722Z   "offline": false
+2026-09-05T12:28:48.864093794Z }
+2026-09-05T12:28:49.565277686Z {
+2026-09-05T12:28:49.565377414Z   "source": "/model-repo/snapshots/ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b",
+2026-09-05T12:28:49.565382598Z   "destination": "/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b",
+2026-09-05T12:28:49.565385494Z   "original_manifest_projections": 4180,
+2026-09-05T12:28:49.565387830Z   "derived_manifest_projections": 37152,
+2026-09-05T12:28:49.565390070Z   "original_manifest_sha256": "7ac43594d7f85a80a232b8f79d117c9ec560a40c12fc6dfccf3dd82cc5c78eb4",
+2026-09-05T12:28:49.565392438Z   "derived_manifest_sha256": "4d2a1a20957c1b45e1eff3ac8ab0c0c9dd7c0f910d37ff02ea96113350a72d80",
+2026-09-05T12:28:49.565394710Z   "weights_modified": false,
+2026-09-05T12:28:49.565396902Z   "chat_template_sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5"
+2026-09-05T12:28:49.565399398Z }
+2026-09-05T12:29:01.545750536Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345] 
+2026-09-05T12:29:01.545776872Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345]        █     █     █▄   ▄█
+2026-09-05T12:29:01.545778776Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.1.dev20051+g487ecf187
+2026-09-05T12:29:01.545779992Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345]   █▄█▀ █     █     █     █  model   /root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b
+2026-09-05T12:29:01.545781304Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+2026-09-05T12:29:01.545782424Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:345] 
+2026-09-05T12:29:01.548842610Z (APIServer pid=54) INFO 09-05 12:29:01 [api_utils.py:273] non-default args: {'model_tag': '/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', 'enable_auto_tool_choice': True, 'tool_call_parser': 'glm47', 'host': '0.0.0.0', 'port': 8001, 'model': '/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', 'max_model_len': 262144, 'served_model_name': ['vcruz305/GLM-5.3-Flash-EXL3-K2'], 'load_format': 'instanttensor', 'attention_backend': 'B12X_MLA_SPARSE', 'reasoning_parser': 'glm45', 'disable_custom_all_reduce': True, 'block_size': 256, 'gpu_memory_utilization': 0.85, 'kv_cache_dtype': 'nvfp4_ds_mla', 'enable_prefix_caching': True, 'mamba_cache_mode': 'align', 'language_model_only': True, 'max_num_batched_tokens': 2048, 'max_num_seqs': 6, 'cudagraph_capture_sizes': [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36], 'max_cudagraph_capture_size': 36, 'enable_flashinfer_autotune': False, 'speculative_config': {'method': 'dflash', 'model': '/draft-repo/snapshots/bf582e4eacc1810f76656d1811693ff6c6737d2a', 'num_speculative_tokens': 5, 'kv_cache_dtype': 'bfloat16'}}
+2026-09-05T12:29:01.549376515Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_DECISION_WINDOW
+2026-09-05T12:29:01.549394531Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_PCIE_ALLREDUCE_BACKEND
+2026-09-05T12:29:01.549396003Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_USE_B12X_MHC
+2026-09-05T12:29:01.549397155Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_BLOCK_M
+2026-09-05T12:29:01.549398307Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_NVFP4_MLA_DYNAMIC_SCALE
+2026-09-05T12:29:01.549399491Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP
+2026-09-05T12:29:01.549400739Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_PCIE_ONESHOT_ALLREDUCE_MAX_SIZE
+2026-09-05T12:29:01.549401843Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_GLM_H64_QUERY_PROJ
+2026-09-05T12:29:01.549402963Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_CAPACITY
+2026-09-05T12:29:01.549403987Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_MIN_M
+2026-09-05T12:29:01.549405091Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_PROBE_INTERVAL
+2026-09-05T12:29:01.549406131Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_TRELLIS
+2026-09-05T12:29:01.549407251Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_BLOCK_M
+2026-09-05T12:29:01.549408275Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_LOAD_THRESHOLDS
+2026-09-05T12:29:01.549409379Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_USE_B12X_KPOOL_INDEXER
+2026-09-05T12:29:01.549410963Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_PCIE_EAGER
+2026-09-05T12:29:01.549412147Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_DCP_A2A
+2026-09-05T12:29:01.549413171Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_MAX_M
+2026-09-05T12:29:01.549414275Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ENABLE_PCIE_ALLREDUCE
+2026-09-05T12:29:01.549415283Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_HISTORY
+2026-09-05T12:29:01.549426851Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_PROBE_INTERVAL_MAX
+2026-09-05T12:29:01.549427955Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_MIN_DEPTH
+2026-09-05T12:29:01.549429443Z (APIServer pid=54) WARNING 09-05 12:29:01 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_NVFP4_MLA_SCALES_FILE
+2026-09-05T12:29:01.558833377Z (APIServer pid=54) INFO 09-05 12:29:01 [model.py:679] Resolved architecture: Glm5NextForConditionalGeneration
+2026-09-05T12:29:01.558849169Z (APIServer pid=54) INFO 09-05 12:29:01 [model.py:1972] Using max model len 262144
+2026-09-05T12:29:04.001765191Z (APIServer pid=54) INFO 09-05 12:29:04 [registry.py:141] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+2026-09-05T12:29:04.001798327Z (APIServer pid=54) INFO 09-05 12:29:04 [model.py:882] Disabled mm_prefix attention mode because multimodal inputs are configuration-disabled. Attention backends without mm_prefix support may now be selected.
+2026-09-05T12:29:04.218217625Z (APIServer pid=54) INFO 09-05 12:29:04 [cache.py:289] Using nvfp4_ds_mla data type to store kv cache. It reduces the GPU memory footprint and boosts the performance. Meanwhile, it may cause accuracy drop without a proper scaling factor
+2026-09-05T12:29:04.220683793Z (APIServer pid=54) INFO 09-05 12:29:04 [model.py:679] Resolved architecture: DFlash2DraftModel
+2026-09-05T12:29:04.220708177Z (APIServer pid=54) INFO 09-05 12:29:04 [model.py:1972] Using max model len 1048576
+2026-09-05T12:29:04.221753748Z (APIServer pid=54) INFO 09-05 12:29:04 [speculative.py:1256] Overriding draft model max model len from 1048576 to 262144
+2026-09-05T12:29:04.706460847Z (APIServer pid=54) INFO 09-05 12:29:04 [exl3.py:625] EXL3 standard fused MoE enabled for glm5_next: projection tiers (2,) via b12x
+2026-09-05T12:29:04.732511490Z (APIServer pid=54) INFO 09-05 12:29:04 [vllm.py:1336] Auto-enabling VLLM_USE_BREAKABLE_CUDAGRAPH=1. Set VLLM_USE_BREAKABLE_CUDAGRAPH=0 to opt out.
+2026-09-05T12:29:04.732564402Z (APIServer pid=54) INFO 09-05 12:29:04 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:29:04.732568642Z (APIServer pid=54) WARNING 09-05 12:29:04 [vllm.py:1866] max_num_scheduled_tokens is set to 2048 based on the speculative decoding settings. This may lead to suboptimal performance. Consider increasing max_num_batched_tokens to accommodate the additional draft token slots, or decrease num_speculative_tokens.
+2026-09-05T12:29:04.750171882Z (APIServer pid=54) INFO 09-05 12:29:04 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+2026-09-05T12:29:17.322084650Z (EngineCore pid=201) INFO 09-05 12:29:17 [core.py:122] Initializing a V1 LLM engine (v0.1.dev20051+g487ecf187) with config: model='/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', speculative_config=SpeculativeConfig(method='dflash', model='/draft-repo/snapshots/bf582e4eacc1810f76656d1811693ff6c6737d2a', num_spec_tokens=5), tokenizer='/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=262144, download_dir=None, load_format=instanttensor, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=exl3, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=nvfp4_ds_mla, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='glm45', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=vcruz305/GLM-5.3-Flash-EXL3-K2, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 36, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+2026-09-05T12:29:19.496345714Z (EngineCore pid=201) INFO 09-05 12:29:19 [registry.py:141] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+2026-09-05T12:29:19.499655516Z (EngineCore pid=201) INFO 09-05 12:29:19 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_0dfa5d12de234f39b0081889baf8d249 backend=nccl
+2026-09-05T12:29:19.504086251Z (EngineCore pid=201) INFO 09-05 12:29:19 [parallel_state.py:1984] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0, EPLB rank N/A
+2026-09-05T12:29:19.504104043Z (EngineCore pid=201) INFO 09-05 12:29:19 [gpu_worker.py:386] Using V2 Model Runner
+2026-09-05T12:29:20.220850243Z (EngineCore pid=201) INFO 09-05 12:29:20 [model_runner.py:353] Loading model from scratch...
+2026-09-05T12:29:20.253901916Z (EngineCore pid=201) INFO 09-05 12:29:20 [cuda.py:592] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+2026-09-05T12:29:20.253929596Z (EngineCore pid=201) INFO 09-05 12:29:20 [mm_encoder_attention.py:375] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+2026-09-05T12:29:20.265364161Z (EngineCore pid=201) INFO 09-05 12:29:20 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:29:20.265390913Z (EngineCore pid=201) WARNING 09-05 12:29:20 [vllm.py:1866] max_num_scheduled_tokens is set to 2048 based on the speculative decoding settings. This may lead to suboptimal performance. Consider increasing max_num_batched_tokens to accommodate the additional draft token slots, or decrease num_speculative_tokens.
+2026-09-05T12:29:20.271336884Z (EngineCore pid=201) INFO 09-05 12:29:20 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+2026-09-05T12:29:20.401094144Z (EngineCore pid=201) INFO 09-05 12:29:20 [sparse_attn_indexer_kpool.py:1108] Using B12x fused paged score+top-k for GLM kpool decode.
+2026-09-05T12:29:20.419500203Z (EngineCore pid=201) INFO 09-05 12:29:20 [cuda.py:473] Using AttentionBackendEnum.B12X_MLA_SPARSE backend.
+2026-09-05T12:29:20.507831604Z (EngineCore pid=201) INFO 09-05 12:29:20 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:06.096036048Z (APIServer pid=54) [transformers] The following generation flags are not valid and may be ignored: ['top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-09-05T12:29:22.704285870Z (EngineCore pid=201) WARNING 09-05 12:29:22 [mla_attention.py:553] Sparse MLA impl has no dense-MHA prefill path; using the top-k MQA path only.
+2026-09-05T12:29:22.704649215Z (EngineCore pid=201) INFO 09-05 12:29:22 [deep_gemm.py:191] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+2026-09-05T12:29:22.704799232Z (EngineCore pid=201) INFO 09-05 12:29:22 [deep_gemm.py:136] DeepGEMM E8M0 enabled on current platform.
+2026-09-05T12:29:22.748837612Z (EngineCore pid=201) INFO 09-05 12:29:22 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:22.810780465Z (EngineCore pid=201) INFO 09-05 12:29:22 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:22.872699750Z (EngineCore pid=201) INFO 09-05 12:29:22 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:22.933865768Z (EngineCore pid=201) INFO 09-05 12:29:22 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:22.994219352Z (EngineCore pid=201) INFO 09-05 12:29:22 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:23.054298183Z (EngineCore pid=201) INFO 09-05 12:29:23 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:23.115025944Z (EngineCore pid=201) INFO 09-05 12:29:23 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:23.175703049Z (EngineCore pid=201) INFO 09-05 12:29:23 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:23.235307671Z (EngineCore pid=201) INFO 09-05 12:29:23 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:23.294769012Z (EngineCore pid=201) INFO 09-05 12:29:23 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+2026-09-05T12:29:25.344863465Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:   0% Completed | 0.00/91.0G [00:00<?, ?B/s]
+2026-09-05T12:29:26.345545397Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:   4% Completed | 3.51G/91.0G [00:01<00:24, 3.77GB/s]
+2026-09-05T12:29:27.507892899Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:   8% Completed | 7.02G/91.0G [00:02<00:26, 3.44GB/s]
+2026-09-05T12:29:28.514416593Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  13% Completed | 11.4G/91.0G [00:03<00:21, 4.00GB/s]
+2026-09-05T12:29:29.514959547Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  17% Completed | 15.7G/91.0G [00:04<00:19, 4.21GB/s]
+2026-09-05T12:29:30.515209731Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  22% Completed | 20.0G/91.0G [00:05<00:17, 4.36GB/s]
+2026-09-05T12:29:31.515247243Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  27% Completed | 24.3G/91.0G [00:06<00:16, 4.45GB/s]
+2026-09-05T12:29:32.514952288Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  31% Completed | 28.6G/91.0G [00:07<00:14, 4.51GB/s]
+2026-09-05T12:29:33.515766825Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  36% Completed | 33.2G/91.0G [00:08<00:13, 4.63GB/s]
+2026-09-05T12:29:34.516117872Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  41% Completed | 37.5G/91.0G [00:09<00:12, 4.64GB/s]
+2026-09-05T12:29:35.535843011Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  46% Completed | 41.9G/91.0G [00:10<00:11, 4.61GB/s]
+2026-09-05T12:29:36.572591564Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  51% Completed | 46.2G/91.0G [00:11<00:10, 4.56GB/s]
+2026-09-05T12:29:37.573161794Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  56% Completed | 50.8G/91.0G [00:12<00:09, 4.69GB/s]
+2026-09-05T12:29:38.576615888Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  61% Completed | 55.2G/91.0G [00:13<00:08, 4.69GB/s]
+2026-09-05T12:29:39.576684707Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  65% Completed | 59.6G/91.0G [00:14<00:07, 4.69GB/s]
+2026-09-05T12:29:40.619124860Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  70% Completed | 63.9G/91.0G [00:15<00:06, 4.64GB/s]
+2026-09-05T12:29:41.619124766Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  75% Completed | 68.4G/91.0G [00:16<00:05, 4.69GB/s]
+2026-09-05T12:29:42.681342676Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  80% Completed | 72.8G/91.0G [00:17<00:04, 4.61GB/s]
+2026-09-05T12:29:43.681688341Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  85% Completed | 77.5G/91.0G [00:18<00:03, 4.73GB/s]
+2026-09-05T12:29:44.681416628Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  90% Completed | 82.3G/91.0G [00:19<00:01, 4.85GB/s]
+2026-09-05T12:29:45.737558677Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:  95% Completed | 86.8G/91.0G [00:20<00:00, 4.77GB/s]
+2026-09-05T12:29:46.096436502Z (EngineCore pid=201) Loading safetensors using InstantTensor loader: 100% Completed | 91.0G/91.0G [00:20<00:00, 4.71GB/s]
+2026-09-05T12:29:46.096467110Z (EngineCore pid=201) 
+2026-09-05T12:29:46.761103119Z (EngineCore pid=201) INFO 09-05 12:29:46 [default_loader.py:430] Loading weights took 23.21 seconds
+2026-09-05T12:29:48.096225265Z (EngineCore pid=201) INFO 09-05 12:29:48 [mla_attention.py:1114] Prewarmed B12x GLM H64 BF16 query projection for decode M=2..16.
+2026-09-05T12:29:48.106067280Z (EngineCore pid=201) INFO 09-05 12:29:48 [eagle3_utils.py:28] Using Eagle3 auxiliary layers from config: (6, 15, 25, 34, 43)
+2026-09-05T12:29:48.116902562Z (EngineCore pid=201) INFO 09-05 12:29:48 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:29:48.361716921Z (EngineCore pid=201) INFO 09-05 12:29:48 [cuda.py:533] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+2026-09-05T12:29:48.361751577Z (EngineCore pid=201) INFO 09-05 12:29:48 [flash_attn.py:873] Using FlashAttention version 2
+2026-09-05T12:29:50.589241459Z (EngineCore pid=201) INFO 09-05 12:29:50 [default_loader.py:430] Loading weights took 2.08 seconds
+2026-09-05T12:29:51.384117462Z (EngineCore pid=201) INFO 09-05 12:29:51 [model_runner.py:374] Model loading took 90.93 GiB and 31.417255 seconds
+2026-09-05T12:29:51.394676311Z (EngineCore pid=201) INFO 09-05 12:29:51 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+2026-09-05T12:29:51.394710839Z (EngineCore pid=201) INFO 09-05 12:29:51 [interface.py:926] Setting attention block size to 12544 tokens to ensure that attention page size is >= mamba page size.
+2026-09-05T12:29:51.394714343Z (EngineCore pid=201) INFO 09-05 12:29:51 [interface.py:950] Padding mamba page size by 0.62% to ensure that mamba page size and attention page size are exactly equal.
+2026-09-05T12:29:52.044552159Z (EngineCore pid=201) 2026-09-05 12:29:52  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:29:49.448796106Z (EngineCore pid=201) Loading safetensors using InstantTensor loader:   0% Completed | 0.00/2.18G [00:00<?, ?B/s]
+2026-09-05T12:29:49.948349287Z (EngineCore pid=201) Loading safetensors using InstantTensor loader: 100% Completed | 2.18G/2.18G [00:00<00:00, 4.69GB/s]
+2026-09-05T12:29:49.948387815Z (EngineCore pid=201) 
+2026-09-05T12:29:56.020740478Z (EngineCore pid=201) 2026-09-05 12:29:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:29:56.847278931Z (EngineCore pid=201) 2026-09-05 12:29:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_post_tilelang` with `out_idx=None`
+2026-09-05T12:29:57.704971210Z (EngineCore pid=201) 2026-09-05 12:29:57  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_post_tilelang`
+2026-09-05T12:30:07.343650464Z (EngineCore pid=201) INFO 09-05 12:30:07 [exl3.py:3029] EXL3 rank-sliced runtime planned: Trellis m=1..36 block_m=8, prefill trellis block_m=64 arena=256.1MiB capacity=1024 chunk=128 topk=8
+2026-09-05T12:30:09.044920120Z (EngineCore pid=201) INFO 09-05 12:30:09 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:30:10.126123482Z (EngineCore pid=201) INFO 09-05 12:30:10 [gpu_worker.py:515] GLM53 memory snapshots: before=torch_peak=90.95GiB, torch_allocated=90.95GiB, free_memory=20.5GiB, total_memory=121.63GiB, cuda_memory=101.13GiB, torch_memory=91.04GiB, non_torch_memory=10.09GiB, timestamp=1788611391.7489166, auto_measure=False; after=torch_peak=92.33GiB, torch_allocated=91.28GiB, free_memory=18.79GiB, total_memory=121.63GiB, cuda_memory=102.83GiB, torch_memory=91.42GiB, non_torch_memory=11.41GiB, timestamp=1788611410.1253371, auto_measure=False
+2026-09-05T12:30:10.127942992Z (EngineCore pid=201) INFO 09-05 12:30:10 [indexer.py:736] DSA indexer decode path: use_flattening=True supports_varlen=False (next_n=6, use_fp4_indexer_cache=False)
+2026-09-05T12:30:10.152249645Z (EngineCore pid=201) INFO 09-05 12:30:10 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:30:10.157140940Z (EngineCore pid=201) INFO 09-05 12:30:10 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:30:10.242445801Z (EngineCore pid=201) INFO 09-05 12:30:10 [breakable_cudagraph.py:288] Breakable CUDA graph enabled
+2026-09-05T12:30:10.799595398Z (EngineCore pid=201) 2026-09-05 12:30:10  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:30:14.932728284Z (EngineCore pid=201) 2026-09-05 12:30:14  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:03.764039798Z (EngineCore pid=201) 2026-09-05 12:31:03  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_fused_tilelang` with `out_idx=None`
+2026-09-05T12:31:04.502508891Z (EngineCore pid=201) 2026-09-05 12:31:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_fused_tilelang`
+2026-09-05T12:31:04.854553960Z (EngineCore pid=201) 2026-09-05 12:31:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:09.287471240Z (EngineCore pid=201) 2026-09-05 12:31:09  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:15.899558898Z (EngineCore pid=201) 2026-09-05 12:31:15  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_fused_tilelang` with `out_idx=None`
+2026-09-05T12:31:16.598090855Z (EngineCore pid=201) 2026-09-05 12:31:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_fused_tilelang`
+2026-09-05T12:31:16.939597825Z (EngineCore pid=201) 2026-09-05 12:31:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:21.418397783Z (EngineCore pid=201) 2026-09-05 12:31:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:27.314879575Z (EngineCore pid=201) INFO 09-05 12:31:27 [mhc.py:438] Using B12x fused GLM H4096 mHC post+pre for decode M=1.
+2026-09-05T12:31:31.549838272Z (EngineCore pid=201) INFO 09-05 12:31:31 [model_runner.py:957] Estimated CUDA graph memory: 1.04 GiB total
+2026-09-05T12:29:56.733888844Z (EngineCore pid=201) /usr/local/lib/python3.12/dist-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+2026-09-05T12:29:56.733917660Z (EngineCore pid=201)   warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+2026-09-05T12:29:57.033895009Z [12:29:57] : Warning: T.vectorized loop over `i_hci` with extent 4 is lowered as a serial loop because TileLang could not find a valid vectorization plan. Scalar accumulator updates inside the loop are a common cause; move reductions to T.unroll or T.serial if this is intended.
+2026-09-05T12:30:00.223724321Z (EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 36, 'quant_mode': 'w4a16', 'routed_rows': 288, 'source_format': 'b12x_trellis', 'top_k': 8}
+2026-09-05T12:30:00.292105833Z (EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 8, 'quant_mode': 'w4a16', 'routed_rows': 64, 'source_format': 'b12x_trellis', 'top_k': 8}
+2026-09-05T12:30:04.368796787Z (EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 1024, 'quant_mode': 'w4a16', 'routed_rows': 8192, 'source_format': 'b12x_trellis', 'top_k': 8}
+2026-09-05T12:30:15.845369768Z (EngineCore pid=201) Profiling CUDA graph memory (PIECEWISE):   0%|          | 0/12 [00:00<?, ?it/s]                                                                               Profiling CUDA graph memory (PIECEWISE):   0%|          | 0/12 [00:00<?, ?it/s]                                                                               Profiling CUDA graph memory (PIECEWISE):   0%|          | 0/12 [00:04<?, ?it/s]/usr/local/lib/python3.12/dist-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+2026-09-05T12:30:15.845388280Z (EngineCore pid=201)   warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+2026-09-05T12:31:29.590540009Z (EngineCore pid=201) Profiling CUDA graph memory (PIECEWISE):   8%|▊         | 1/12 [00:50<09:15, 50.48s/it]Profiling CUDA graph memory (PIECEWISE):  17%|█▋        | 2/12 [00:51<03:31, 21.16s/it]Profiling CUDA graph memory (PIECEWISE):  25%|██▌       | 3/12 [00:51<01:46, 11.78s/it]Profiling CUDA graph memory (PIECEWISE):  33%|███▎      | 4/12 [00:52<00:58,  7.37s/it]Profiling CUDA graph memory (PIECEWISE):  42%|████▏     | 5/12 [00:53<00:34,  4.99s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  42%|████▏     | 5/12 [00:53<00:34,  4.99s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  42%|████▏     | 5/12 [00:53<00:34,  4.99s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  42%|████▏     | 5/12 [00:54<00:34,  4.99s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  42%|████▏     | 5/12 [00:58<00:34,  4.99s/it]Profiling CUDA graph memory (PIECEWISE):  50%|█████     | 6/12 [01:01<00:36,  6.07s/it]Profiling CUDA graph memory (PIECEWISE):  58%|█████▊    | 7/12 [01:03<00:23,  4.71s/it]Profiling CUDA graph memory (PIECEWISE):  67%|██████▋   | 8/12 [01:04<00:15,  3.78s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  67%|██████▋   | 8/12 [01:05<00:15,  3.78s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  67%|██████▋   | 8/12 [01:06<00:15,  3.78s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  67%|██████▋   | 8/12 [01:06<00:15,  3.78s/it]                                                                                       Profiling CUDA graph memory (PIECEWISE):  67%|██████▋   | 8/12 [01:10<00:15,  3.78s/it]Profiling CUDA graph memory (PIECEWISE):  75%|███████▌  | 9/12 [01:13<00:15,  5.16s/it]Profiling CUDA graph memory (PIECEWISE):  83%|████████▎ | 10/12 [01:14<00:08,  4.10s/it]Profiling CUDA graph memory (PIECEWISE):  92%|█████████▏| 11/12 [01:16<00:03,  3.37s/it]Profiling CUDA graph memory (PIECEWISE): 100%|██████████| 12/12 [01:18<00:00,  3.07s/it]Profiling CUDA graph memory (PIECEWISE): 100%|██████████| 12/12 [01:18<00:00,  6.58s/it]
+2026-09-05T12:31:31.122757486Z (EngineCore pid=201) Profiling CUDA graph memory (FULL):   0%|          | 0/6 [00:00<?, ?it/s]Profiling CUDA graph memory (FULL):  17%|█▋        | 1/6 [00:00<00:02,  2.01it/s]Profiling CUDA graph memory (FULL):  33%|███▎      | 2/6 [00:00<00:01,  3.10it/s]Profiling CUDA graph memory (FULL):  50%|█████     | 3/6 [00:00<00:00,  3.80it/s]Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:01<00:00,  4.23it/s]Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:01<00:00,  4.63it/s]Profiling CUDA graph memory (FULL): 100%|██████████| 6/6 [00:01<00:00,  4.29it/s]Profiling CUDA graph memory (FULL): 100%|██████████| 6/6 [00:01<00:00,  3.92it/s]
+2026-09-05T12:31:31.550365026Z (EngineCore pid=201) INFO 09-05 12:31:31 [gpu_worker.py:574] GLM53 memory accounting: Memory profiling takes 18.38 seconds. Total non KV cache memory: 95.85GiB; torch peak memory increase: 1.38GiB; total consumed (from mem_get_info): 94.8GiB; weights memory: 90.93GiB.
+2026-09-05T12:31:31.550389890Z (EngineCore pid=201) INFO 09-05 12:31:31 [gpu_worker.py:575] Available KV cache memory: 6.5 GiB
+2026-09-05T12:31:31.550392642Z (EngineCore pid=201) INFO 09-05 12:31:31 [gpu_worker.py:590] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.8500 is equivalent to --gpu-memory-utilization=0.8415 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.8585. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+2026-09-05T12:31:31.553380139Z (EngineCore pid=201) INFO 09-05 12:31:31 [kv_cache_utils.py:2181] GPU KV cache size: 317,750 tokens, Maximum concurrency for 262,144 tokens per request: 1.21x
+2026-09-05T12:31:31.557192583Z (EngineCore pid=201) INFO 09-05 12:31:31 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:31:31.563102314Z (EngineCore pid=201) INFO 09-05 12:31:31 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:31:31.835468378Z (EngineCore pid=201) INFO 09-05 12:31:31 [deepseek_v4_mhc_warmup.py:245] Warming up mHC TileLang kernels for Glm5NextDecoderLayer token sizes: [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1088, 1152, 1216, 1280, 1344, 1408, 1472, 1536, 1600, 1664, 1728, 1792, 1856, 1920, 1984, 2048]
+2026-09-05T12:31:31.901908761Z (EngineCore pid=201) 2026-09-05 12:31:31  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:36.295577128Z (EngineCore pid=201) 2026-09-05 12:31:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:36.786923681Z (EngineCore pid=201) 2026-09-05 12:31:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:41.475273707Z (EngineCore pid=201) 2026-09-05 12:31:41  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:41.990106109Z (EngineCore pid=201) 2026-09-05 12:31:41  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:46.294162146Z (EngineCore pid=201) 2026-09-05 12:31:46  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:46.758554101Z (EngineCore pid=201) 2026-09-05 12:31:46  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:51.356765987Z (EngineCore pid=201) 2026-09-05 12:31:51  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:51.826313173Z (EngineCore pid=201) 2026-09-05 12:31:51  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:31:56.386236546Z (EngineCore pid=201) 2026-09-05 12:31:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:31:56.854076670Z (EngineCore pid=201) 2026-09-05 12:31:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:32:01.456708486Z (EngineCore pid=201) 2026-09-05 12:32:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:32:01.933197403Z (EngineCore pid=201) 2026-09-05 12:32:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:32:06.164420906Z (EngineCore pid=201) 2026-09-05 12:32:06  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:32:06.662664450Z (EngineCore pid=201) 2026-09-05 12:32:06  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+2026-09-05T12:32:11.182576231Z (EngineCore pid=201) 2026-09-05 12:32:11  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+2026-09-05T12:32:11.672725045Z (EngineCore pid=201) INFO 09-05 12:32:11 [deepseek_v4_mhc_warmup.py:255] mHC TileLang warmup finished in 39.84 seconds.
+2026-09-05T12:32:13.016281542Z (EngineCore pid=201) INFO 09-05 12:32:13 [spec_decode_rejection_warmup.py:64] Warming up spec-decode rejection sampler kernels (vocab=154880, num_spec=5, dtype_pairs=[('torch.bfloat16', 'torch.float32'), ('torch.float32', 'torch.float32'), ('torch.bfloat16', 'torch.bfloat16'), ('torch.float32', 'torch.bfloat16')], block_verify=False).
+2026-09-05T12:32:15.142738782Z (EngineCore pid=201) INFO 09-05 12:32:15 [kernel_warmup.py:95] Warming up ll_bf16 router GEMM kernels for shapes: ((4096, 288),).
+2026-09-05T12:32:15.946211893Z (EngineCore pid=201) INFO 09-05 12:32:15 [kernel_warmup.py:170] Skipping FlashInfer autotune because it is disabled.
+2026-09-05T12:32:34.104538692Z (EngineCore pid=201) INFO 09-05 12:32:34 [speculator.py:141] Capturing model for DFlash2 speculator...
+2026-09-05T12:32:34.105967096Z (EngineCore pid=201) INFO 09-05 12:32:34 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.546281566Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.558139699Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.581805708Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.590875975Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.613344621Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.621322469Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.642996824Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.651495682Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.672678787Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.680996749Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:32:32.866565476Z (EngineCore pid=201) Capturing CUDA graphs (PIECEWISE):   0%|          | 0/12 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 1/12 [00:00<00:10,  1.04it/s]Capturing CUDA graphs (PIECEWISE):  17%|█▋        | 2/12 [00:01<00:07,  1.25it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 3/12 [00:02<00:06,  1.35it/s]Capturing CUDA graphs (PIECEWISE):  33%|███▎      | 4/12 [00:02<00:05,  1.40it/s]Capturing CUDA graphs (PIECEWISE):  42%|████▏     | 5/12 [00:03<00:05,  1.33it/s]Capturing CUDA graphs (PIECEWISE):  50%|█████     | 6/12 [00:05<00:06,  1.13s/it]Capturing CUDA graphs (PIECEWISE):  58%|█████▊    | 7/12 [00:07<00:06,  1.36s/it]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 8/12 [00:09<00:06,  1.51s/it]Capturing CUDA graphs (PIECEWISE):  75%|███████▌  | 9/12 [00:11<00:04,  1.60s/it]Capturing CUDA graphs (PIECEWISE):  83%|████████▎ | 10/12 [00:12<00:03,  1.65s/it]Capturing CUDA graphs (PIECEWISE):  92%|█████████▏| 11/12 [00:14<00:01,  1.70s/it]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 12/12 [00:16<00:00,  1.73s/it]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 12/12 [00:16<00:00,  1.38s/it]
+2026-09-05T12:32:34.104496468Z (EngineCore pid=201) Capturing CUDA graphs (FULL):   0%|          | 0/6 [00:00<?, ?it/s]Capturing CUDA graphs (FULL):  17%|█▋        | 1/6 [00:00<00:01,  3.95it/s]Capturing CUDA graphs (FULL):  33%|███▎      | 2/6 [00:00<00:00,  4.39it/s]Capturing CUDA graphs (FULL):  50%|█████     | 3/6 [00:00<00:00,  4.63it/s]Capturing CUDA graphs (FULL):  67%|██████▋   | 4/6 [00:00<00:00,  4.74it/s]Capturing CUDA graphs (FULL):  83%|████████▎ | 5/6 [00:01<00:00,  4.94it/s]Capturing CUDA graphs (FULL): 100%|██████████| 6/6 [00:01<00:00,  5.12it/s]Capturing CUDA graphs (FULL): 100%|██████████| 6/6 [00:01<00:00,  4.85it/s]
+2026-09-05T12:33:05.702607039Z (EngineCore pid=201) INFO 09-05 12:33:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:05.709642117Z (EngineCore pid=201) INFO 09-05 12:33:05 [model_runner.py:1017] Graph capturing finished in 50 secs, took 0.58 GiB
+2026-09-05T12:33:05.709643637Z (EngineCore pid=201) INFO 09-05 12:33:05 [gpu_worker.py:738] CUDA graph pool memory: 0.58 GiB (actual), 1.04 GiB (estimated), difference: 0.45 GiB (78.0%).
+2026-09-05T12:33:05.709645589Z (EngineCore pid=201) INFO 09-05 12:33:05 [gpu_worker.py:801] Free memory on device (113.59/121.63 GiB) on startup. Desired GPU memory utilization is (0.85, 103.38 GiB). Actual usage is 94.8 GiB for consumed memory (weights + non-torch), 2.08 GiB for peak activation, and 0.58 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=6194300519` (5.77 GiB) to fit into requested memory, or `--kv-cache-memory=17159141376` (15.98 GiB) to fully utilize gpu memory. Current kv cache memory in use is 6.5 GiB.
+2026-09-05T12:33:10.865544356Z (EngineCore pid=201) INFO 09-05 12:33:10 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+2026-09-05T12:33:05.709612229Z (EngineCore pid=201) Capturing dflash2 CUDA graphs (FULL):   0%|          | 0/6 [00:00<?, ?it/s]Capturing dflash2 CUDA graphs (FULL):  17%|█▋        | 1/6 [00:31<02:37, 31.45s/it]Capturing dflash2 CUDA graphs (FULL):  83%|████████▎ | 5/6 [00:31<00:04,  4.71s/it]Capturing dflash2 CUDA graphs (FULL): 100%|██████████| 6/6 [00:31<00:00,  5.27s/it]
+2026-09-05T12:33:11.265170464Z (EngineCore pid=201) INFO 09-05 12:33:11 [torch_utils.py:263] Reducing Torch threads from 20 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+2026-09-05T12:33:11.265704482Z (EngineCore pid=201) INFO 09-05 12:33:11 [core.py:363] init engine (profile, create kv cache, warmup model) took 199.87 s
+2026-09-05T12:33:11.418015670Z (EngineCore pid=201) INFO 09-05 12:33:11 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+2026-09-05T12:33:11.425012428Z (APIServer pid=54) INFO 09-05 12:33:11 [api_server.py:678] Supported tasks: ['generate']
+2026-09-05T12:33:11.544712076Z (APIServer pid=54) INFO 09-05 12:33:11 [parser_manager.py:37] "auto" tool choice has been enabled.
+2026-09-05T12:33:12.715889995Z (APIServer pid=54) INFO 09-05 12:33:12 [hf.py:551] Detected the chat template content format to be 'openai'. You can set `--chat-template-content-format` to override this.
+2026-09-05T12:33:12.737108989Z (APIServer pid=54) WARNING 09-05 12:33:12 [model.py:1720] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 1.0, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+2026-09-05T12:33:12.754945523Z (APIServer pid=54) INFO 09-05 12:33:12 [api_server.py:682] Starting vLLM server on http://0.0.0.0:8001
+2026-09-05T12:33:12.754962932Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:51] Available routes are:
+2026-09-05T12:33:12.754964340Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /openapi.json, Methods: GET, HEAD
+2026-09-05T12:33:12.754965556Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /docs, Methods: GET, HEAD
+2026-09-05T12:33:12.754966740Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+2026-09-05T12:33:12.754967876Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /redoc, Methods: GET, HEAD
+2026-09-05T12:33:12.754968852Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /load, Methods: GET
+2026-09-05T12:33:12.754969876Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /version, Methods: GET
+2026-09-05T12:33:12.754970884Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /health, Methods: GET
+2026-09-05T12:33:12.754971972Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /metrics, Methods: GET
+2026-09-05T12:33:12.754972948Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /tokenize, Methods: POST
+2026-09-05T12:33:12.754974020Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /detokenize, Methods: POST
+2026-09-05T12:33:12.754975044Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/models, Methods: GET
+2026-09-05T12:33:12.754976084Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /ping, Methods: GET
+2026-09-05T12:33:12.754977060Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /ping, Methods: POST
+2026-09-05T12:33:12.754978132Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /invocations, Methods: POST
+2026-09-05T12:33:12.754979108Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/chat/completions, Methods: POST
+2026-09-05T12:33:12.754980228Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/chat/completions/batch, Methods: POST
+2026-09-05T12:33:12.754981204Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/responses, Methods: POST
+2026-09-05T12:33:12.754982292Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/responses/{response_id}, Methods: GET
+2026-09-05T12:33:12.754983300Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/responses/{response_id}/cancel, Methods: POST
+2026-09-05T12:33:12.754984420Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/completions, Methods: POST
+2026-09-05T12:33:12.754985956Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/messages, Methods: POST
+2026-09-05T12:33:12.755007380Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/messages/count_tokens, Methods: POST
+2026-09-05T12:33:12.755018260Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /generative_scoring, Methods: POST
+2026-09-05T12:33:12.755019460Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /scale_elastic_ep, Methods: POST
+2026-09-05T12:33:12.755020452Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /is_scaling_elastic_ep, Methods: POST
+2026-09-05T12:33:12.755021524Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/chat/completions/render, Methods: POST
+2026-09-05T12:33:12.755022548Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/completions/render, Methods: POST
+2026-09-05T12:33:12.755023668Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/chat/completions/derender, Methods: POST
+2026-09-05T12:33:12.755024660Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /v1/completions/derender, Methods: POST
+2026-09-05T12:33:12.755025780Z (APIServer pid=54) INFO 09-05 12:33:12 [launcher.py:60] Route: /inference/v1/generate, Methods: POST
+2026-09-05T12:33:13.705067275Z (APIServer pid=54) INFO:     127.0.0.1:44664 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:33:13.705906478Z (APIServer pid=54) INFO:     127.0.0.1:44674 - "GET /v1/models HTTP/1.1" 200 OK
+2026-09-05T12:33:14.468224484Z (EngineCore pid=201) WARNING 09-05 12:33:14 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _gumbel_sample_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:14.552669960Z (EngineCore pid=201) WARNING 09-05 12:33:14 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _prepare_dflash_inputs_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:16.689769518Z (APIServer pid=54) INFO:     127.0.0.1:44680 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:33:12.777179080Z (APIServer pid=54) INFO:     Started server process [54]
+2026-09-05T12:33:12.777195128Z (APIServer pid=54) INFO:     Waiting for application startup.
+2026-09-05T12:33:13.059409355Z (APIServer pid=54) INFO:     Application startup complete.
+2026-09-05T12:33:16.690556000Z GLM release startup greedy C1 warmup completed in 2.98s
+2026-09-05T12:33:16.693769642Z (APIServer pid=54) INFO:     127.0.0.1:44696 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:33:16.697384053Z (APIServer pid=54) INFO:     127.0.0.1:44712 - "POST /v1/chat/completions/render HTTP/1.1" 200 OK
+2026-09-05T12:33:17.208448231Z (EngineCore pid=201) WARNING 09-05 12:33:17 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _compute_local_logits_stats_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:17.491649357Z (EngineCore pid=201) WARNING 09-05 12:33:17 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _rejection_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:17.665336482Z (EngineCore pid=201) WARNING 09-05 12:33:17 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _resample_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:20.235207509Z (APIServer pid=54) INFO:     127.0.0.1:44714 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:33:20.235824279Z GLM release startup rendered-chat warmup completed in 3.54s
+2026-09-05T12:33:23.060132246Z (APIServer pid=54) INFO 09-05 12:33:23 [loggers.py:310] Engine 000: Avg prompt throughput: 8.2 tokens/s, Avg generation throughput: 8.2 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-09-05T12:33:23.060264759Z (APIServer pid=54) INFO 09-05 12:33:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.16, Accepted throughput: 5.93 tokens/s, Drafted throughput: 13.75 tokens/s, Accepted: 69 tokens, Drafted: 160 tokens, Per-position acceptance rate: 0.719, 0.562, 0.438, 0.250, 0.188, Avg Draft acceptance rate: 43.1%
+2026-09-05T12:33:24.255464956Z (APIServer pid=54) INFO:     127.0.0.1:44720 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:33:24.255853725Z GLM release startup long-prefill warmup completed in 4.02s
+2026-09-05T12:33:25.165174932Z (EngineCore pid=201) WARNING 09-05 12:33:25 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _topk_topp_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:33:33.062418452Z (APIServer pid=54) INFO 09-05 12:33:33 [loggers.py:310] Engine 000: Avg prompt throughput: 426.0 tokens/s, Avg generation throughput: 35.6 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 92.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:33:33.062462036Z (APIServer pid=54) INFO 09-05 12:33:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.51, Accepted throughput: 21.10 tokens/s, Drafted throughput: 70.00 tokens/s, Accepted: 211 tokens, Drafted: 700 tokens, Per-position acceptance rate: 0.571, 0.400, 0.257, 0.150, 0.129, Avg Draft acceptance rate: 30.1%
+2026-09-05T12:33:43.063377403Z (APIServer pid=54) INFO 09-05 12:33:43 [loggers.py:310] Engine 000: Avg prompt throughput: 8.2 tokens/s, Avg generation throughput: 54.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 68.9%, Prefix cache hit rate: 0.0%
+2026-09-05T12:33:43.063509099Z (APIServer pid=54) INFO 09-05 12:33:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.84, Accepted throughput: 40.59 tokens/s, Drafted throughput: 71.49 tokens/s, Accepted: 406 tokens, Drafted: 715 tokens, Per-position acceptance rate: 0.776, 0.650, 0.545, 0.469, 0.399, Avg Draft acceptance rate: 56.8%
+2026-09-05T12:33:53.063929727Z (APIServer pid=54) INFO 09-05 12:33:53 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 27.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 71.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:33:53.063998831Z (APIServer pid=54) INFO 09-05 12:33:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.02, Accepted throughput: 13.80 tokens/s, Drafted throughput: 67.49 tokens/s, Accepted: 138 tokens, Drafted: 675 tokens, Per-position acceptance rate: 0.526, 0.274, 0.133, 0.052, 0.037, Avg Draft acceptance rate: 20.4%
+2026-09-05T12:34:03.064721202Z (APIServer pid=54) INFO 09-05 12:34:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 24.9 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 47.9%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:03.064753122Z (APIServer pid=54) INFO 09-05 12:34:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.08, Accepted throughput: 13.00 tokens/s, Drafted throughput: 60.00 tokens/s, Accepted: 130 tokens, Drafted: 600 tokens, Per-position acceptance rate: 0.533, 0.300, 0.158, 0.058, 0.033, Avg Draft acceptance rate: 21.7%
+2026-09-05T12:34:07.025251144Z (APIServer pid=54) INFO:     127.0.0.1:56606 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:34:07.025710569Z GLM release startup warmup 1/4 completed in 42.77s
+2026-09-05T12:34:13.067012807Z (APIServer pid=54) INFO 09-05 12:34:13 [loggers.py:310] Engine 000: Avg prompt throughput: 16.4 tokens/s, Avg generation throughput: 29.8 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 90.8%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:13.067072743Z (APIServer pid=54) INFO 09-05 12:34:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.58, Accepted throughput: 18.20 tokens/s, Drafted throughput: 57.49 tokens/s, Accepted: 182 tokens, Drafted: 575 tokens, Per-position acceptance rate: 0.591, 0.443, 0.270, 0.148, 0.130, Avg Draft acceptance rate: 31.7%
+2026-09-05T12:34:23.068186919Z (APIServer pid=54) INFO 09-05 12:34:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 54.6 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 95.8%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:23.068236391Z (APIServer pid=54) INFO 09-05 12:34:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.41, Accepted throughput: 38.59 tokens/s, Drafted throughput: 79.99 tokens/s, Accepted: 386 tokens, Drafted: 800 tokens, Per-position acceptance rate: 0.694, 0.550, 0.456, 0.388, 0.325, Avg Draft acceptance rate: 48.2%
+2026-09-05T12:34:33.069289610Z (APIServer pid=54) INFO 09-05 12:34:33 [loggers.py:310] Engine 000: Avg prompt throughput: 8.2 tokens/s, Avg generation throughput: 38.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 69.7%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:33.069370266Z (APIServer pid=54) INFO 09-05 12:34:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.89, Accepted throughput: 25.30 tokens/s, Drafted throughput: 66.99 tokens/s, Accepted: 253 tokens, Drafted: 670 tokens, Per-position acceptance rate: 0.597, 0.433, 0.343, 0.276, 0.239, Avg Draft acceptance rate: 37.8%
+2026-09-05T12:34:43.070485183Z (APIServer pid=54) INFO 09-05 12:34:43 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 38.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 24.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:43.070555519Z (APIServer pid=54) INFO 09-05 12:34:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.92, Accepted throughput: 28.90 tokens/s, Drafted throughput: 49.49 tokens/s, Accepted: 289 tokens, Drafted: 495 tokens, Per-position acceptance rate: 0.808, 0.657, 0.566, 0.485, 0.404, Avg Draft acceptance rate: 58.4%
+2026-09-05T12:34:44.496864196Z (APIServer pid=54) INFO:     127.0.0.1:44914 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:34:44.497478006Z GLM release startup warmup 2/4 completed in 36.47s
+2026-09-05T12:34:53.070972690Z (APIServer pid=54) INFO 09-05 12:34:53 [loggers.py:310] Engine 000: Avg prompt throughput: 16.4 tokens/s, Avg generation throughput: 34.8 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 92.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:34:53.070996210Z (APIServer pid=54) INFO 09-05 12:34:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.59, Accepted throughput: 21.30 tokens/s, Drafted throughput: 67.00 tokens/s, Accepted: 213 tokens, Drafted: 670 tokens, Per-position acceptance rate: 0.560, 0.425, 0.291, 0.172, 0.142, Avg Draft acceptance rate: 31.8%
+2026-09-05T12:35:03.071878452Z (APIServer pid=54) INFO 09-05 12:35:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 56.5 tokens/s, Running: 3 reqs, Waiting: 2 reqs, GPU KV cache usage: 72.3%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:03.071935941Z (APIServer pid=54) INFO 09-05 12:35:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.72, Accepted throughput: 41.30 tokens/s, Drafted throughput: 76.00 tokens/s, Accepted: 413 tokens, Drafted: 760 tokens, Per-position acceptance rate: 0.757, 0.612, 0.526, 0.447, 0.375, Avg Draft acceptance rate: 54.3%
+2026-09-05T12:35:13.072114217Z (APIServer pid=54) INFO 09-05 12:35:13 [loggers.py:310] Engine 000: Avg prompt throughput: 8.2 tokens/s, Avg generation throughput: 29.5 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 71.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:13.072148905Z (APIServer pid=54) INFO 09-05 12:35:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.27, Accepted throughput: 16.60 tokens/s, Drafted throughput: 65.50 tokens/s, Accepted: 166 tokens, Drafted: 655 tokens, Per-position acceptance rate: 0.557, 0.321, 0.206, 0.107, 0.076, Avg Draft acceptance rate: 25.3%
+2026-09-05T12:35:23.073550917Z (APIServer pid=54) INFO 09-05 12:35:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 27.0 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 47.9%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:23.073608757Z (APIServer pid=54) INFO 09-05 12:35:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.40, Accepted throughput: 16.00 tokens/s, Drafted throughput: 57.00 tokens/s, Accepted: 160 tokens, Drafted: 570 tokens, Per-position acceptance rate: 0.596, 0.333, 0.202, 0.158, 0.114, Avg Draft acceptance rate: 28.1%
+2026-09-05T12:35:26.326100294Z (APIServer pid=54) INFO:     127.0.0.1:56046 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:35:26.326697271Z GLM release startup warmup 3/4 completed in 40.83s
+2026-09-05T12:35:33.074797219Z (APIServer pid=54) INFO 09-05 12:35:33 [loggers.py:310] Engine 000: Avg prompt throughput: 16.4 tokens/s, Avg generation throughput: 31.1 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 90.8%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:33.074862051Z (APIServer pid=54) INFO 09-05 12:35:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.70, Accepted throughput: 19.90 tokens/s, Drafted throughput: 58.49 tokens/s, Accepted: 199 tokens, Drafted: 585 tokens, Per-position acceptance rate: 0.590, 0.470, 0.308, 0.188, 0.145, Avg Draft acceptance rate: 34.0%
+2026-09-05T12:35:43.075014194Z (APIServer pid=54) INFO 09-05 12:35:43 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 54.3 tokens/s, Running: 4 reqs, Waiting: 2 reqs, GPU KV cache usage: 96.6%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:43.075072738Z (APIServer pid=54) INFO 09-05 12:35:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.48, Accepted throughput: 38.70 tokens/s, Drafted throughput: 77.99 tokens/s, Accepted: 387 tokens, Drafted: 780 tokens, Per-position acceptance rate: 0.712, 0.545, 0.474, 0.397, 0.353, Avg Draft acceptance rate: 49.6%
+2026-09-05T12:35:53.075865448Z (APIServer pid=54) INFO 09-05 12:35:53 [loggers.py:310] Engine 000: Avg prompt throughput: 8.2 tokens/s, Avg generation throughput: 41.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 0.0%
+2026-09-05T12:35:53.075952504Z (APIServer pid=54) INFO 09-05 12:35:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.04, Accepted throughput: 28.10 tokens/s, Drafted throughput: 69.00 tokens/s, Accepted: 281 tokens, Drafted: 690 tokens, Per-position acceptance rate: 0.645, 0.449, 0.399, 0.312, 0.232, Avg Draft acceptance rate: 40.7%
+2026-09-05T12:36:03.076213361Z (APIServer pid=54) INFO 09-05 12:36:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 33.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 24.4%, Prefix cache hit rate: 0.0%
+2026-09-05T12:36:03.076263249Z (APIServer pid=54) INFO 09-05 12:36:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.75, Accepted throughput: 25.00 tokens/s, Drafted throughput: 45.50 tokens/s, Accepted: 250 tokens, Drafted: 455 tokens, Per-position acceptance rate: 0.769, 0.615, 0.495, 0.451, 0.418, Avg Draft acceptance rate: 54.9%
+2026-09-05T12:36:03.822821232Z (APIServer pid=54) INFO:     127.0.0.1:60122 - "POST /v1/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:03.823657554Z GLM release startup warmup 4/4 completed in 36.50s
+2026-09-05T12:36:04.833108187Z GLM release startup warmup complete; container is ready.
+2026-09-05T12:36:05.658737144Z (APIServer pid=54) INFO:     127.0.0.1:60238 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:36:13.076915603Z (APIServer pid=54) INFO 09-05 12:36:13 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.6 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-09-05T12:36:13.076937603Z (APIServer pid=54) INFO 09-05 12:36:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.60, Accepted throughput: 2.30 tokens/s, Drafted throughput: 2.50 tokens/s, Accepted: 23 tokens, Drafted: 25 tokens, Per-position acceptance rate: 1.000, 1.000, 1.000, 1.000, 0.600, Avg Draft acceptance rate: 92.0%
+2026-09-05T12:36:23.077860300Z (APIServer pid=54) INFO 09-05 12:36:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-09-05T12:36:30.154232816Z (APIServer pid=54) INFO:     172.22.2.12:45006 - "GET /v1/models HTTP/1.1" 200 OK
+2026-09-05T12:36:30.162567529Z (APIServer pid=54) INFO:     172.22.2.12:45022 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:36:31.018707757Z (APIServer pid=54) INFO:     172.22.2.12:45036 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.404571463Z (APIServer pid=54) INFO:     172.22.2.12:45042 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.559898971Z (APIServer pid=54) INFO:     172.22.2.12:45044 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.641348897Z (APIServer pid=54) INFO:     172.22.2.12:45050 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.685625782Z (APIServer pid=54) INFO:     172.22.2.12:45064 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.742617698Z (APIServer pid=54) INFO:     172.22.2.12:45078 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.793846780Z (APIServer pid=54) INFO:     172.22.2.12:45094 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.839367942Z (APIServer pid=54) INFO:     172.22.2.12:45096 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.884714766Z (APIServer pid=54) INFO:     172.22.2.12:45102 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.929460341Z (APIServer pid=54) INFO:     172.22.2.12:45112 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:31.974835086Z (APIServer pid=54) INFO:     172.22.2.12:45114 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.019105187Z (APIServer pid=54) INFO:     172.22.2.12:45120 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.060864817Z (APIServer pid=54) INFO:     172.22.2.12:45130 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.106223145Z (APIServer pid=54) INFO:     172.22.2.12:45144 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.153525224Z (APIServer pid=54) INFO:     172.22.2.12:45158 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.197578909Z (APIServer pid=54) INFO:     172.22.2.12:45160 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.243343687Z (APIServer pid=54) INFO:     172.22.2.12:45170 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.283797008Z (APIServer pid=54) INFO:     172.22.2.12:45178 - "POST /tokenize HTTP/1.1" 200 OK
+2026-09-05T12:36:32.342338513Z (APIServer pid=54) INFO:     172.22.2.12:45206 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:32.365229142Z (APIServer pid=54) INFO:     172.22.2.12:45226 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:32.426423470Z (APIServer pid=54) INFO:     172.22.2.12:45238 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:32.468145900Z (APIServer pid=54) INFO:     172.22.2.12:45194 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:32.514860393Z (APIServer pid=54) INFO:     172.22.2.12:45242 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:32.561879494Z (APIServer pid=54) INFO:     172.22.2.12:45210 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:36:35.807924761Z (APIServer pid=54) INFO:     127.0.0.1:53362 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:37:05.645548253Z (EngineCore pid=201) WARNING 09-05 12:37:05 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _kpool_tail_seed_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+2026-09-05T12:37:05.911643996Z (APIServer pid=54) INFO:     127.0.0.1:37738 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:37:13.080514411Z (APIServer pid=54) INFO 09-05 12:37:13 [loggers.py:310] Engine 000: Avg prompt throughput: 3276.8 tokens/s, Avg generation throughput: 2.3 tokens/s, Running: 1 reqs, Waiting: 5 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 17.7%
+2026-09-05T12:37:13.080544027Z (APIServer pid=54) INFO 09-05 12:37:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.67, Accepted throughput: 0.27 tokens/s, Drafted throughput: 0.50 tokens/s, Accepted: 16 tokens, Drafted: 30 tokens, Per-position acceptance rate: 0.667, 0.667, 0.500, 0.500, 0.333, Avg Draft acceptance rate: 53.3%
+2026-09-05T12:37:23.080968273Z (APIServer pid=54) INFO 09-05 12:37:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 5.0 tokens/s, Running: 1 reqs, Waiting: 4 reqs, GPU KV cache usage: 52.9%, Prefix cache hit rate: 17.7%
+2026-09-05T12:37:23.080993665Z (APIServer pid=54) INFO 09-05 12:37:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.67, Accepted throughput: 4.20 tokens/s, Drafted throughput: 4.50 tokens/s, Accepted: 42 tokens, Drafted: 45 tokens, Per-position acceptance rate: 1.000, 1.000, 0.889, 0.889, 0.889, Avg Draft acceptance rate: 93.3%
+2026-09-05T12:37:33.081335648Z (APIServer pid=54) INFO 09-05 12:37:33 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Waiting: 4 reqs, GPU KV cache usage: 63.9%, Prefix cache hit rate: 17.7%
+2026-09-05T12:37:36.000957458Z (APIServer pid=54) INFO:     127.0.0.1:52242 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:37:43.082419850Z (APIServer pid=54) INFO 09-05 12:37:43 [loggers.py:310] Engine 000: Avg prompt throughput: 2022.3 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 1 reqs, Waiting: 4 reqs, GPU KV cache usage: 48.7%, Prefix cache hit rate: 17.7%
+2026-09-05T12:37:53.083526944Z (APIServer pid=54) INFO 09-05 12:37:53 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.4 tokens/s, Running: 2 reqs, Waiting: 3 reqs, GPU KV cache usage: 89.9%, Prefix cache hit rate: 24.2%
+2026-09-05T12:37:53.083607440Z (APIServer pid=54) INFO 09-05 12:37:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.67, Accepted throughput: 0.50 tokens/s, Drafted throughput: 1.50 tokens/s, Accepted: 15 tokens, Drafted: 45 tokens, Per-position acceptance rate: 0.667, 0.444, 0.222, 0.222, 0.111, Avg Draft acceptance rate: 33.3%
+2026-09-05T12:38:03.085411299Z (APIServer pid=54) INFO 09-05 12:38:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 3.6 tokens/s, Running: 1 reqs, Waiting: 4 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 24.2%
+2026-09-05T12:38:03.085475299Z (APIServer pid=54) INFO 09-05 12:38:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 4.00, Accepted throughput: 2.70 tokens/s, Drafted throughput: 4.50 tokens/s, Accepted: 27 tokens, Drafted: 45 tokens, Per-position acceptance rate: 0.889, 0.667, 0.667, 0.444, 0.333, Avg Draft acceptance rate: 60.0%
+2026-09-05T12:38:06.113674152Z (APIServer pid=54) INFO:     127.0.0.1:55818 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:38:13.086219550Z (APIServer pid=54) INFO 09-05 12:38:13 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.6 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 63.9%, Prefix cache hit rate: 24.2%
+2026-09-05T12:38:13.086242366Z (APIServer pid=54) INFO 09-05 12:38:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.40, Accepted throughput: 2.20 tokens/s, Drafted throughput: 2.50 tokens/s, Accepted: 22 tokens, Drafted: 25 tokens, Per-position acceptance rate: 1.000, 1.000, 0.800, 0.800, 0.800, Avg Draft acceptance rate: 88.0%
+2026-09-05T12:38:23.086879188Z (APIServer pid=54) INFO 09-05 12:38:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 67.2%, Prefix cache hit rate: 24.2%
+2026-09-05T12:38:33.087828054Z (APIServer pid=54) INFO 09-05 12:38:33 [loggers.py:310] Engine 000: Avg prompt throughput: 2022.2 tokens/s, Avg generation throughput: 1.3 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 27.6%
+2026-09-05T12:38:33.087948231Z (APIServer pid=54) INFO 09-05 12:38:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.00, Accepted throughput: 0.40 tokens/s, Drafted throughput: 1.00 tokens/s, Accepted: 8 tokens, Drafted: 20 tokens, Per-position acceptance rate: 0.750, 0.500, 0.500, 0.250, 0.000, Avg Draft acceptance rate: 40.0%
+2026-09-05T12:38:36.216517044Z (APIServer pid=54) INFO:     127.0.0.1:58318 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:38:43.089583704Z (APIServer pid=54) INFO 09-05 12:38:43 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 5.4 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 89.9%, Prefix cache hit rate: 27.6%
+2026-09-05T12:38:43.089615032Z (APIServer pid=54) INFO 09-05 12:38:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 6.00, Accepted throughput: 4.50 tokens/s, Drafted throughput: 4.50 tokens/s, Accepted: 45 tokens, Drafted: 45 tokens, Per-position acceptance rate: 1.000, 1.000, 1.000, 1.000, 1.000, Avg Draft acceptance rate: 100.0%
+2026-09-05T12:38:53.089877361Z (APIServer pid=54) INFO 09-05 12:38:53 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.6 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 63.9%, Prefix cache hit rate: 27.6%
+2026-09-05T12:38:53.090026498Z (APIServer pid=54) INFO 09-05 12:38:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 6.00, Accepted throughput: 0.50 tokens/s, Drafted throughput: 0.50 tokens/s, Accepted: 5 tokens, Drafted: 5 tokens, Per-position acceptance rate: 1.000, 1.000, 1.000, 1.000, 1.000, Avg Draft acceptance rate: 100.0%
+2026-09-05T12:39:03.091311883Z (APIServer pid=54) INFO 09-05 12:39:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 64.7%, Prefix cache hit rate: 27.6%
+2026-09-05T12:39:06.318326188Z (APIServer pid=54) INFO:     127.0.0.1:54182 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:39:13.092682627Z (APIServer pid=54) INFO 09-05 12:39:13 [loggers.py:310] Engine 000: Avg prompt throughput: 2022.2 tokens/s, Avg generation throughput: 2.4 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 29.7%
+2026-09-05T12:39:13.092738195Z (APIServer pid=54) INFO 09-05 12:39:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.88, Accepted throughput: 0.75 tokens/s, Drafted throughput: 2.00 tokens/s, Accepted: 15 tokens, Drafted: 40 tokens, Per-position acceptance rate: 0.750, 0.500, 0.250, 0.250, 0.125, Avg Draft acceptance rate: 37.5%
+2026-09-05T12:39:23.094706875Z (APIServer pid=54) INFO 09-05 12:39:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.9 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 29.7%
+2026-09-05T12:39:23.094737163Z (APIServer pid=54) INFO 09-05 12:39:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.62, Accepted throughput: 2.10 tokens/s, Drafted throughput: 4.00 tokens/s, Accepted: 21 tokens, Drafted: 40 tokens, Per-position acceptance rate: 0.750, 0.625, 0.625, 0.375, 0.250, Avg Draft acceptance rate: 52.5%
+2026-09-05T12:39:33.096050286Z (APIServer pid=54) INFO 09-05 12:39:33 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 3.7 tokens/s, Running: 1 reqs, Waiting: 1 reqs, GPU KV cache usage: 66.4%, Prefix cache hit rate: 29.7%
+2026-09-05T12:39:33.096174047Z (APIServer pid=54) INFO 09-05 12:39:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.43, Accepted throughput: 3.10 tokens/s, Drafted throughput: 3.50 tokens/s, Accepted: 31 tokens, Drafted: 35 tokens, Per-position acceptance rate: 1.000, 0.857, 0.857, 0.857, 0.857, Avg Draft acceptance rate: 88.6%
+2026-09-05T12:39:36.435231436Z (APIServer pid=54) INFO:     127.0.0.1:32994 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:39:43.097493905Z (APIServer pid=54) INFO 09-05 12:39:43 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Waiting: 1 reqs, GPU KV cache usage: 57.1%, Prefix cache hit rate: 29.7%
+2026-09-05T12:39:53.098742961Z (APIServer pid=54) INFO 09-05 12:39:53 [loggers.py:310] Engine 000: Avg prompt throughput: 2022.2 tokens/s, Avg generation throughput: 0.9 tokens/s, Running: 1 reqs, Waiting: 1 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 31.1%
+2026-09-05T12:39:53.098788498Z (APIServer pid=54) INFO 09-05 12:39:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 4.00, Accepted throughput: 0.30 tokens/s, Drafted throughput: 0.50 tokens/s, Accepted: 6 tokens, Drafted: 10 tokens, Per-position acceptance rate: 1.000, 1.000, 0.500, 0.500, 0.000, Avg Draft acceptance rate: 60.0%
+2026-09-05T12:40:03.099642816Z (APIServer pid=54) INFO 09-05 12:40:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 89.9%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:03.099671232Z (APIServer pid=54) INFO 09-05 12:40:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.11, Accepted throughput: 1.00 tokens/s, Drafted throughput: 4.50 tokens/s, Accepted: 10 tokens, Drafted: 45 tokens, Per-position acceptance rate: 0.556, 0.222, 0.111, 0.111, 0.111, Avg Draft acceptance rate: 22.2%
+2026-09-05T12:40:06.559358083Z (APIServer pid=54) INFO:     127.0.0.1:40206 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:40:13.100596591Z (APIServer pid=54) INFO 09-05 12:40:13 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.4 tokens/s, Running: 1 reqs, Waiting: 1 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:13.100637935Z (APIServer pid=54) INFO 09-05 12:40:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.67, Accepted throughput: 1.50 tokens/s, Drafted throughput: 4.50 tokens/s, Accepted: 15 tokens, Drafted: 45 tokens, Per-position acceptance rate: 0.778, 0.556, 0.222, 0.111, 0.000, Avg Draft acceptance rate: 33.3%
+2026-09-05T12:40:23.101721182Z (APIServer pid=54) INFO 09-05 12:40:23 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 2.8 tokens/s, Running: 1 reqs, Waiting: 1 reqs, GPU KV cache usage: 37.8%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:23.101754750Z (APIServer pid=54) INFO 09-05 12:40:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.50, Accepted throughput: 2.00 tokens/s, Drafted throughput: 4.00 tokens/s, Accepted: 20 tokens, Drafted: 40 tokens, Per-position acceptance rate: 1.000, 0.750, 0.250, 0.250, 0.250, Avg Draft acceptance rate: 50.0%
+2026-09-05T12:40:33.102884382Z (APIServer pid=54) INFO 09-05 12:40:33 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 1.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 63.9%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:33.102972558Z (APIServer pid=54) INFO 09-05 12:40:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.00, Accepted throughput: 1.20 tokens/s, Drafted throughput: 1.50 tokens/s, Accepted: 12 tokens, Drafted: 15 tokens, Per-position acceptance rate: 1.000, 1.000, 0.667, 0.667, 0.667, Avg Draft acceptance rate: 80.0%
+2026-09-05T12:40:36.655757236Z (APIServer pid=54) INFO:     127.0.0.1:37972 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:40:43.103122203Z (APIServer pid=54) INFO 09-05 12:40:43 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 64.7%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:48.603161509Z (APIServer pid=54) INFO:     172.22.2.12:52982 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:40:53.103288794Z (APIServer pid=54) INFO 09-05 12:40:53 [loggers.py:310] Engine 000: Avg prompt throughput: 2022.4 tokens/s, Avg generation throughput: 8.7 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 31.1%
+2026-09-05T12:40:53.103334522Z (APIServer pid=54) INFO 09-05 12:40:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.62, Accepted throughput: 3.15 tokens/s, Drafted throughput: 6.00 tokens/s, Accepted: 63 tokens, Drafted: 120 tokens, Per-position acceptance rate: 0.833, 0.583, 0.458, 0.417, 0.333, Avg Draft acceptance rate: 52.5%
+2026-09-05T12:41:03.104601214Z (APIServer pid=54) INFO 09-05 12:41:03 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 31.1%
+2026-09-05T12:41:06.760952790Z (APIServer pid=54) INFO:     127.0.0.1:37884 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:41:36.854342015Z (APIServer pid=54) INFO:     127.0.0.1:56706 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:42:06.965659549Z (APIServer pid=54) INFO:     127.0.0.1:59060 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:42:14.136372215Z (APIServer pid=54) INFO:     172.22.2.12:43190 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:42:15.571557074Z [12:42:15] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:15.726099610Z (APIServer pid=54) INFO:     172.22.2.12:43204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:17.068660163Z (APIServer pid=54) INFO:     172.22.2.12:43208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:18.546369436Z (APIServer pid=54) INFO:     172.22.2.12:43222 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:18.404719994Z [12:42:18] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:20.027594399Z (APIServer pid=54) INFO:     172.22.2.12:43230 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:21.663610697Z (APIServer pid=54) INFO:     172.22.2.12:45178 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:19.872108148Z [12:42:19] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:21.509016784Z [12:42:21] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:23.110062099Z (APIServer pid=54) INFO 09-05 12:42:23 [loggers.py:310] Engine 000: Avg prompt throughput: 115.6 tokens/s, Avg generation throughput: 15.5 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.5%, Prefix cache hit rate: 30.9%
+2026-09-05T12:42:23.110127939Z (APIServer pid=54) INFO 09-05 12:42:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.50, Accepted throughput: 1.40 tokens/s, Drafted throughput: 1.44 tokens/s, Accepted: 126 tokens, Drafted: 130 tokens, Per-position acceptance rate: 1.000, 0.929, 0.929, 0.857, 0.786, Avg Draft acceptance rate: 96.9%
+2026-09-05T12:42:23.139875116Z (APIServer pid=54) INFO:     172.22.2.12:45188 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:24.757971313Z (APIServer pid=54) INFO:     172.22.2.12:45202 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:26.102038269Z (APIServer pid=54) INFO:     172.22.2.12:45216 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:27.453305694Z (APIServer pid=54) INFO:     172.22.2.12:45224 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:24.603995738Z [12:42:24] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:28.781903804Z [12:42:28] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:28.932053495Z (APIServer pid=54) INFO:     172.22.2.12:45230 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:30.418098470Z (APIServer pid=54) INFO:     172.22.2.12:45240 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:32.060057215Z (APIServer pid=54) INFO:     172.22.2.12:52932 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:30.261192359Z [12:42:30] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:31.904691925Z [12:42:31] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:33.110966810Z (APIServer pid=54) INFO 09-05 12:42:33 [loggers.py:310] Engine 000: Avg prompt throughput: 135.9 tokens/s, Avg generation throughput: 18.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.5%, Prefix cache hit rate: 30.7%
+2026-09-05T12:42:33.111036970Z (APIServer pid=54) INFO 09-05 12:42:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.52, Accepted throughput: 14.90 tokens/s, Drafted throughput: 15.40 tokens/s, Accepted: 149 tokens, Drafted: 154 tokens, Per-position acceptance rate: 1.000, 0.970, 0.939, 0.879, 0.727, Avg Draft acceptance rate: 96.8%
+2026-09-05T12:42:33.677796098Z (APIServer pid=54) INFO:     172.22.2.12:52940 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:35.308274328Z (APIServer pid=54) INFO:     172.22.2.12:52956 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:33.538098230Z [12:42:33] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:35.152820222Z [12:42:35] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:36.654749466Z (APIServer pid=54) INFO:     172.22.2.12:52966 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:37.065779750Z (APIServer pid=54) INFO:     127.0.0.1:48132 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:42:38.134173971Z (APIServer pid=54) INFO:     172.22.2.12:52976 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:37.994318310Z [12:42:37] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:39.467185180Z [12:42:39] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:39.621097538Z (APIServer pid=54) INFO:     172.22.2.12:52984 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:41.108956787Z (APIServer pid=54) INFO:     172.22.2.12:52998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:40.953858474Z [12:42:40] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:42.594997568Z [12:42:42] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:42.751319453Z (APIServer pid=54) INFO:     172.22.2.12:58280 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:43.112688406Z (APIServer pid=54) INFO 09-05 12:42:43 [loggers.py:310] Engine 000: Avg prompt throughput: 116.8 tokens/s, Avg generation throughput: 19.1 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 30.5%
+2026-09-05T12:42:43.112722326Z (APIServer pid=54) INFO 09-05 12:42:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.46, Accepted throughput: 15.60 tokens/s, Drafted throughput: 15.90 tokens/s, Accepted: 156 tokens, Drafted: 159 tokens, Per-position acceptance rate: 1.000, 0.943, 0.914, 0.829, 0.771, Avg Draft acceptance rate: 98.1%
+2026-09-05T12:42:44.241090915Z (APIServer pid=54) INFO:     172.22.2.12:58286 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:46.131600615Z (APIServer pid=54) INFO:     172.22.2.12:58312 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:45.896920563Z [12:42:45] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:46.123519503Z [12:42:46] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:46.727885476Z [12:42:46] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:46.753736288Z (APIServer pid=54) INFO:     172.22.2.12:58360 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:46.753767232Z (APIServer pid=54) INFO:     172.22.2.12:58324 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:47.426490767Z (APIServer pid=54) INFO:     172.22.2.12:58302 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:49.008790325Z (APIServer pid=54) INFO:     172.22.2.12:58354 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:49.008829029Z (APIServer pid=54) INFO:     172.22.2.12:58340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:48.765159975Z [12:42:48] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:49.694088904Z (APIServer pid=54) INFO:     172.22.2.12:58390 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:50.350613559Z (APIServer pid=54) INFO:     172.22.2.12:58366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:49.676053427Z [12:42:49] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:51.665582889Z [12:42:51] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:51.665642761Z [12:42:51] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:51.911006540Z (APIServer pid=54) INFO:     172.22.2.12:58378 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:51.911059404Z (APIServer pid=54) INFO:     172.22.2.12:58394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:52.611328924Z (APIServer pid=54) INFO:     172.22.2.12:58420 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:51.902800724Z [12:42:51] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:53.112697617Z (APIServer pid=54) INFO 09-05 12:42:53 [loggers.py:310] Engine 000: Avg prompt throughput: 251.5 tokens/s, Avg generation throughput: 35.9 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 30.1%
+2026-09-05T12:42:53.112731921Z (APIServer pid=54) INFO 09-05 12:42:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.62, Accepted throughput: 29.10 tokens/s, Drafted throughput: 29.90 tokens/s, Accepted: 291 tokens, Drafted: 299 tokens, Per-position acceptance rate: 1.000, 0.952, 0.937, 0.905, 0.825, Avg Draft acceptance rate: 97.3%
+2026-09-05T12:42:53.498266849Z (APIServer pid=54) INFO:     172.22.2.12:58406 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:53.246254698Z [12:42:53] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:54.792458534Z [12:42:54] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:55.026344375Z (APIServer pid=54) INFO:     172.22.2.12:58356 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:55.026385335Z (APIServer pid=54) INFO:     172.22.2.12:58358 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:54.792503478Z [12:42:54] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:54.792505814Z [12:42:54] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:55.026387047Z (APIServer pid=54) INFO:     172.22.2.12:58366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:56.345703334Z (APIServer pid=54) INFO:     172.22.2.12:58364 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:57.888684903Z (APIServer pid=54) INFO:     172.22.2.12:58386 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:55.668423594Z [12:42:55] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:42:57.652259838Z [12:42:57] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:42:57.888728487Z (APIServer pid=54) INFO:     172.22.2.12:58396 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:58.580043803Z (APIServer pid=54) INFO:     172.22.2.12:58416 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:59.240478821Z (APIServer pid=54) INFO:     172.22.2.12:58412 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:42:58.562319175Z [12:42:58] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:00.552017980Z [12:43:00] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:00.792208911Z (APIServer pid=54) INFO:     172.22.2.12:58432 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:00.783739158Z [12:43:00] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:00.783781798Z [12:43:00] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:01.388258442Z [12:43:01] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:01.414806985Z (APIServer pid=54) INFO:     172.22.2.12:58418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:01.414853497Z (APIServer pid=54) INFO:     172.22.2.12:58444 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:02.097067474Z (APIServer pid=54) INFO:     172.22.2.12:58454 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:03.113372755Z (APIServer pid=54) INFO 09-05 12:43:03 [loggers.py:310] Engine 000: Avg prompt throughput: 311.3 tokens/s, Avg generation throughput: 38.8 tokens/s, Running: 4 reqs, Waiting: 2 reqs, Deferred: 2 reqs, GPU KV cache usage: 94.1%, Prefix cache hit rate: 29.7%
+2026-09-05T12:43:03.113439027Z (APIServer pid=54) INFO 09-05 12:43:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.57, Accepted throughput: 31.50 tokens/s, Drafted throughput: 32.20 tokens/s, Accepted: 315 tokens, Drafted: 322 tokens, Per-position acceptance rate: 1.000, 0.986, 0.942, 0.870, 0.768, Avg Draft acceptance rate: 97.8%
+2026-09-05T12:43:03.674268711Z [12:43:03] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:03.895580963Z [12:43:03] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:03.895621427Z [12:43:03] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:03.903463914Z (APIServer pid=54) INFO:     172.22.2.12:58470 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:04.514237761Z (APIServer pid=54) INFO:     172.22.2.12:58480 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:04.514267025Z (APIServer pid=54) INFO:     172.22.2.12:40084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:04.514268993Z (APIServer pid=54) INFO:     172.22.2.12:40088 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:03.895623971Z [12:43:03] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:06.542631526Z [12:43:06] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:06.773871855Z [12:43:06] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:06.782709657Z (APIServer pid=54) INFO:     172.22.2.12:40096 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:07.171346177Z (APIServer pid=54) INFO:     127.0.0.1:44252 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:43:07.415496032Z (APIServer pid=54) INFO:     172.22.2.12:40104 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:07.415544369Z (APIServer pid=54) INFO:     172.22.2.12:40110 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:08.077771631Z [12:43:08] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:08.363564504Z (APIServer pid=54) INFO:     172.22.2.12:40138 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:09.913176842Z (APIServer pid=54) INFO:     172.22.2.12:40124 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:09.670433855Z [12:43:09] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:09.670475279Z [12:43:09] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:09.903040588Z [12:43:09] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:09.913331850Z (APIServer pid=54) INFO:     172.22.2.12:40146 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:10.605811777Z (APIServer pid=54) INFO:     172.22.2.12:40122 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:11.270755910Z (APIServer pid=54) INFO:     172.22.2.12:40156 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:12.817023951Z (APIServer pid=54) INFO:     172.22.2.12:40158 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:10.586416872Z [12:43:10] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:12.581631291Z [12:43:12] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:12.817104368Z (APIServer pid=54) INFO:     172.22.2.12:40186 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:13.114416155Z (APIServer pid=54) INFO 09-05 12:43:13 [loggers.py:310] Engine 000: Avg prompt throughput: 233.8 tokens/s, Avg generation throughput: 43.1 tokens/s, Running: 2 reqs, Waiting: 2 reqs, Deferred: 2 reqs, GPU KV cache usage: 47.1%, Prefix cache hit rate: 29.4%
+2026-09-05T12:43:13.114470347Z (APIServer pid=54) INFO 09-05 12:43:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.48, Accepted throughput: 35.40 tokens/s, Drafted throughput: 36.80 tokens/s, Accepted: 354 tokens, Drafted: 368 tokens, Per-position acceptance rate: 1.000, 0.949, 0.911, 0.861, 0.759, Avg Draft acceptance rate: 96.2%
+2026-09-05T12:43:13.763652498Z (APIServer pid=54) INFO:     172.22.2.12:53052 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:14.615157052Z (APIServer pid=54) INFO:     172.22.2.12:53060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:15.475794370Z (APIServer pid=54) INFO:     172.22.2.12:53062 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:16.109773996Z (APIServer pid=54) INFO:     172.22.2.12:53078 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:16.968009114Z (APIServer pid=54) INFO:     172.22.2.12:53092 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:17.851362034Z (APIServer pid=54) INFO:     172.22.2.12:53094 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:18.950803670Z (APIServer pid=54) INFO:     172.22.2.12:53104 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:19.597146500Z (APIServer pid=54) INFO:     172.22.2.12:53108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:20.447063850Z (APIServer pid=54) INFO:     172.22.2.12:53118 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:21.084847423Z (APIServer pid=54) INFO:     172.22.2.12:53128 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:13.477342167Z [12:43:13] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:14.359094298Z [12:43:14] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:15.467683354Z [12:43:15] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:16.712431402Z [12:43:16] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:17.593830924Z [12:43:17] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:18.699876084Z [12:43:18] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:18.943082207Z [12:43:18] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:20.438206576Z [12:43:20] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:21.932215500Z [12:43:21] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:22.180800120Z (APIServer pid=54) INFO:     172.22.2.12:53136 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:22.829339565Z (APIServer pid=54) INFO:     172.22.2.12:53138 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:23.115170038Z (APIServer pid=54) INFO 09-05 12:43:23 [loggers.py:310] Engine 000: Avg prompt throughput: 232.8 tokens/s, Avg generation throughput: 34.2 tokens/s, Running: 3 reqs, Waiting: 1 reqs, Deferred: 1 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 29.0%
+2026-09-05T12:43:23.115216454Z (APIServer pid=54) INFO 09-05 12:43:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.41, Accepted throughput: 27.80 tokens/s, Drafted throughput: 29.40 tokens/s, Accepted: 278 tokens, Drafted: 294 tokens, Per-position acceptance rate: 1.000, 0.937, 0.889, 0.841, 0.746, Avg Draft acceptance rate: 94.6%
+2026-09-05T12:43:23.686907752Z (APIServer pid=54) INFO:     172.22.2.12:53144 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:24.556651384Z (APIServer pid=54) INFO:     172.22.2.12:53154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:25.658602034Z (APIServer pid=54) INFO:     172.22.2.12:33158 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:23.430208853Z [12:43:23] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:24.300648934Z [12:43:24] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:25.406327259Z [12:43:25] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:26.271708670Z [12:43:26] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:26.529157428Z (APIServer pid=54) INFO:     172.22.2.12:33172 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:26.529677109Z (APIServer pid=54) INFO:     172.22.2.12:33184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:27.483485516Z (APIServer pid=54) INFO:     172.22.2.12:33200 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:26.271732222Z [12:43:26] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:27.193012821Z [12:43:27] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:28.337386060Z [12:43:28] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:28.573168962Z (APIServer pid=54) INFO:     172.22.2.12:33216 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:29.430590412Z (APIServer pid=54) INFO:     172.22.2.12:33228 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:30.039053835Z [12:43:30] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:30.294442874Z (APIServer pid=54) INFO:     172.22.2.12:33232 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:30.284959502Z [12:43:30] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:30.927372416Z (APIServer pid=54) INFO:     172.22.2.12:33246 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:31.552535679Z (APIServer pid=54) INFO:     172.22.2.12:33248 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:32.651587904Z (APIServer pid=54) INFO:     172.22.2.12:33268 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:32.400188861Z [12:43:32] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:33.115821334Z (APIServer pid=54) INFO 09-05 12:43:33 [loggers.py:310] Engine 000: Avg prompt throughput: 253.0 tokens/s, Avg generation throughput: 36.4 tokens/s, Running: 3 reqs, Waiting: 2 reqs, Deferred: 2 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 28.7%
+2026-09-05T12:43:33.115882246Z (APIServer pid=54) INFO 09-05 12:43:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.40, Accepted throughput: 29.50 tokens/s, Drafted throughput: 31.70 tokens/s, Accepted: 295 tokens, Drafted: 317 tokens, Per-position acceptance rate: 1.000, 0.925, 0.910, 0.851, 0.716, Avg Draft acceptance rate: 93.1%
+2026-09-05T12:43:33.528923733Z (APIServer pid=54) INFO:     172.22.2.12:33278 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:34.170812821Z (APIServer pid=54) INFO:     172.22.2.12:33282 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:33.271093711Z [12:43:33] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:35.023542225Z (APIServer pid=54) INFO:     172.22.2.12:56266 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:36.129978408Z (APIServer pid=54) INFO:     172.22.2.12:56278 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:34.768794628Z [12:43:34] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:35.878261748Z [12:43:35] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:36.777769337Z (APIServer pid=54) INFO:     172.22.2.12:56300 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:37.256382297Z (APIServer pid=54) INFO:     127.0.0.1:42780 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:43:37.402958920Z (APIServer pid=54) INFO:     172.22.2.12:56290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:38.260666579Z (APIServer pid=54) INFO:     172.22.2.12:56308 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:38.003893376Z [12:43:38] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:39.363577535Z (APIServer pid=54) INFO:     172.22.2.12:56310 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:40.007028211Z (APIServer pid=54) INFO:     172.22.2.12:56318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:40.859206509Z (APIServer pid=54) INFO:     172.22.2.12:56328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:40.603714414Z [12:43:40] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:41.729904798Z (APIServer pid=54) INFO:     172.22.2.12:56342 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:42.370858923Z (APIServer pid=54) INFO:     172.22.2.12:56346 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:43.117016221Z (APIServer pid=54) INFO 09-05 12:43:43 [loggers.py:310] Engine 000: Avg prompt throughput: 232.8 tokens/s, Avg generation throughput: 35.3 tokens/s, Running: 4 reqs, Waiting: 1 reqs, Deferred: 1 reqs, GPU KV cache usage: 94.1%, Prefix cache hit rate: 28.4%
+2026-09-05T12:43:43.117054989Z (APIServer pid=54) INFO 09-05 12:43:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.59, Accepted throughput: 28.90 tokens/s, Drafted throughput: 30.20 tokens/s, Accepted: 289 tokens, Drafted: 302 tokens, Per-position acceptance rate: 1.000, 0.968, 0.937, 0.857, 0.825, Avg Draft acceptance rate: 95.7%
+2026-09-05T12:43:41.471106309Z [12:43:41] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:42.969838396Z [12:43:42] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:43.226760576Z (APIServer pid=54) INFO:     172.22.2.12:56352 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:44.095059161Z (APIServer pid=54) INFO:     172.22.2.12:56356 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:44.970804248Z (APIServer pid=54) INFO:     172.22.2.12:36060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:45.839750050Z (APIServer pid=54) INFO:     172.22.2.12:36064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:43.838922952Z [12:43:43] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:44.713866581Z [12:43:44] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:45.584375060Z [12:43:45] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:46.450207509Z [12:43:46] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:46.706826184Z (APIServer pid=54) INFO:     172.22.2.12:36072 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:47.568074620Z (APIServer pid=54) INFO:     172.22.2.12:36078 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:48.205911808Z (APIServer pid=54) INFO:     172.22.2.12:36092 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:49.064056122Z (APIServer pid=54) INFO:     172.22.2.12:36098 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:47.311946811Z [12:43:47] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:47.558980306Z [12:43:47] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:48.806804550Z [12:43:48] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:49.933838023Z (APIServer pid=54) INFO:     172.22.2.12:36106 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:50.803950885Z (APIServer pid=54) INFO:     172.22.2.12:36112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:49.678110087Z [12:43:49] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:51.415385787Z [12:43:51] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:51.669820070Z (APIServer pid=54) INFO:     172.22.2.12:36114 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:52.549491296Z (APIServer pid=54) INFO:     172.22.2.12:36116 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:52.292522269Z [12:43:52] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:53.118800234Z (APIServer pid=54) INFO 09-05 12:43:53 [loggers.py:310] Engine 000: Avg prompt throughput: 233.5 tokens/s, Avg generation throughput: 34.9 tokens/s, Running: 3 reqs, Waiting: 2 reqs, Deferred: 2 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 28.1%
+2026-09-05T12:43:53.118827050Z (APIServer pid=54) INFO 09-05 12:43:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.37, Accepted throughput: 28.39 tokens/s, Drafted throughput: 29.69 tokens/s, Accepted: 284 tokens, Drafted: 297 tokens, Per-position acceptance rate: 1.000, 0.923, 0.892, 0.815, 0.738, Avg Draft acceptance rate: 95.6%
+2026-09-05T12:43:53.416975894Z (APIServer pid=54) INFO:     172.22.2.12:36122 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:53.408528989Z [12:43:53] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:43:54.049400937Z (APIServer pid=54) INFO:     172.22.2.12:36134 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:54.905058252Z (APIServer pid=54) INFO:     172.22.2.12:56826 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:55.787111501Z (APIServer pid=54) INFO:     172.22.2.12:56832 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:56.651332233Z (APIServer pid=54) INFO:     172.22.2.12:56838 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:54.649726190Z [12:43:54] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:57.259996646Z [12:43:57] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:57.515433461Z (APIServer pid=54) INFO:     172.22.2.12:56850 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:58.384276031Z (APIServer pid=54) INFO:     172.22.2.12:56856 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:58.384368528Z (APIServer pid=54) INFO:     172.22.2.12:56864 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:58.128001566Z [12:43:58] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:43:59.568567432Z (APIServer pid=54) INFO:     172.22.2.12:56878 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:00.428018821Z (APIServer pid=54) INFO:     172.22.2.12:56894 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:43:59.336769294Z [12:43:59] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:44:00.172696375Z [12:44:00] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:01.293511733Z (APIServer pid=54) INFO:     172.22.2.12:56896 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:01.536170494Z (APIServer pid=54) INFO:     172.22.2.12:56902 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:01.035821056Z [12:44:01] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:01.284468282Z [12:44:01] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:01.947723672Z [12:44:01] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:44:02.128177194Z (APIServer pid=54) INFO:     172.22.2.12:56920 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:02.473991650Z (APIServer pid=54) INFO:     172.22.2.12:56908 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:03.120992384Z (APIServer pid=54) INFO 09-05 12:44:03 [loggers.py:310] Engine 000: Avg prompt throughput: 217.0 tokens/s, Avg generation throughput: 38.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 22.7%, Prefix cache hit rate: 27.9%
+2026-09-05T12:44:02.319395164Z [12:44:02] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:44:03.121060560Z (APIServer pid=54) INFO 09-05 12:44:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.44, Accepted throughput: 31.10 tokens/s, Drafted throughput: 32.49 tokens/s, Accepted: 311 tokens, Drafted: 325 tokens, Per-position acceptance rate: 1.000, 0.943, 0.886, 0.843, 0.771, Avg Draft acceptance rate: 95.7%
+2026-09-05T12:44:04.276480292Z (APIServer pid=54) INFO:     172.22.2.12:48610 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:06.079533765Z (APIServer pid=54) INFO:     172.22.2.12:48626 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:07.381754855Z (APIServer pid=54) INFO:     127.0.0.1:39572 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:44:07.431673849Z (APIServer pid=54) INFO:     172.22.2.12:48630 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:09.127252046Z (APIServer pid=54) INFO:     172.22.2.12:48636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:11.145289750Z (APIServer pid=54) INFO:     172.22.2.12:48650 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:12.485924168Z (APIServer pid=54) INFO:     172.22.2.12:49328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:13.122710087Z (APIServer pid=54) INFO 09-05 12:44:13 [loggers.py:310] Engine 000: Avg prompt throughput: 32.1 tokens/s, Avg generation throughput: 18.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.5%, Prefix cache hit rate: 27.8%
+2026-09-05T12:44:13.122748743Z (APIServer pid=54) INFO 09-05 12:44:13 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.90, Accepted throughput: 13.90 tokens/s, Drafted throughput: 24.00 tokens/s, Accepted: 139 tokens, Drafted: 240 tokens, Per-position acceptance rate: 0.792, 0.667, 0.562, 0.500, 0.375, Avg Draft acceptance rate: 57.9%
+2026-09-05T12:44:13.836931192Z [12:44:13] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:44:13.982365012Z (APIServer pid=54) INFO:     172.22.2.12:49338 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:15.477689068Z (APIServer pid=54) INFO:     172.22.2.12:49342 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:16.973482390Z (APIServer pid=54) INFO:     172.22.2.12:49352 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:18.613597687Z (APIServer pid=54) INFO:     172.22.2.12:49368 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:15.326238591Z [12:44:15] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:16.820651125Z [12:44:16] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:18.459738131Z [12:44:18] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:20.088933731Z [12:44:20] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:20.243916186Z (APIServer pid=54) INFO:     172.22.2.12:49370 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:21.879252844Z (APIServer pid=54) INFO:     172.22.2.12:40998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:23.124049492Z (APIServer pid=54) INFO 09-05 12:44:23 [loggers.py:310] Engine 000: Avg prompt throughput: 136.3 tokens/s, Avg generation throughput: 19.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.5%, Prefix cache hit rate: 27.7%
+2026-09-05T12:44:21.725037943Z [12:44:21] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:23.124118996Z (APIServer pid=54) INFO 09-05 12:44:23 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.36, Accepted throughput: 15.70 tokens/s, Drafted throughput: 16.60 tokens/s, Accepted: 157 tokens, Drafted: 166 tokens, Per-position acceptance rate: 1.000, 0.944, 0.917, 0.861, 0.639, Avg Draft acceptance rate: 94.6%
+2026-09-05T12:44:23.369264388Z (APIServer pid=54) INFO:     172.22.2.12:41008 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:24.865038956Z (APIServer pid=54) INFO:     172.22.2.12:41016 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:26.361638391Z (APIServer pid=54) INFO:     172.22.2.12:41030 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:27.024570322Z (APIServer pid=54) INFO:     172.22.2.12:41042 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:23.222667269Z [12:44:23] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154829.
+2026-09-05T12:44:24.714050640Z [12:44:24] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:26.206643264Z [12:44:26] /project/cpp/grammar_matcher.cc:612: Warning: The matcher has terminated after accepting the stop token, but is trying to accept new token with id 154848.
+2026-09-05T12:44:30.638673588Z (APIServer pid=54) INFO:     172.22.2.12:41052 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:33.124396310Z (APIServer pid=54) INFO 09-05 12:44:33 [loggers.py:310] Engine 000: Avg prompt throughput: 46.1 tokens/s, Avg generation throughput: 18.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 22.7%, Prefix cache hit rate: 27.6%
+2026-09-05T12:44:33.124438070Z (APIServer pid=54) INFO 09-05 12:44:33 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.75, Accepted throughput: 13.20 tokens/s, Drafted throughput: 23.20 tokens/s, Accepted: 132 tokens, Drafted: 232 tokens, Per-position acceptance rate: 0.833, 0.667, 0.500, 0.417, 0.333, Avg Draft acceptance rate: 56.9%
+2026-09-05T12:44:34.842392520Z (APIServer pid=54) INFO:     172.22.2.12:56010 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:37.492817067Z (APIServer pid=54) INFO:     127.0.0.1:40314 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:44:37.678243259Z (APIServer pid=54) INFO:     172.22.2.12:56014 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:42.816210594Z (APIServer pid=54) INFO:     172.22.2.12:56022 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:43.126218575Z (APIServer pid=54) INFO 09-05 12:44:43 [loggers.py:310] Engine 000: Avg prompt throughput: 6.0 tokens/s, Avg generation throughput: 21.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 22.7%, Prefix cache hit rate: 27.6%
+2026-09-05T12:44:43.126287071Z (APIServer pid=54) INFO 09-05 12:44:43 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.63, Accepted throughput: 15.50 tokens/s, Drafted throughput: 29.50 tokens/s, Accepted: 155 tokens, Drafted: 295 tokens, Per-position acceptance rate: 0.847, 0.610, 0.525, 0.441, 0.203, Avg Draft acceptance rate: 52.5%
+2026-09-05T12:44:44.896631404Z (APIServer pid=54) INFO:     172.22.2.12:55140 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:49.454143290Z (APIServer pid=54) INFO:     172.22.2.12:55152 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:50.015881146Z (APIServer pid=54) INFO:     172.22.2.12:55168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:53.127209039Z (APIServer pid=54) INFO 09-05 12:44:53 [loggers.py:310] Engine 000: Avg prompt throughput: 11.5 tokens/s, Avg generation throughput: 20.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 22.7%, Prefix cache hit rate: 27.6%
+2026-09-05T12:44:53.127275376Z (APIServer pid=54) INFO 09-05 12:44:53 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.70, Accepted throughput: 15.10 tokens/s, Drafted throughput: 28.00 tokens/s, Accepted: 151 tokens, Drafted: 280 tokens, Per-position acceptance rate: 0.857, 0.750, 0.518, 0.357, 0.214, Avg Draft acceptance rate: 53.9%
+2026-09-05T12:44:54.812045775Z (APIServer pid=54) INFO:     172.22.2.12:33312 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:58.727648187Z (APIServer pid=54) INFO:     172.22.2.12:33326 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-05T12:44:58.733811421Z (APIServer pid=54) INFO:     172.22.2.12:33330 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:45:03.129741482Z (APIServer pid=54) INFO 09-05 12:45:03 [loggers.py:310] Engine 000: Avg prompt throughput: 2.8 tokens/s, Avg generation throughput: 10.3 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 27.6%
+2026-09-05T12:45:03.129763866Z (APIServer pid=54) INFO 09-05 12:45:03 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.94, Accepted throughput: 6.80 tokens/s, Drafted throughput: 17.50 tokens/s, Accepted: 68 tokens, Drafted: 175 tokens, Per-position acceptance rate: 0.829, 0.543, 0.343, 0.200, 0.029, Avg Draft acceptance rate: 38.9%
+2026-09-05T12:45:07.591483142Z (APIServer pid=54) INFO:     127.0.0.1:53052 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:45:13.130398261Z (APIServer pid=54) INFO 09-05 12:45:13 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 27.6%
+2026-09-05T12:45:37.684156140Z (APIServer pid=54) INFO:     127.0.0.1:38510 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:46:07.795035884Z (APIServer pid=54) INFO:     127.0.0.1:36268 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:46:37.897810081Z (APIServer pid=54) INFO:     127.0.0.1:39840 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:47:07.976761463Z (APIServer pid=54) INFO:     127.0.0.1:38186 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:47:38.057500306Z (APIServer pid=54) INFO:     127.0.0.1:34198 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:48:08.141584215Z (APIServer pid=54) INFO:     127.0.0.1:56872 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:48:38.220472966Z (APIServer pid=54) INFO:     127.0.0.1:40770 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:49:08.301054589Z (APIServer pid=54) INFO:     127.0.0.1:35366 - "GET /health HTTP/1.1" 200 OK
+2026-09-05T12:49:38.401011407Z (APIServer pid=54) INFO:     127.0.0.1:43422 - "GET /health HTTP/1.1" 200 OK

@@ -1,0 +1,17 @@
+{"gpu": "NVIDIA GB10", "torch": "2.13.0+cu130"}
+INFO 09-05 11:35:05 [exl3.py:625] EXL3 standard fused MoE enabled for glm5_next: projection tiers (2, 3) via b12x
+INFO 09-05 11:35:05 [exl3.py:2434] EXL3 projection-mixed Trellis model.language_model.layers.0.mlp.experts: tiers=(bits,gate,up,down)((2, 287, 1, 144), (3, 1, 287, 144))
+{"tiers": [2, 3], "experts": 288, "rows": 1, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00039724737871438265, "cosine": 0.9999998807907104, "graph_replay": true, "stable_allocation": true}
+{"tiers": [2, 3], "experts": 288, "rows": 6, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00041646676254458725, "cosine": 0.9999998807907104, "graph_replay": true, "stable_allocation": true}
+{"tiers": [2, 3], "experts": 288, "rows": 8, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.0004135671188123524, "cosine": 1.0, "graph_replay": true, "stable_allocation": true}
+{"tiers": [2, 3], "experts": 288, "rows": 36, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.0004049974668305367, "cosine": 0.9999998807907104, "graph_replay": true, "stable_allocation": true}
+{"tiers": [2, 3], "experts": 288, "rows": 65, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00040878719300962985, "cosine": 0.9999999403953552, "graph_replay": true, "stable_allocation": true}
+{"tiers": [2, 3], "experts": 288, "rows": 128, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.0004085871041752398, "cosine": 0.9999998211860657, "graph_replay": true, "stable_allocation": true}
+INFO 09-05 11:35:23 [exl3.py:625] EXL3 standard fused MoE enabled for glm5_next: projection tiers (3, 4) via b12x
+INFO 09-05 11:35:23 [exl3.py:2434] EXL3 projection-mixed Trellis model.language_model.layers.0.mlp.experts: tiers=(bits,gate,up,down)((3, 287, 1, 144), (4, 1, 287, 144))
+{"tiers": [3, 4], "experts": 288, "rows": 1, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.000410738488426432, "cosine": 0.9999999403953552, "graph_replay": true, "stable_allocation": true}
+{"tiers": [3, 4], "experts": 288, "rows": 6, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.0004152761830482632, "cosine": 0.9999998807907104, "graph_replay": true, "stable_allocation": true}
+{"tiers": [3, 4], "experts": 288, "rows": 8, "capacity": 8, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00041164830327033997, "cosine": 0.9999997615814209, "graph_replay": true, "stable_allocation": true}
+{"tiers": [3, 4], "experts": 288, "rows": 36, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.0004093717143405229, "cosine": 0.9999997615814209, "graph_replay": true, "stable_allocation": true}
+{"tiers": [3, 4], "experts": 288, "rows": 65, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00040705702849663794, "cosine": 0.9999999403953552, "graph_replay": true, "stable_allocation": true}
+{"tiers": [3, 4], "experts": 288, "rows": 128, "capacity": 128, "hidden": 4096, "intermediate": 2048, "topk": 8, "relative_error": 0.00040937980520538986, "cosine": 0.9999998807907104, "graph_replay": true, "stable_allocation": true}

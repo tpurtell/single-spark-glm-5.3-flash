@@ -1,0 +1,393 @@
+{
+  "schema": "glm53-repeated-word-diagnostic.v1",
+  "complete": true,
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "kv_cache": "fp8_ds_mla",
+  "base_url": "http://kiwi:8001",
+  "scope": "Low-entropy C1 decode diagnostic, not normal-content performance",
+  "speculative_method": "dflash2",
+  "draft_tokens": 5,
+  "requested_word": "orchid",
+  "requested_count": 100,
+  "max_tokens": 1500,
+  "temperature": 0,
+  "seed": 20260905,
+  "warmups": 1,
+  "repeats": 5,
+  "runs": [
+    {
+      "concurrency": 1,
+      "prompt_tokens": 69,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.660085517003608,
+      "decode_tokens_per_second": 43.34684401454592,
+      "batch_window_decode_seconds": 4.660085517003608,
+      "batch_window_decode_tokens_per_second": 43.34684401454592,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.34684401454592
+      ],
+      "ttft_ms": 479.6152679991792,
+      "request_seconds": 5.139803600002779,
+      "started_epoch_seconds": 1788622466.8670063,
+      "sequence_ttft_ms": [
+        479.6152679991792
+      ],
+      "sequence_decode_seconds": [
+        4.660085517003608
+      ],
+      "sequence_finish_offset_seconds": [
+        5.139700785002788
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 168,
+      "rejected_draft_tokens": 2,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 69,
+        "total_tokens": 272,
+        "completion_tokens": 203
+      },
+      "timed": false,
+      "nonce": "cffb7c7945774c07a534b3f6de9f3e79",
+      "prompt": "orchid cffb7c7945774c07a534b3f6de9f3e79\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    },
+    {
+      "concurrency": 1,
+      "prompt_tokens": 67,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.6643244689985295,
+      "decode_tokens_per_second": 43.30745027336641,
+      "batch_window_decode_seconds": 4.6643244689985295,
+      "batch_window_decode_tokens_per_second": 43.30745027336641,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.30745027336641
+      ],
+      "ttft_ms": 527.8306740001426,
+      "request_seconds": 5.192217577001429,
+      "started_epoch_seconds": 1788622472.0406878,
+      "sequence_ttft_ms": [
+        527.8306740001426
+      ],
+      "sequence_decode_seconds": [
+        4.6643244689985295
+      ],
+      "sequence_finish_offset_seconds": [
+        5.192155142998672
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 168,
+      "rejected_draft_tokens": 2,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.9705882352941176,
+        "4": 0.9705882352941176
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 67,
+        "total_tokens": 270,
+        "completion_tokens": 203
+      },
+      "timed": true,
+      "nonce": "b0d9b55aba9e49ff874e29e4c62ef55f",
+      "prompt": "orchid b0d9b55aba9e49ff874e29e4c62ef55f\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    },
+    {
+      "concurrency": 1,
+      "prompt_tokens": 67,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.656710162998934,
+      "decode_tokens_per_second": 43.37826339398187,
+      "batch_window_decode_seconds": 4.656710162998934,
+      "batch_window_decode_tokens_per_second": 43.37826339398187,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.37826339398187
+      ],
+      "ttft_ms": 532.7190829993924,
+      "request_seconds": 5.189482456000405,
+      "started_epoch_seconds": 1788622477.261711,
+      "sequence_ttft_ms": [
+        532.7190829993924
+      ],
+      "sequence_decode_seconds": [
+        4.656710162998934
+      ],
+      "sequence_finish_offset_seconds": [
+        5.189429245998326
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 168,
+      "rejected_draft_tokens": 2,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 67,
+        "total_tokens": 270,
+        "completion_tokens": 203
+      },
+      "timed": true,
+      "nonce": "4d85e924dff54aa1aba23cf0f15b3f1a",
+      "prompt": "orchid 4d85e924dff54aa1aba23cf0f15b3f1a\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    },
+    {
+      "concurrency": 1,
+      "prompt_tokens": 69,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.662748249997094,
+      "decode_tokens_per_second": 43.322090142895,
+      "batch_window_decode_seconds": 4.662748249997094,
+      "batch_window_decode_tokens_per_second": 43.322090142895,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.322090142895
+      ],
+      "ttft_ms": 544.9586510003428,
+      "request_seconds": 5.207757976997527,
+      "started_epoch_seconds": 1788622482.4793887,
+      "sequence_ttft_ms": [
+        544.9586510003428
+      ],
+      "sequence_decode_seconds": [
+        4.662748249997094
+      ],
+      "sequence_finish_offset_seconds": [
+        5.207706900997437
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 168,
+      "rejected_draft_tokens": 2,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 69,
+        "total_tokens": 272,
+        "completion_tokens": 203
+      },
+      "timed": true,
+      "nonce": "c0cb90e8eae240d084e0f1f6ce15a9a6",
+      "prompt": "orchid c0cb90e8eae240d084e0f1f6ce15a9a6\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    },
+    {
+      "concurrency": 1,
+      "prompt_tokens": 66,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.680342526000459,
+      "decode_tokens_per_second": 43.15923436753616,
+      "batch_window_decode_seconds": 4.680342526000459,
+      "batch_window_decode_tokens_per_second": 43.15923436753616,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.15923436753616
+      ],
+      "ttft_ms": 532.0884649991058,
+      "request_seconds": 5.212529049000295,
+      "started_epoch_seconds": 1788622487.7195754,
+      "sequence_ttft_ms": [
+        532.0884649991058
+      ],
+      "sequence_decode_seconds": [
+        4.680342526000459
+      ],
+      "sequence_finish_offset_seconds": [
+        5.2124309909995645
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 168,
+      "rejected_draft_tokens": 2,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 66,
+        "total_tokens": 269,
+        "completion_tokens": 203
+      },
+      "timed": true,
+      "nonce": "fb7adeb64556438e9796662fa9ba5688",
+      "prompt": "orchid fb7adeb64556438e9796662fa9ba5688\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    },
+    {
+      "concurrency": 1,
+      "prompt_tokens": 68,
+      "completion_tokens": 203,
+      "completion_tokens_by_sequence": [
+        203
+      ],
+      "decode_tokens": 202,
+      "decode_seconds": 4.647177514001669,
+      "decode_tokens_per_second": 43.46724423402937,
+      "batch_window_decode_seconds": 4.647177514001669,
+      "batch_window_decode_tokens_per_second": 43.46724423402937,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        43.46724423402937
+      ],
+      "ttft_ms": 516.9251209954382,
+      "request_seconds": 5.164162184999441,
+      "started_epoch_seconds": 1788622492.983047,
+      "sequence_ttft_ms": [
+        516.9251209954382
+      ],
+      "sequence_decode_seconds": [
+        4.647177514001669
+      ],
+      "sequence_finish_offset_seconds": [
+        5.164102634997107
+      ],
+      "draft_tokens": 170,
+      "accepted_draft_tokens": 169,
+      "rejected_draft_tokens": 1,
+      "accepted_draft_rate": 0.9941176470588236,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9705882352941176
+      },
+      "rejected_draft_rate": 0.0058823529411764705,
+      "target_verification_passes": 34,
+      "committed_tokens_per_target_pass": 5.970588235294118,
+      "finish_reasons": [
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 68,
+        "total_tokens": 271,
+        "completion_tokens": 203
+      },
+      "timed": true,
+      "nonce": "ec6565a4c5fb4b8097e52986752317fe",
+      "prompt": "orchid ec6565a4c5fb4b8097e52986752317fe\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_count": 101,
+      "exact_contract_passed": false
+    }
+  ],
+  "summary": {
+    "median_decode_tokens_per_second": 43.322090142895,
+    "resolved_runs": 5,
+    "total_runs": 5,
+    "exact_contract_passes": 0,
+    "observed_counts": [
+      101,
+      101,
+      101,
+      101,
+      101
+    ],
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+    ]
+  }
+}

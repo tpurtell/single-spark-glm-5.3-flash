@@ -1,0 +1,16 @@
+{
+  "errors": 0,
+  "final_answer_marker_hits": 12,
+  "health_after": {
+    "ok": true,
+    "seconds": 0.006,
+    "status": 200
+  },
+  "loops": 0,
+  "marker_misses": 0,
+  "median_seconds": 148.365,
+  "passes": 12,
+  "phase": "thinking-max-shared-prefix",
+  "requests": 12,
+  "token_limit_finishes": 0
+}

@@ -1,0 +1,26 @@
+F.F.F..
+======================================================================
+FAIL: test_batch_stops_at_first_eos (__main__.TerminationTests.test_batch_stops_at_first_eos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<stdin>", line 59, in test_batch_stops_at_first_eos
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_reset_clears_cached_termination (__main__.TerminationTests.test_reset_clears_cached_termination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<stdin>", line 87, in test_reset_clears_cached_termination
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_second_advance_is_noop (__main__.TerminationTests.test_second_advance_is_noop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<stdin>", line 67, in test_second_advance_is_noop
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+
+FAILED (failures=3)

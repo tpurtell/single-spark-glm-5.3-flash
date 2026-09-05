@@ -1,0 +1,111 @@
+{"pass": "cold", "passed": true, "ttft_seconds": 36.90381800800242, "request_seconds": 39.466679529999965}
+{"pass": "replay", "passed": true, "ttft_seconds": 37.29733290799777, "request_seconds": 39.87634934899688}
+{"pass": "changed-tail", "passed": true, "ttft_seconds": 37.06906758599507, "request_seconds": 39.4683277160002}
+{"pass": "original-after-changed-tail", "passed": true, "ttft_seconds": 37.04685744900053, "request_seconds": 39.63761962600256}
+{
+  "schema": "glm53-prefix-replay.v3",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "base_url": "http://emu:8001",
+  "passed": false,
+  "complete": true,
+  "target_prompt_tokens": 32768,
+  "cache_salt": "8b75748480f143f7858777018488a7f5",
+  "fixture_nonce": "prefix-replay-94dd7565597e401eb8772b9ad73416b7",
+  "original_prompt_ids_sha256": "1e60feb4742eda06f1f87a7b55814bfe2f03cfdbbcd7bbf50a18d8e33064e07d",
+  "changed_prompt_ids_sha256": "d95955e416d82d3a9144eb5090f611250b633bcb77ec5d34969797b00589dbd7",
+  "prefix_cache_hits_before": 0.0,
+  "passes": [
+    {
+      "pass": 1,
+      "name": "cold",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 39.466679529999965,
+      "ttft_seconds": 36.90381800800242,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    },
+    {
+      "pass": 2,
+      "name": "replay",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 39.87634934899688,
+      "ttft_seconds": 37.29733290799777,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    },
+    {
+      "pass": 3,
+      "name": "changed-tail",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=amethyst-3926"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 39.4683277160002,
+      "ttft_seconds": 37.06906758599507,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=amethyst-3926"
+    },
+    {
+      "pass": 4,
+      "name": "original-after-changed-tail",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 39.63761962600256,
+      "ttft_seconds": 37.04685744900053,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    }
+  ],
+  "scope": "Strict exact-answer cold retrieval, identical replay, changed-tail isolation, then original replay",
+  "prefix_cache_hits_after": 0.0,
+  "prefix_cache_hit_delta": 0.0,
+  "high_recycled_page_rationale": "The identical second pass exercises the production allocator/cache replay path that previously exposed 32-bit pool-offset overflow; focused B12x tests separately force page IDs past the exact 2^31/stride boundary."
+}

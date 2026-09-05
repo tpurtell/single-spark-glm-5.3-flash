@@ -1,0 +1,25 @@
+{"gpu":"NVIDIA GB10","torch":"2.13.0+cu130"}
+{"tiers":[2,3],"experts":4,"rows":1,"capacity":8,"relative_error":0.0006649548886343837,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":4,"rows":6,"capacity":8,"relative_error":0.0006129973917268217,"cosine":0.9999998211860657,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":4,"rows":8,"capacity":8,"relative_error":0.0006769099272787571,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":4,"rows":36,"capacity":128,"relative_error":0.0006310604512691498,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":4,"rows":65,"capacity":128,"relative_error":0.0006198475603014231,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":4,"rows":128,"capacity":128,"relative_error":0.0006243127281777561,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":1,"capacity":8,"relative_error":0.0007049993146210909,"cosine":0.9999996423721313,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":6,"capacity":8,"relative_error":0.000607501482591033,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":8,"capacity":8,"relative_error":0.0006415439420379698,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":36,"capacity":128,"relative_error":0.0006345492438413203,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":65,"capacity":128,"relative_error":0.0006483339820988476,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":4,"rows":128,"capacity":128,"relative_error":0.0006302766851149499,"cosine":0.9999998807907104,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":1,"capacity":8,"relative_error":0.0007005225634202361,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":6,"capacity":8,"relative_error":0.0006597945466637611,"cosine":0.9999998211860657,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":8,"capacity":8,"relative_error":0.0006315314094536006,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":36,"capacity":128,"relative_error":0.0006196080357767642,"cosine":0.9999998211860657,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":65,"capacity":128,"relative_error":0.0006215618341229856,"cosine":0.9999998807907104,"graph_replay":true,"stable_allocation":true}
+{"tiers":[2,3],"experts":288,"rows":128,"capacity":128,"relative_error":0.0006210486753843725,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":1,"capacity":8,"relative_error":0.0008226390928030014,"cosine":0.9999998211860657,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":6,"capacity":8,"relative_error":0.0006218227790668607,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":8,"capacity":8,"relative_error":0.0006752371555194259,"cosine":0.9999997019767761,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":36,"capacity":128,"relative_error":0.0006330093019641936,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":65,"capacity":128,"relative_error":0.0006180886994116008,"cosine":0.9999997615814209,"graph_replay":true,"stable_allocation":true}
+{"tiers":[3,4],"experts":288,"rows":128,"capacity":128,"relative_error":0.0006410973146557808,"cosine":0.9999998211860657,"graph_replay":true,"stable_allocation":true}

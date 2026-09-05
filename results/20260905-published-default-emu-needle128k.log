@@ -1,0 +1,96 @@
+{
+  "schema": "glm53-cold-multi-needle.v2",
+  "passed": true,
+  "exact_answer": true,
+  "exact_prompt_usage": true,
+  "finish_reason": "stop",
+  "framing": "server official chat template, reasoning low, explicit </think>",
+  "target_prompt_tokens": 131072,
+  "body_tokens": 131059,
+  "placement_scope": "offsets within the user-message body before chat framing",
+  "nonce": "glm53-context-qualification",
+  "cache_salt": "ac2a00f499c74e6e8ac2035cdce3e5a5",
+  "prompt_sha256": "ee011342e4ec7aa04f836fa35fe91d93b28983aeba39b4da3c683ba1493a858a",
+  "prompt_ids_sha256": "e83e3d5ab891a0530b1dbdc857c52de223c4fc5ce3a4cecde723a7f8277e7300",
+  "placements": [
+    {
+      "fraction": 0.05,
+      "key": "CINDER-05",
+      "value": "azurite-4831",
+      "token_offset_before_record": 6553
+    },
+    {
+      "fraction": 0.25,
+      "key": "JUNIPER-25",
+      "value": "topaz-7614",
+      "token_offset_before_record": 32765
+    },
+    {
+      "fraction": 0.5,
+      "key": "LANTERN-50",
+      "value": "cobalt-2097",
+      "token_offset_before_record": 65530
+    },
+    {
+      "fraction": 0.75,
+      "key": "MARBLE-75",
+      "value": "saffron-6382",
+      "token_offset_before_record": 98294
+    },
+    {
+      "fraction": 0.95,
+      "key": "ORBIT-95",
+      "value": "willow-1459",
+      "token_offset_before_record": 124506
+    },
+    {
+      "fraction": 0.99,
+      "key": "QUARTZ-99",
+      "value": "indigo-8726",
+      "token_offset_before_record": 129748
+    }
+  ],
+  "checks": [
+    {
+      "key": "CINDER-05",
+      "expected": "azurite-4831",
+      "passed": true
+    },
+    {
+      "key": "JUNIPER-25",
+      "expected": "topaz-7614",
+      "passed": true
+    },
+    {
+      "key": "LANTERN-50",
+      "expected": "cobalt-2097",
+      "passed": true
+    },
+    {
+      "key": "MARBLE-75",
+      "expected": "saffron-6382",
+      "passed": true
+    },
+    {
+      "key": "ORBIT-95",
+      "expected": "willow-1459",
+      "passed": true
+    },
+    {
+      "key": "QUARTZ-99",
+      "expected": "indigo-8726",
+      "passed": true
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 131072,
+    "total_tokens": 131146,
+    "completion_tokens": 74
+  },
+  "build_seconds": 1.479,
+  "ttft_seconds": 158.358,
+  "stream_after_first_token_seconds": 2.29,
+  "request_seconds": 160.648,
+  "wall_seconds_after_build": 160.652,
+  "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+}

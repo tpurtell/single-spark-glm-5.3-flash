@@ -1,0 +1,284 @@
+{
+  "repository": "zai-org/GLM-5.3-Flash",
+  "revision": "690b705278a3a58e538fcb37c2ca8b5f9511213c",
+  "source": "official-current",
+  "sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5",
+  "checked_utc": "2026-09-05T14:57:52.690257+00:00",
+  "offline": false
+}
+{
+  "source": "/model-repo/snapshots/ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b",
+  "destination": "/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b",
+  "original_manifest_projections": 4180,
+  "derived_manifest_projections": 37152,
+  "original_manifest_sha256": "7ac43594d7f85a80a232b8f79d117c9ec560a40c12fc6dfccf3dd82cc5c78eb4",
+  "derived_manifest_sha256": "4d2a1a20957c1b45e1eff3ac8ab0c0c9dd7c0f910d37ff02ea96113350a72d80",
+  "weights_modified": false,
+  "chat_template_sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5"
+}
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345] 
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345]        █     █     █▄   ▄█
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.1.dev20051+g487ecf187
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345]   █▄█▀ █     █     █     █  model   /root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:345] 
+(APIServer pid=54) INFO 09-05 14:58:05 [api_utils.py:273] non-default args: {'model_tag': '/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', 'enable_auto_tool_choice': True, 'tool_call_parser': 'glm47', 'host': '0.0.0.0', 'port': 8001, 'model': '/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', 'max_model_len': 1048576, 'served_model_name': ['vcruz305/GLM-5.3-Flash-EXL3-K2'], 'load_format': 'instanttensor', 'attention_backend': 'B12X_MLA_SPARSE', 'reasoning_parser': 'glm45', 'disable_custom_all_reduce': True, 'block_size': 256, 'gpu_memory_utilization': 0.85, 'kv_cache_dtype': 'nvfp4_ds_mla', 'enable_prefix_caching': True, 'mamba_cache_mode': 'align', 'replayssm_buffer_len': 10, 'use_replayssm': True, 'language_model_only': True, 'max_num_batched_tokens': 512, 'max_num_seqs': 6, 'cudagraph_capture_sizes': [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36], 'max_cudagraph_capture_size': 36, 'enable_flashinfer_autotune': False, 'speculative_config': {'method': 'dflash', 'model': '/draft-repo/snapshots/bf582e4eacc1810f76656d1811693ff6c6737d2a', 'num_speculative_tokens': 5, 'kv_cache_dtype': 'bfloat16'}}
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_DECISION_WINDOW
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_PCIE_ALLREDUCE_BACKEND
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_USE_B12X_MHC
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_BLOCK_M
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_NVFP4_MLA_DYNAMIC_SCALE
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_PCIE_ONESHOT_ALLREDUCE_MAX_SIZE
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_GLM_H64_QUERY_PROJ
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_CAPACITY
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_MIN_M
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_PROBE_INTERVAL
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_PREFILL_TRELLIS
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_BLOCK_M
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_LOAD_THRESHOLDS
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_USE_B12X_KPOOL_INDEXER
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_PCIE_EAGER
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_B12X_DCP_A2A
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_EXL3_TRELLIS_MAX_M
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ENABLE_PCIE_ALLREDUCE
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_HISTORY
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_PROBE_INTERVAL_MAX
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_ADAPTIVE_MTP_MIN_DEPTH
+(APIServer pid=54) WARNING 09-05 14:58:05 [envs.py:2239] Unknown vLLM environment variable detected: VLLM_NVFP4_MLA_SCALES_FILE
+(APIServer pid=54) INFO 09-05 14:58:05 [model.py:679] Resolved architecture: Glm5NextForConditionalGeneration
+(APIServer pid=54) INFO 09-05 14:58:05 [model.py:1972] Using max model len 1048576
+(APIServer pid=54) INFO 09-05 14:58:08 [registry.py:141] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+(APIServer pid=54) INFO 09-05 14:58:08 [model.py:882] Disabled mm_prefix attention mode because multimodal inputs are configuration-disabled. Attention backends without mm_prefix support may now be selected.
+(APIServer pid=54) INFO 09-05 14:58:08 [cache.py:289] Using nvfp4_ds_mla data type to store kv cache. It reduces the GPU memory footprint and boosts the performance. Meanwhile, it may cause accuracy drop without a proper scaling factor
+(APIServer pid=54) INFO 09-05 14:58:08 [model.py:679] Resolved architecture: DFlash2DraftModel
+(APIServer pid=54) INFO 09-05 14:58:08 [model.py:1972] Using max model len 1048576
+(APIServer pid=54) INFO 09-05 14:58:08 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=512.
+(APIServer pid=54) INFO 09-05 14:58:08 [exl3.py:625] EXL3 standard fused MoE enabled for glm5_next: projection tiers (2,) via b12x
+(APIServer pid=54) INFO 09-05 14:58:08 [vllm.py:1336] Auto-enabling VLLM_USE_BREAKABLE_CUDAGRAPH=1. Set VLLM_USE_BREAKABLE_CUDAGRAPH=0 to opt out.
+(APIServer pid=54) INFO 09-05 14:58:08 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(APIServer pid=54) WARNING 09-05 14:58:08 [vllm.py:1866] max_num_scheduled_tokens is set to 512 based on the speculative decoding settings. This may lead to suboptimal performance. Consider increasing max_num_batched_tokens to accommodate the additional draft token slots, or decrease num_speculative_tokens.
+(APIServer pid=54) INFO 09-05 14:58:08 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+(APIServer pid=54) [transformers] The following generation flags are not valid and may be ignored: ['top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+(EngineCore pid=201) INFO 09-05 14:58:21 [core.py:122] Initializing a V1 LLM engine (v0.1.dev20051+g487ecf187) with config: model='/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', speculative_config=SpeculativeConfig(method='dflash', model='/draft-repo/snapshots/bf582e4eacc1810f76656d1811693ff6c6737d2a', num_spec_tokens=5), tokenizer='/root/.cache/glm53/prepared-ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1048576, download_dir=None, load_format=instanttensor, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=exl3, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=nvfp4_ds_mla, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='glm45', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=vcruz305/GLM-5.3-Flash-EXL3-K2, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [512], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 36, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=201) INFO 09-05 14:58:23 [registry.py:141] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+(EngineCore pid=201) INFO 09-05 14:58:23 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_a9268c8da9ee4aeb83aa1ab03a15de4a backend=nccl
+(EngineCore pid=201) INFO 09-05 14:58:23 [parallel_state.py:1984] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0, EPLB rank N/A
+(EngineCore pid=201) INFO 09-05 14:58:23 [gpu_worker.py:386] Using V2 Model Runner
+(EngineCore pid=201) INFO 09-05 14:58:24 [model_runner.py:353] Loading model from scratch...
+(EngineCore pid=201) INFO 09-05 14:58:24 [cuda.py:592] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+(EngineCore pid=201) INFO 09-05 14:58:24 [mm_encoder_attention.py:375] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+(EngineCore pid=201) INFO 09-05 14:58:24 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) WARNING 09-05 14:58:24 [vllm.py:1866] max_num_scheduled_tokens is set to 512 based on the speculative decoding settings. This may lead to suboptimal performance. Consider increasing max_num_batched_tokens to accommodate the additional draft token slots, or decrease num_speculative_tokens.
+(EngineCore pid=201) INFO 09-05 14:58:24 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=201) INFO 09-05 14:58:24 [sparse_attn_indexer_kpool.py:1108] Using B12x fused paged score+top-k for GLM kpool decode.
+(EngineCore pid=201) INFO 09-05 14:58:24 [cuda.py:473] Using AttentionBackendEnum.B12X_MLA_SPARSE backend.
+(EngineCore pid=201) INFO 09-05 14:58:24 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) WARNING 09-05 14:58:25 [mla_attention.py:553] Sparse MLA impl has no dense-MHA prefill path; using the top-k MQA path only.
+(EngineCore pid=201) INFO 09-05 14:58:25 [deep_gemm.py:191] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+(EngineCore pid=201) INFO 09-05 14:58:25 [deep_gemm.py:136] DeepGEMM E8M0 enabled on current platform.
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) INFO 09-05 14:58:25 [b12x_mla_sparse.py:1528] B12X GLM MLA KV format: KV_FP8_ROPE=1 kv_gmem_stride=368 kv_cache_dtype=nvfp4_ds_mla
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:   0% Completed | 0.00/91.0G [00:00<?, ?B/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:   4% Completed | 3.52G/91.0G [00:01<00:24, 3.78GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:   8% Completed | 7.04G/91.0G [00:02<00:25, 3.54GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  13% Completed | 11.4G/91.0G [00:03<00:21, 4.06GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  17% Completed | 15.8G/91.0G [00:04<00:18, 4.29GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  22% Completed | 20.1G/91.0G [00:05<00:17, 4.43GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  27% Completed | 24.7G/91.0G [00:06<00:15, 4.60GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  32% Completed | 29.0G/91.0G [00:07<00:14, 4.60GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  37% Completed | 33.5G/91.0G [00:08<00:13, 4.68GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  42% Completed | 38.0G/91.0G [00:09<00:12, 4.65GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  47% Completed | 42.4G/91.0G [00:10<00:11, 4.68GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  51% Completed | 46.8G/91.0G [00:11<00:10, 4.70GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  56% Completed | 51.4G/91.0G [00:12<00:08, 4.77GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  61% Completed | 55.8G/91.0G [00:13<00:07, 4.75GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  66% Completed | 60.3G/91.0G [00:14<00:07, 4.70GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  71% Completed | 64.7G/91.0G [00:15<00:05, 4.73GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  76% Completed | 69.4G/91.0G [00:16<00:04, 4.80GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  81% Completed | 73.8G/91.0G [00:17<00:03, 4.73GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  86% Completed | 78.5G/91.0G [00:18<00:02, 4.83GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  91% Completed | 83.0G/91.0G [00:19<00:01, 4.80GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:  97% Completed | 88.0G/91.0G [00:20<00:00, 4.91GB/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader: 100% Completed | 91.0G/91.0G [00:20<00:00, 4.77GB/s]
+(EngineCore pid=201) 
+(EngineCore pid=201) INFO 09-05 14:58:48 [default_loader.py:430] Loading weights took 22.78 seconds
+(EngineCore pid=201) INFO 09-05 14:58:49 [mla_attention.py:1114] Prewarmed B12x GLM H64 BF16 query projection for decode M=2..16.
+(EngineCore pid=201) INFO 09-05 14:58:50 [eagle3_utils.py:28] Using Eagle3 auxiliary layers from config: (6, 15, 25, 34, 43)
+(EngineCore pid=201) INFO 09-05 14:58:50 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:58:50 [cuda.py:533] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=201) INFO 09-05 14:58:50 [flash_attn.py:873] Using FlashAttention version 2
+(EngineCore pid=201) /usr/local/lib/python3.12/dist-packages/vllm/model_executor/model_loader/weight_utils.py:1130: RuntimeWarning: Shrink io_depth from 512 to 460 due to memory limit.
+(EngineCore pid=201)   with instanttensor.safe_open(
+(EngineCore pid=201) Loading safetensors using InstantTensor loader:   0% Completed | 0.00/2.18G [00:00<?, ?B/s]
+(EngineCore pid=201) Loading safetensors using InstantTensor loader: 100% Completed | 2.18G/2.18G [00:00<00:00, 5.57GB/s]
+(EngineCore pid=201) 
+(EngineCore pid=201) INFO 09-05 14:58:55 [default_loader.py:430] Loading weights took 5.20 seconds
+(EngineCore pid=201) INFO 09-05 14:58:56 [model_runner.py:374] Model loading took 90.76 GiB and 32.551999 seconds
+(EngineCore pid=201) INFO 09-05 14:58:56 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=201) INFO 09-05 14:58:56 [interface.py:926] Setting attention block size to 15360 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=201) INFO 09-05 14:58:56 [interface.py:950] Padding mamba page size by 0.29% to ensure that mamba page size and attention page size are exactly equal.
+(EngineCore pid=201) 2026-09-05 14:58:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) /usr/local/lib/python3.12/dist-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+(EngineCore pid=201)   warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+(EngineCore pid=201) 2026-09-05 14:59:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_post_tilelang` with `out_idx=None`
+[14:59:02] : Warning: T.vectorized loop over `i_hci` with extent 4 is lowered as a serial loop because TileLang could not find a valid vectorization plan. Scalar accumulator updates inside the loop are a common cause; move reductions to T.unroll or T.serial if this is intended.
+(EngineCore pid=201) 2026-09-05 14:59:02  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_post_tilelang`
+(EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 36, 'quant_mode': 'w4a16', 'routed_rows': 288, 'source_format': 'b12x_trellis', 'top_k': 8}
+(EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 8, 'quant_mode': 'w4a16', 'routed_rows': 64, 'source_format': 'b12x_trellis', 'top_k': 8}
+(EngineCore pid=201) b12x policy fallback: moe.decode is using a heuristic on nvidia gb10 (compute capability 12.1, 48 SMs) because profile 'nvidia.gb10.48sm' does not cover the query; query={'activation': 'silu', 'hidden_size': 4096, 'intermediate_size': 2048, 'num_experts': 288, 'num_tokens': 512, 'quant_mode': 'w4a16', 'routed_rows': 4096, 'source_format': 'b12x_trellis', 'top_k': 8}
+(EngineCore pid=201) INFO 09-05 14:59:12 [exl3.py:3029] EXL3 rank-sliced runtime planned: Trellis m=1..36 block_m=8, prefill trellis block_m=64 arena=140.1MiB capacity=512 chunk=128 topk=8
+(EngineCore pid=201) INFO 09-05 14:59:12 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:59:13 [gpu_worker.py:515] GLM53 memory snapshots: before=torch_peak=90.77GiB, torch_allocated=90.77GiB, free_memory=21.41GiB, total_memory=121.63GiB, cuda_memory=100.21GiB, torch_memory=90.87GiB, non_torch_memory=9.35GiB, timestamp=1788620336.650222, auto_measure=False; after=torch_peak=92.28GiB, torch_allocated=91.65GiB, free_memory=19.27GiB, total_memory=121.63GiB, cuda_memory=102.36GiB, torch_memory=91.83GiB, non_torch_memory=10.53GiB, timestamp=1788620353.882281, auto_measure=False
+(EngineCore pid=201) INFO 09-05 14:59:13 [indexer.py:736] DSA indexer decode path: use_flattening=True supports_varlen=False (next_n=6, use_fp4_indexer_cache=False)
+(EngineCore pid=201) INFO 09-05 14:59:13 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:59:13 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:59:14 [breakable_cudagraph.py:288] Breakable CUDA graph enabled
+(EngineCore pid=201) 2026-09-05 14:59:14  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:18  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_fused_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:26  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_fused_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:26  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:30  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:31  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_fused_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:32  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_fused_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:32  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) Profiling CUDA graph memory (FULL):   0%|          | 0/6 [00:00<?, ?it/s]                                                                         Profiling CUDA graph memory (FULL):   0%|          | 0/6 [00:00<?, ?it/s]                                                                         Profiling CUDA graph memory (FULL):   0%|          | 0/6 [00:04<?, ?it/s]Profiling CUDA graph memory (FULL):  17%|█▋        | 1/6 [00:10<00:50, 10.19s/it]Profiling CUDA graph memory (FULL):  33%|███▎      | 2/6 [00:10<00:17,  4.34s/it]Profiling CUDA graph memory (FULL):  50%|█████     | 3/6 [00:10<00:07,  2.51s/it]Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:10<00:03,  1.61s/it]                                                                                 Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:11<00:03,  1.61s/it]                                                                                 Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:11<00:03,  1.61s/it]                                                                                 Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:12<00:03,  1.61s/it]                                                                                 Profiling CUDA graph memory (FULL):  67%|██████▋   | 4/6 [00:16<00:03,  1.61s/it]Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:16<00:03,  3.19s/it]                                                                                 Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:17<00:03,  3.19s/it]                                                                                 Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:17<00:03,  3.19s/it]                                                                                 Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:18<00:03,  3.19s/it]                                                                                 Profiling CUDA graph memory (FULL):  83%|████████▎ | 5/6 [00:22<00:03,  3.19s/it]Profiling CUDA graph memory (FULL): 100%|██████████| 6/6 [00:22<00:00,  4.10s/it]Profiling CUDA graph memory (FULL): 100%|██████████| 6/6 [00:22<00:00,  3.81s/it]
+(EngineCore pid=201) INFO 09-05 14:59:37 [model_runner.py:957] Estimated CUDA graph memory: 0.87 GiB total
+(EngineCore pid=201) INFO 09-05 14:59:37 [gpu_worker.py:574] GLM53 memory accounting: Memory profiling takes 17.23 seconds. Total non KV cache memory: 95.56GiB; torch peak memory increase: 1.52GiB; total consumed (from mem_get_info): 94.93GiB; weights memory: 90.76GiB.
+(EngineCore pid=201) INFO 09-05 14:59:37 [gpu_worker.py:575] Available KV cache memory: 6.96 GiB
+(EngineCore pid=201) INFO 09-05 14:59:37 [gpu_worker.py:590] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.8500 is equivalent to --gpu-memory-utilization=0.8429 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.8571. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=201) INFO 09-05 14:59:37 [kv_cache_utils.py:2181] GPU KV cache size: 1,079,117 tokens, Maximum concurrency for 1,048,576 tokens per request: 1.03x
+(EngineCore pid=201) INFO 09-05 14:59:37 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:59:37 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 14:59:38 [deepseek_v4_mhc_warmup.py:245] Warming up mHC TileLang kernels for Glm5NextDecoderLayer token sizes: [1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 64, 128, 192, 256, 320, 384, 448, 512]
+(EngineCore pid=201) INFO 09-05 14:59:38 [mhc.py:438] Using B12x fused GLM H4096 mHC post+pre for decode M=1.
+(EngineCore pid=201) 2026-09-05 14:59:38  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:47  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:47  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:51  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) 2026-09-05 14:59:52  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:129): TileLang begins to compile kernel `mhc_pre_big_fuse_with_norm_tilelang` with `out_idx=None`
+(EngineCore pid=201) 2026-09-05 14:59:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang completes to compile kernel `mhc_pre_big_fuse_with_norm_tilelang`
+(EngineCore pid=201) INFO 09-05 14:59:56 [deepseek_v4_mhc_warmup.py:255] mHC TileLang warmup finished in 18.88 seconds.
+(EngineCore pid=201) INFO 09-05 14:59:58 [spec_decode_rejection_warmup.py:64] Warming up spec-decode rejection sampler kernels (vocab=154880, num_spec=5, dtype_pairs=[('torch.bfloat16', 'torch.bfloat16'), ('torch.float32', 'torch.bfloat16'), ('torch.bfloat16', 'torch.float32'), ('torch.float32', 'torch.float32')], block_verify=False).
+(EngineCore pid=201) INFO 09-05 15:00:00 [kernel_warmup.py:95] Warming up ll_bf16 router GEMM kernels for shapes: ((4096, 288),).
+(EngineCore pid=201) INFO 09-05 15:00:01 [kernel_warmup.py:170] Skipping FlashInfer autotune because it is disabled.
+(EngineCore pid=201) Capturing CUDA graphs (FULL):   0%|          | 0/6 [00:00<?, ?it/s]Capturing CUDA graphs (FULL):  17%|█▋        | 1/6 [00:00<00:02,  1.87it/s]Capturing CUDA graphs (FULL):  33%|███▎      | 2/6 [00:00<00:01,  2.78it/s]Capturing CUDA graphs (FULL):  50%|█████     | 3/6 [00:00<00:00,  3.38it/s]Capturing CUDA graphs (FULL):  67%|██████▋   | 4/6 [00:01<00:00,  3.12it/s]Capturing CUDA graphs (FULL):  83%|████████▎ | 5/6 [00:02<00:00,  1.35it/s]Capturing CUDA graphs (FULL): 100%|██████████| 6/6 [00:04<00:00,  1.06it/s]Capturing CUDA graphs (FULL): 100%|██████████| 6/6 [00:04<00:00,  1.44it/s]
+(EngineCore pid=201) INFO 09-05 15:00:05 [speculator.py:141] Capturing model for DFlash2 speculator...
+(EngineCore pid=201) INFO 09-05 15:00:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=201) INFO 09-05 15:00:35 [model_runner.py:1017] Graph capturing finished in 34 secs, took 1.51 GiB
+(EngineCore pid=201) INFO 09-05 15:00:35 [gpu_worker.py:738] CUDA graph pool memory: 1.51 GiB (actual), 0.87 GiB (estimated), difference: 0.65 GiB (42.7%).
+(EngineCore pid=201) Capturing dflash2 CUDA graphs (FULL):   0%|          | 0/6 [00:00<?, ?it/s]Capturing dflash2 CUDA graphs (FULL):  17%|█▋        | 1/6 [00:29<02:27, 29.53s/it]Capturing dflash2 CUDA graphs (FULL):  83%|████████▎ | 5/6 [00:29<00:04,  4.42s/it]Capturing dflash2 CUDA graphs (FULL): 100%|██████████| 6/6 [00:29<00:00,  4.95s/it]
+(EngineCore pid=201) INFO 09-05 15:00:35 [gpu_worker.py:801] Free memory on device (114.2/121.63 GiB) on startup. Desired GPU memory utilization is (0.85, 103.38 GiB). Actual usage is 94.93 GiB for consumed memory (weights + non-torch), 1.5 GiB for peak activation, and 1.51 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=5686376039` (5.3 GiB) to fit into requested memory, or `--kv-cache-memory=17297680384` (16.11 GiB) to fully utilize gpu memory. Current kv cache memory in use is 6.96 GiB.
+(EngineCore pid=201) /usr/local/lib/python3.12/dist-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+(EngineCore pid=201)   warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+(EngineCore pid=201) INFO 09-05 15:01:33 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=201) INFO 09-05 15:01:33 [torch_utils.py:263] Reducing Torch threads from 20 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=201) INFO 09-05 15:01:33 [core.py:363] init engine (profile, create kv cache, warmup model) took 157.40 s
+(EngineCore pid=201) INFO 09-05 15:01:33 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(APIServer pid=54) INFO 09-05 15:01:33 [api_server.py:678] Supported tasks: ['generate']
+(APIServer pid=54) INFO 09-05 15:01:34 [parser_manager.py:37] "auto" tool choice has been enabled.
+(APIServer pid=54) INFO 09-05 15:01:35 [hf.py:551] Detected the chat template content format to be 'openai'. You can set `--chat-template-content-format` to override this.
+(APIServer pid=54) WARNING 09-05 15:01:35 [model.py:1720] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 1.0, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=54) INFO 09-05 15:01:35 [api_server.py:682] Starting vLLM server on http://0.0.0.0:8001
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:51] Available routes are:
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /openapi.json, Methods: HEAD, GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /docs, Methods: HEAD, GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /redoc, Methods: HEAD, GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /load, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /version, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /health, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /metrics, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /tokenize, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /detokenize, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/models, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /ping, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /ping, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /invocations, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/chat/completions/batch, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/responses, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/completions, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/messages, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /generative_scoring, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /is_scaling_elastic_ep, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/chat/completions/render, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/completions/render, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/chat/completions/derender, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /v1/completions/derender, Methods: POST
+(APIServer pid=54) INFO 09-05 15:01:35 [launcher.py:60] Route: /inference/v1/generate, Methods: POST
+(APIServer pid=54) INFO:     Started server process [54]
+(APIServer pid=54) INFO:     Waiting for application startup.
+(APIServer pid=54) INFO:     Application startup complete.
+(APIServer pid=54) INFO:     127.0.0.1:53324 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=54) INFO:     127.0.0.1:53330 - "GET /v1/models HTTP/1.1" 200 OK
+(EngineCore pid=201) WARNING 09-05 15:01:38 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _gumbel_sample_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=201) WARNING 09-05 15:01:38 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _prepare_dflash_inputs_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=54) INFO:     127.0.0.1:53332 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup greedy C1 warmup completed in 3.03s
+(APIServer pid=54) INFO:     127.0.0.1:39444 - "POST /tokenize HTTP/1.1" 200 OK
+(APIServer pid=54) INFO:     127.0.0.1:39454 - "POST /v1/chat/completions/render HTTP/1.1" 200 OK
+(EngineCore pid=201) WARNING 09-05 15:01:41 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _compute_local_logits_stats_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=201) WARNING 09-05 15:01:41 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _rejection_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=201) WARNING 09-05 15:01:41 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _resample_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=54) INFO:     127.0.0.1:39464 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup rendered-chat warmup completed in 3.27s
+(APIServer pid=54) INFO 09-05 15:01:45 [loggers.py:310] Engine 000: Avg prompt throughput: 8.1 tokens/s, Avg generation throughput: 8.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 17.1%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:01:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.30, Accepted throughput: 5.87 tokens/s, Drafted throughput: 12.77 tokens/s, Accepted: 69 tokens, Drafted: 150 tokens, Per-position acceptance rate: 0.767, 0.633, 0.433, 0.233, 0.233, Avg Draft acceptance rate: 46.0%
+(APIServer pid=54) INFO:     127.0.0.1:39470 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup long-prefill warmup completed in 4.48s
+(APIServer pid=54) INFO:     127.0.0.1:39482 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=54) INFO 09-05 15:01:55 [loggers.py:310] Engine 000: Avg prompt throughput: 819.1 tokens/s, Avg generation throughput: 0.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 28.6%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO:     127.0.0.1:45630 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup ReplaySSM prefix warmup completed in 8.69s
+(EngineCore pid=201) WARNING 09-05 15:01:57 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _causal_conv1d_update_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=201) WARNING 09-05 15:02:00 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _kda_replayssm_spec_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=201) WARNING 09-05 15:02:02 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _kpool_tail_seed_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=54) INFO 09-05 15:02:05 [loggers.py:310] Engine 000: Avg prompt throughput: 526.5 tokens/s, Avg generation throughput: 2.5 tokens/s, Running: 3 reqs, Waiting: 1 reqs, GPU KV cache usage: 38.1%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 4.40, Accepted throughput: 0.85 tokens/s, Drafted throughput: 1.25 tokens/s, Accepted: 17 tokens, Drafted: 25 tokens, Per-position acceptance rate: 1.000, 0.600, 0.600, 0.600, 0.600, Avg Draft acceptance rate: 68.0%
+(APIServer pid=54) INFO:     127.0.0.1:45640 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=54) INFO:     127.0.0.1:45656 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=54) INFO 09-05 15:02:15 [loggers.py:310] Engine 000: Avg prompt throughput: 622.6 tokens/s, Avg generation throughput: 31.7 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 36.2%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 4.06, Accepted throughput: 23.90 tokens/s, Drafted throughput: 39.00 tokens/s, Accepted: 239 tokens, Drafted: 390 tokens, Per-position acceptance rate: 0.782, 0.628, 0.590, 0.551, 0.513, Avg Draft acceptance rate: 61.3%
+(APIServer pid=54) INFO:     127.0.0.1:45646 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=54) INFO:     127.0.0.1:45658 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup ReplaySSM mixed prefill/decode warmup completed in 23.70s
+(EngineCore pid=201) WARNING 09-05 15:02:22 [jit_monitor.py:135] Triton kernel JIT compilation during inference: _topk_topp_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=54) INFO 09-05 15:02:25 [loggers.py:310] Engine 000: Avg prompt throughput: 24.6 tokens/s, Avg generation throughput: 36.0 tokens/s, Running: 6 reqs, Waiting: 0 reqs, GPU KV cache usage: 40.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.86, Accepted throughput: 23.40 tokens/s, Drafted throughput: 62.99 tokens/s, Accepted: 234 tokens, Drafted: 630 tokens, Per-position acceptance rate: 0.643, 0.437, 0.333, 0.246, 0.198, Avg Draft acceptance rate: 37.1%
+(APIServer pid=54) INFO 09-05 15:02:35 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 59.5 tokens/s, Running: 6 reqs, Waiting: 0 reqs, GPU KV cache usage: 45.7%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.20, Accepted throughput: 40.90 tokens/s, Drafted throughput: 92.99 tokens/s, Accepted: 409 tokens, Drafted: 930 tokens, Per-position acceptance rate: 0.720, 0.532, 0.387, 0.301, 0.258, Avg Draft acceptance rate: 44.0%
+(APIServer pid=54) INFO 09-05 15:02:45 [loggers.py:310] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 63.7 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 16.2%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 3.85, Accepted throughput: 47.60 tokens/s, Drafted throughput: 83.49 tokens/s, Accepted: 476 tokens, Drafted: 835 tokens, Per-position acceptance rate: 0.754, 0.641, 0.551, 0.467, 0.437, Avg Draft acceptance rate: 57.0%
+(APIServer pid=54) INFO:     127.0.0.1:54266 - "POST /v1/completions HTTP/1.1" 200 OK
+GLM release startup warmup 1/4 completed in 28.47s
+(APIServer pid=54) INFO 09-05 15:02:55 [loggers.py:310] Engine 000: Avg prompt throughput: 24.6 tokens/s, Avg generation throughput: 37.0 tokens/s, Running: 6 reqs, Waiting: 0 reqs, GPU KV cache usage: 40.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=54) INFO 09-05 15:02:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.71, Accepted throughput: 23.20 tokens/s, Drafted throughput: 68.00 tokens/s, Accepted: 232 tokens, Drafted: 680 tokens, Per-position acceptance rate: 0.640, 0.441, 0.294, 0.191, 0.140, Avg Draft acceptance rate: 34.1%

@@ -1,0 +1,1006 @@
+{
+  "schema": "glm53-serving-benchmark.v5",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "kv_cache": "nvfp4_ds_mla",
+  "speculative_method": "dflash2",
+  "draft_tokens_per_step": 5,
+  "dflash_tokens": 5,
+  "mtp_tokens": null,
+  "suite": "blend",
+  "primary_metric": "median_batch_window_decode_tokens_per_second",
+  "method": "primary aggregate decode is total post-first tokens divided by the first-any to last-any batch window; end-to-end request throughput includes TTFT. Legacy median_decode_tokens_per_second is the sum of per-sequence rates and must not be treated as aggregate serving capacity when requests are staggered or queued. Acceptance is the matching Prometheus counter delta; target-pass efficiency is one target bonus token plus accepted drafts per verification pass",
+  "glmrt_standard_seven_case_blend": true,
+  "concurrency": 6,
+  "batch_scope": "Each batch contains n completions of one content prompt; seven prompt types across batches",
+  "repeats_per_case": 1,
+  "cases": [
+    {
+      "case": "code",
+      "category": "code",
+      "median_batch_window_decode_tokens_per_second": 125.39042281114716,
+      "median_request_tokens_per_second": 118.02062768027069,
+      "median_decode_tokens_per_second": 128.26715062117776,
+      "min_decode_tokens_per_second": 128.26715062117776,
+      "max_decode_tokens_per_second": 128.26715062117776,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.7802281368821293,
+      "median_committed_tokens_per_target_pass": 4.901140684410646,
+      "draft_tokens": 1315,
+      "accepted_draft_tokens": 1026,
+      "rejected_draft_tokens": 289,
+      "target_verification_passes": 263,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 50,
+          "completion_tokens": 1289,
+          "completion_tokens_by_sequence": [
+            199,
+            218,
+            218,
+            218,
+            218,
+            218
+          ],
+          "decode_tokens": 1283,
+          "decode_seconds": 10.23204142099712,
+          "decode_tokens_per_second": 128.26715062117776,
+          "batch_window_decode_seconds": 10.23204142099712,
+          "batch_window_decode_tokens_per_second": 125.39042281114716,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            20.3028730220071,
+            21.593000655157528,
+            21.592890090338024,
+            21.59277931178826,
+            21.59304005506044,
+            21.59256748682642
+          ],
+          "ttft_ms": 689.688375001424,
+          "request_seconds": 10.92181956100103,
+          "started_epoch_seconds": 1788614770.386354,
+          "sequence_ttft_ms": [
+            689.688375001424,
+            872.142423002515,
+            872.1255470009055,
+            872.0581759989727,
+            872.0859280001605,
+            871.967710001627
+          ],
+          "sequence_decode_seconds": [
+            9.75231435400201,
+            10.049552790995222,
+            10.049604248997639,
+            10.049655807000818,
+            10.049534454003151,
+            10.049754394996853
+          ],
+          "sequence_finish_offset_seconds": [
+            10.442002729003434,
+            10.921695213997737,
+            10.921729795998544,
+            10.92171398299979,
+            10.921620382003312,
+            10.92172210499848
+          ],
+          "draft_tokens": 1315,
+          "accepted_draft_tokens": 1026,
+          "rejected_draft_tokens": 289,
+          "accepted_draft_rate": 0.7802281368821293,
+          "per_position_acceptance": {
+            "0": 0.9277566539923955,
+            "1": 0.8973384030418251,
+            "2": 0.7984790874524715,
+            "3": 0.6539923954372624,
+            "4": 0.623574144486692
+          },
+          "rejected_draft_rate": 0.21977186311787072,
+          "target_verification_passes": 263,
+          "committed_tokens_per_target_pass": 4.901140684410646,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 300,
+            "total_tokens": 1589,
+            "completion_tokens": 1289
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        if start <= merged[-1][1]:\n            merged[-1] = (merged[-1][0], max(merged[-1][1], end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(1, 4), (4, 5)]) == [(1, 5)]\nassert merge_intervals([]) == []\n```",
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(5, 7), (1, 2), (3, 4)]) == [(1, 2), (3, 4), (5, 7)]\nassert merge_intervals([]) == []\n```",
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(5, 7), (1, 2), (3, 4)]) == [(1, 2), (3, 4), (5, 7)]\nassert merge_intervals([]) == []\n```",
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(5, 7), (1, 2), (3, 4)]) == [(1, 2), (3, 4), (5, 7)]\nassert merge_intervals([]) == []\n```",
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(5, 7), (1, 2), (3, 4)]) == [(1, 2), (3, 4), (5, 7)]\nassert merge_intervals([]) == []\n```",
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10)]) == [(1, 6), (8, 10)]\nassert merge_intervals([(5, 7), (1, 2), (3, 4)]) == [(1, 2), (3, 4), (5, 7)]\nassert merge_intervals([]) == []\n```"
+          ],
+          "content_preview": "```python\\nfrom typing import List, Tuple\\n\\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\\n    \"\"\"Merge overlapping integer intervals into a minimal set of non-overlapping intervals.\"\"\"\\n    if not intervals:\\n ",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "math",
+      "category": "reasoning",
+      "median_batch_window_decode_tokens_per_second": 119.12437075362125,
+      "median_request_tokens_per_second": 85.12861161525186,
+      "median_decode_tokens_per_second": 119.1354338677202,
+      "min_decode_tokens_per_second": 119.1354338677202,
+      "max_decode_tokens_per_second": 119.1354338677202,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.575,
+      "median_committed_tokens_per_target_pass": 3.875,
+      "draft_tokens": 240,
+      "accepted_draft_tokens": 138,
+      "rejected_draft_tokens": 102,
+      "target_verification_passes": 48,
+      "quality_passed": false,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 47,
+          "completion_tokens": 186,
+          "completion_tokens_by_sequence": [
+            31,
+            31,
+            31,
+            31,
+            31,
+            31
+          ],
+          "decode_tokens": 180,
+          "decode_seconds": 1.5110258200002136,
+          "decode_tokens_per_second": 119.1354338677202,
+          "batch_window_decode_seconds": 1.5110258200002136,
+          "batch_window_decode_tokens_per_second": 119.12437075362125,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            19.85623159055368,
+            19.85547703914135,
+            19.855873586817882,
+            19.855480718723964,
+            19.856788091913376,
+            19.855582840569937
+          ],
+          "ttft_ms": 673.7158329997328,
+          "request_seconds": 2.1849293260020204,
+          "started_epoch_seconds": 1788614781.3341255,
+          "sequence_ttft_ms": [
+            673.857786001463,
+            673.7158329997328,
+            673.842443000467,
+            673.8238149991957,
+            673.8683420044254,
+            673.7941000028513
+          ],
+          "sequence_decode_seconds": [
+            1.5108607020010822,
+            1.5109181180014275,
+            1.5108879429972149,
+            1.5109178380007506,
+            1.5108183589982218,
+            1.5109100670015323
+          ],
+          "sequence_finish_offset_seconds": [
+            2.184718488002545,
+            2.1846339510011603,
+            2.184730385997682,
+            2.1847416529999464,
+            2.184686701002647,
+            2.1847041670043836
+          ],
+          "draft_tokens": 240,
+          "accepted_draft_tokens": 138,
+          "rejected_draft_tokens": 102,
+          "accepted_draft_rate": 0.575,
+          "per_position_acceptance": {
+            "0": 0.875,
+            "1": 0.75,
+            "2": 0.5,
+            "3": 0.5,
+            "4": 0.25
+          },
+          "rejected_draft_rate": 0.425,
+          "target_verification_passes": 48,
+          "committed_tokens_per_target_pass": 3.875,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 282,
+            "total_tokens": 468,
+            "completion_tokens": 186
+          },
+          "quality_contract_passed": false,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "response does not show the requested calculation inputs"
+              ]
+            }
+          ],
+          "content": [
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price",
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price",
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price",
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price",
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price",
+            "240 × 0.75 = $180 (discounted price)\n180 × 1.08 = **$194.40** final price"
+          ],
+          "content_preview": "240 × 0.75 = $180 (discounted price)\\n180 × 1.08 = **$194.40** final price",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "fable",
+      "category": "creative-prose",
+      "median_batch_window_decode_tokens_per_second": 54.522714702202165,
+      "median_request_tokens_per_second": 53.127156879258116,
+      "median_decode_tokens_per_second": 59.13346907074244,
+      "min_decode_tokens_per_second": 59.13346907074244,
+      "max_decode_tokens_per_second": 59.13346907074244,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.25256673511293637,
+      "median_committed_tokens_per_target_pass": 2.2628336755646816,
+      "draft_tokens": 2435,
+      "accepted_draft_tokens": 615,
+      "rejected_draft_tokens": 1820,
+      "target_verification_passes": 487,
+      "quality_passed": false,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 44,
+          "completion_tokens": 1102,
+          "completion_tokens_by_sequence": [
+            178,
+            184,
+            191,
+            191,
+            176,
+            182
+          ],
+          "decode_tokens": 1096,
+          "decode_seconds": 20.101713680000103,
+          "decode_tokens_per_second": 59.13346907074244,
+          "batch_window_decode_seconds": 20.101713680000103,
+          "batch_window_decode_tokens_per_second": 54.522714702202165,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            9.853861200812936,
+            9.931011640688684,
+            9.451977051437908,
+            9.61574412450311,
+            10.204326970261016,
+            10.076548083038787
+          ],
+          "ttft_ms": 640.8188240020536,
+          "request_seconds": 20.74268725699949,
+          "started_epoch_seconds": 1788614783.540371,
+          "sequence_ttft_ms": [
+            640.92904899735,
+            640.9004969973466,
+            640.9178930043709,
+            640.939024000545,
+            640.8188240020536,
+            640.9476170010748
+          ],
+          "sequence_decode_seconds": [
+            17.962501845002407,
+            18.427125717003946,
+            20.101614610997785,
+            19.75926122200326,
+            17.14958767099597,
+            17.962500501998875
+          ],
+          "sequence_finish_offset_seconds": [
+            18.603430893999757,
+            19.068026214001293,
+            20.742532504002156,
+            20.400200246003806,
+            17.790406494998024,
+            18.60344811899995
+          ],
+          "draft_tokens": 2435,
+          "accepted_draft_tokens": 615,
+          "rejected_draft_tokens": 1820,
+          "accepted_draft_rate": 0.25256673511293637,
+          "per_position_acceptance": {
+            "0": 0.6550308008213552,
+            "1": 0.351129363449692,
+            "2": 0.1457905544147844,
+            "3": 0.06570841889117043,
+            "4": 0.045174537987679675
+          },
+          "rejected_draft_rate": 0.7474332648870636,
+          "target_verification_passes": 487,
+          "committed_tokens_per_target_pass": 2.2628336755646816,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 264,
+            "total_tokens": 1366,
+            "completion_tokens": 1102
+          },
+          "quality_contract_passed": false,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "fable has 134 words, outside 140..170"
+              ]
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "fable has 133 words, outside 140..170"
+              ]
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. The parrots watched their prize vanish and fell silent. That evening, they found another mango together. This time, Ruby said, \"We spotted it,\" and Jade said, \"We freed it,\" and they shared the sweet fruit in peace, each bite tasting better than any they had eaten alone.\n\n**Moral:** Shared credit feeds friendship, but quarreling over glory leaves everyone hungry.",
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. Ruby and Jade watched in dismay as their prize vanished. \"If we had shared the credit,\" Ruby sighed, \"we could have shared the fruit.\" Jade nodded, and from that day on, whenever they found something good, they celebrated together first and divided it afterward. The tree grew quieter, and their bellies grew fuller.\n\n**Moral:** Those who fight over credit often lose the reward that cooperation would have shared.",
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. The parrots watched in dismay as their prize vanished. Ruby sighed, \"If we had shared the credit, we could have shared the fruit.\" Jade nodded, and from that day on, whenever they found food, they announced their discovery together, splitting every meal in harmony. Their tree grew famous among birds for its generous residents, and travelers came to learn their way.\n\nMoral: Those who fight over credit often lose the prize that cooperation would have shared.",
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. Ruby and Jade watched in dismay as their prize vanished. \"If we had shared the credit,\" Ruby sighed, \"we could have shared the fruit.\" Jade nodded, and from that day on, whenever they found something good, they celebrated together first and divided it afterward. The tree gave them many mangoes, and their squabbles gave them none.\n\n**Moral:** Those who fight over credit often lose the reward that sharing would have brought them both.",
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. The parrots watched their prize vanish and fell silent. That evening, they found another mango together. This time, Ruby said, \"We spotted it,\" and Jade said, \"We freed it,\" and they shared the sweet fruit in peace, each bite tasting better than any they had eaten alone.\n\n**Moral:** Credit shared is a feast; credit hoarded is a hunger.",
+            "**The Two Parrots of the Mango Tree**\n\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade countered, \"But I pecked the stem loose so it could fall!\" The farmer, passing by, heard their quarrel and picked up the mango himself, walking away with it while they argued. The parrots watched their prize vanish and fell silent. That evening, they found another mango together. This time, Ruby spotted it and Jade pecked it loose in one smooth motion, and they shared the sweet fruit evenly on the same branch, chirping happily as the sun set over the field.\n\nMoral: Those who quarrel over credit lose the prize, but those who work together share the sweetness."
+          ],
+          "content_preview": "**The Two Parrots of the Mango Tree**\\n\\nTwo parrots, Ruby and Jade, lived in a mango tree by a farmer's field. One morning, they discovered a ripe mango hanging low on a branch. Ruby said, \"I spotted it first with my sharp eyes!\" Jade counte",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "hello",
+      "category": "short-response",
+      "median_batch_window_decode_tokens_per_second": 142.32036841178572,
+      "median_request_tokens_per_second": 76.83608527474233,
+      "median_decode_tokens_per_second": 142.3697946355391,
+      "min_decode_tokens_per_second": 142.3697946355391,
+      "max_decode_tokens_per_second": 142.3697946355391,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.8,
+      "median_committed_tokens_per_target_pass": 5.0,
+      "draft_tokens": 60,
+      "accepted_draft_tokens": 48,
+      "rejected_draft_tokens": 12,
+      "target_verification_passes": 12,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 14,
+          "completion_tokens": 60,
+          "completion_tokens_by_sequence": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "decode_tokens": 54,
+          "decode_seconds": 0.379425661994901,
+          "decode_tokens_per_second": 142.3697946355391,
+          "batch_window_decode_seconds": 0.379425661994901,
+          "batch_window_decode_tokens_per_second": 142.32036841178572,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            23.72480191464924,
+            23.734318043788857,
+            23.72714029108003,
+            23.722360639499314,
+            23.72883253346767,
+            23.732341213054
+          ],
+          "ttft_ms": 401.2908619988593,
+          "request_seconds": 0.7808830939975451,
+          "started_epoch_seconds": 1788614804.308343,
+          "sequence_ttft_ms": [
+            401.3666760001797,
+            401.4209769957233,
+            401.39233399531804,
+            401.2908619988593,
+            401.40738699847134,
+            401.433636994625
+          ],
+          "sequence_decode_seconds": [
+            0.3793498479935806,
+            0.37919775000045775,
+            0.3793124619987793,
+            0.3793888869986404,
+            0.3792854109997279,
+            0.3792293360020267
+          ],
+          "sequence_finish_offset_seconds": [
+            0.7807165239937603,
+            0.7806187269961811,
+            0.7807047959940974,
+            0.7806797489974997,
+            0.7806927979981992,
+            0.7806629729966517
+          ],
+          "draft_tokens": 60,
+          "accepted_draft_tokens": 48,
+          "rejected_draft_tokens": 12,
+          "accepted_draft_rate": 0.8,
+          "per_position_acceptance": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "3": 0.5,
+            "4": 0.5
+          },
+          "rejected_draft_rate": 0.2,
+          "target_verification_passes": 12,
+          "committed_tokens_per_target_pass": 5.0,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 84,
+            "total_tokens": 144,
+            "completion_tokens": 60
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "Hi! How can I help you today?",
+            "Hi! How can I help you today?",
+            "Hi! How can I help you today?",
+            "Hi! How can I help you today?",
+            "Hi! How can I help you today?",
+            "Hi! How can I help you today?"
+          ],
+          "content_preview": "Hi! How can I help you today?",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "topic",
+      "category": "exposition",
+      "median_batch_window_decode_tokens_per_second": 61.95110641369362,
+      "median_request_tokens_per_second": 61.09057577494178,
+      "median_decode_tokens_per_second": 63.20335557959813,
+      "min_decode_tokens_per_second": 63.20335557959813,
+      "max_decode_tokens_per_second": 63.20335557959813,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.3407755581668625,
+      "median_committed_tokens_per_target_pass": 2.7038777908343126,
+      "draft_tokens": 4255,
+      "accepted_draft_tokens": 1450,
+      "rejected_draft_tokens": 2805,
+      "target_verification_passes": 851,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 41,
+          "completion_tokens": 2304,
+          "completion_tokens_by_sequence": [
+            384,
+            384,
+            384,
+            384,
+            384,
+            384
+          ],
+          "decode_tokens": 2298,
+          "decode_seconds": 37.093768505998014,
+          "decode_tokens_per_second": 63.20335557959813,
+          "batch_window_decode_seconds": 37.093768505998014,
+          "batch_window_decode_tokens_per_second": 61.95110641369362,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            10.882829976280236,
+            10.504358411151907,
+            10.725117001244193,
+            10.32521568626195,
+            10.325239111582366,
+            10.440595393077478
+          ],
+          "ttft_ms": 620.5689889975474,
+          "request_seconds": 37.71449148700049,
+          "started_epoch_seconds": 1788614805.1141741,
+          "sequence_ttft_ms": [
+            620.5689889975474,
+            620.6229699964751,
+            620.6959699993604,
+            620.6813780008815,
+            620.6658949959092,
+            620.6485079965205
+          ],
+          "sequence_decode_seconds": [
+            35.19305188400176,
+            36.4610559740031,
+            35.71056613700057,
+            37.09365611699468,
+            37.093571960998815,
+            36.68373168200196
+          ],
+          "sequence_finish_offset_seconds": [
+            35.81362087299931,
+            37.08167894399958,
+            36.33126210699993,
+            37.71433749499556,
+            37.714237855994725,
+            37.30438018999848
+          ],
+          "draft_tokens": 4255,
+          "accepted_draft_tokens": 1450,
+          "rejected_draft_tokens": 2805,
+          "accepted_draft_rate": 0.3407755581668625,
+          "per_position_acceptance": {
+            "0": 0.700352526439483,
+            "1": 0.4500587544065805,
+            "2": 0.29142185663924797,
+            "3": 0.16568742655699178,
+            "4": 0.0963572267920094
+          },
+          "rejected_draft_rate": 0.6592244418331374,
+          "target_verification_passes": 851,
+          "committed_tokens_per_target_pass": 2.7038777908343126,
+          "finish_reasons": [
+            "length",
+            "length",
+            "length",
+            "length",
+            "length",
+            "length"
+          ],
+          "usage": {
+            "prompt_tokens": 246,
+            "total_tokens": 2550,
+            "completion_tokens": 2304
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is divided into fixed-size chunks called *pages* (typically 4KB), and physical RAM is divided into matching *frames*. A page table (per process) records which virtual page maps to which physical frame. The CPU's Memory Management Unit (MMU) performs this translation on every memory access.\n\n- **Page faults:** If your program accesses a page that isn't currently in RAM (e.g., it was swapped out to disk, or was never loaded), the MMU raises a *page fault*. The OS pauses your program, loads the page from disk into a frame, updates the page table, and resumes execution. It's transparent to you — the access just completes, albeit slowly. Frequent faults on every access (\"thrashing\") severely hurt performance.\n\n- **TLB (Translation Lookaside Buffer):** Translating every address via the page table would be slow (the table lives in memory). The TLB is a small, ultra-fast cache inside the CPU that stores recent virtual→physical translations. If a lookup hits the TLB, translation is nearly free; on a miss, the MMU walks the page table (and may then populate the TLB). TLBs rely on locality — programs tend to reuse the same pages repeatedly.\n\n- **Why you care as a programmer:** Virtual memory means you don't manage physical RAM manually, and out-of-memory errors are less common (the OS can swap pages to disk). But performance depends",
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is divided into fixed-size chunks called *pages* (typically 4KB), and physical RAM is divided into matching *frames*. A page table (per process) maps each virtual page to a physical frame, so any virtual address is translated as: `virtual address → page number + offset → physical address`.\n\n- **Page faults:** If a program accesses a page that isn't currently in RAM (it's on disk or hasn't been allocated), the CPU raises a *page fault*. The OS pauses the program, loads the needed page from disk into a frame (possibly evicting another page), updates the page table, and restarts the instruction. This is why disk thrashing can make programs crawl.\n\n- **The TLB (Translation Lookaside Buffer):** Translating every address via the page table would be slow (the table itself lives in memory). The TLB is a small, ultra-fast cache in the CPU that stores recent virtual→physical translations. On a TLB *hit*, translation takes ~1 cycle; on a *miss*, the CPU must walk the page table (and possibly trigger a page fault).\n\n- **Why it matters to you:** You rarely manage this directly, but it explains real behavior — e.g., memory-mapped files, why allocating huge arrays may \"work\" but crash later on first touch (lazy allocation via page faults), and why out-of-memory errors occur even when swap exists. It also underlies",
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is divided into fixed-size chunks called *pages* (typically 4KB), and physical RAM is divided into matching *frames*. A page table (per process) records which virtual page maps to which physical frame. The CPU's Memory Management Unit (MMU) performs this translation on every memory access.\n\n- **Page faults:** If your program accesses a page that isn't currently in RAM (e.g., it was swapped out to disk, or was never loaded yet), the MMU raises a *page fault*. The OS pauses your program, loads the needed page from disk into a frame, updates the page table, and resumes execution. This is invisible to your code — it just feels like a (sometimes very slow) memory access.\n\n- **TLB (Translation Lookaside Buffer):** Translating every address via the page table would be slow (it may require multiple memory reads). The TLB is a small, fast cache inside the CPU that stores recent virtual→physical translations. If a lookup hits the TLB, translation is nearly instant; on a miss, the MMU falls back to the page table. TLB hit rates are typically very high because programs reuse the same pages frequently.\n\n- **Why you care as a programmer:** Locality matters — accessing memory scattered across many pages causes frequent TLB misses and page faults, which can massively slow your program. Also, virtual memory enables *demand paging* and memory-mapped files, and",
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is split into fixed-size chunks called *pages* (typically 4KB); physical RAM is split into matching *frames*. A page table (per process) records which virtual page maps to which frame. The CPU's memory management unit (MMU) translates every virtual address using this table.\n\n- **Page faults:** If a program accesses a page that isn't currently in RAM (it's on disk or hasn't been allocated), the MMU raises a *page fault*. The OS pauses the program, loads the needed page from disk into a frame (possibly evicting another page), updates the page table, and restarts the instruction. This is normal and usually invisible to you — but frequent faults (\"thrashing\") make programs extremely slow.\n\n- **The TLB (Translation Lookaside Buffer):** Translating every address via the page table would be slow, so the CPU keeps a small, very fast cache of recent virtual→physical translations. If a lookup hits the TLB, translation is nearly instant; on a miss, the MMU walks the page table (which may itself require multiple memory accesses).\n\n- **Why you care:** Virtual memory means you rarely worry about physical RAM limits — the OS handles allocation, protection (one process can't read another's memory), and swapping. But be aware that memory access costs vary wildly: a TLB hit is fast, a page fault to disk is ~100,000x slower, so data",
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is split into fixed-size chunks called *pages* (typically 4KB); physical RAM is split into matching *frames*. A page table (per process) records which virtual page maps to which frame, or marks it as \"not in memory.\" The MMU (memory management unit) performs this translation on every memory access.\n\n- **Page faults:** When your program accesses a page that isn't currently in RAM, the MMU raises a *page fault*. The OS pauses your program, loads the needed page from disk (swap file or memory-mapped file) into a frame—possibly evicting a less-used page first—updates the page table, and restarts the instruction. It's transparent to your code, but frequent faults mean thrashing and terrible performance.\n\n- **TLB (Translation Lookaside Buffer):** A small, super-fast cache in the CPU that stores recent virtual→physical address translations. Since page table lookups would otherwise require extra memory accesses on *every* instruction, the TLB makes translation nearly free when it hits. A TLB miss means falling back to the (slower) page table walk.\n\n- **Why you care as a programmer:** Access patterns matter—sequential access is cache/paging-friendly; jumping around randomly across a huge working set causes TLB misses and page faults. Also, allocating huge arrays you barely touch \"costs\" little until you write to them (demand paging), and memory-mapped files",
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller physical RAM behind the scenes. This lets programs run as if they have more memory than physically exists, and isolates processes from each other.\n\n- **Paging:** Virtual address space is divided into fixed-size chunks called *pages* (typically 4KB), and physical RAM is divided into matching *frames*. A page table (per process) records which virtual page maps to which physical frame. The CPU's Memory Management Unit (MMU) performs this translation on every memory access.\n\n- **Page faults:** If your program accesses a page that isn't currently in RAM (e.g., it was swapped out to disk, or was never loaded yet), the MMU raises a *page fault*. The OS pauses your program, loads the page from disk into a frame, updates the page table, and resumes execution. It's transparent to your code — it just feels like a (very slow) memory access.\n\n- **TLB (Translation Lookaside Buffer):** Translating every address via the page table would be slow, since the table lives in memory. The TLB is a small, fast cache inside the CPU that stores recent virtual→physical translations. If a lookup hits the TLB, translation is nearly instant; on a miss, the MMU walks the page table (and may then cache the result).\n\n- **Why it matters to you:** You rarely manage this directly, but it explains real-world behavior — e.g., allocating huge arrays that you barely touch costs little RAM (pages are only materialized on first access), and why memory access patterns with poor locality can thrash (constant page faults) and dramatically slow your"
+          ],
+          "content_preview": "# Virtual Memory in 5 Bullet Points\\n\\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use 4GB\"), while the OS and hardware map those virtual addresses onto the actual, smaller",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "structured-json",
+      "category": "structured-output",
+      "median_batch_window_decode_tokens_per_second": 138.68726538989702,
+      "median_request_tokens_per_second": 110.8916503744714,
+      "median_decode_tokens_per_second": 138.69350908465697,
+      "min_decode_tokens_per_second": 138.69350908465697,
+      "max_decode_tokens_per_second": 138.69350908465697,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.7,
+      "median_committed_tokens_per_target_pass": 4.5,
+      "draft_tokens": 420,
+      "accepted_draft_tokens": 294,
+      "rejected_draft_tokens": 126,
+      "target_verification_passes": 84,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 65,
+          "completion_tokens": 378,
+          "completion_tokens_by_sequence": [
+            63,
+            63,
+            63,
+            63,
+            63,
+            63
+          ],
+          "decode_tokens": 372,
+          "decode_seconds": 2.6822938570039696,
+          "decode_tokens_per_second": 138.69350908465697,
+          "batch_window_decode_seconds": 2.6822938570039696,
+          "batch_window_decode_tokens_per_second": 138.68726538989702,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            23.115860536624375,
+            23.116527502073136,
+            23.115459441583802,
+            23.115281555961307,
+            23.114885134572045,
+            23.115494913842287
+          ],
+          "ttft_ms": 726.3312079958268,
+          "request_seconds": 3.408732746996975,
+          "started_epoch_seconds": 1788614842.8519282,
+          "sequence_ttft_ms": [
+            726.4579990005586,
+            726.4240579970647,
+            726.3771069992799,
+            726.4044589974219,
+            726.3312079958268,
+            726.4415239988011
+          ],
+          "sequence_decode_seconds": [
+            2.6821411169948988,
+            2.682063731001108,
+            2.6821876569956657,
+            2.6822082979997504,
+            2.682254298000771,
+            2.6821835410009953
+          ],
+          "sequence_finish_offset_seconds": [
+            3.4085991159954574,
+            3.4084877889981726,
+            3.4085647639949457,
+            3.4086127569971723,
+            3.408585505996598,
+            3.4086250649997965
+          ],
+          "draft_tokens": 420,
+          "accepted_draft_tokens": 294,
+          "rejected_draft_tokens": 126,
+          "accepted_draft_rate": 0.7,
+          "per_position_acceptance": {
+            "0": 0.8571428571428571,
+            "1": 0.7142857142857143,
+            "2": 0.6428571428571429,
+            "3": 0.6428571428571429,
+            "4": 0.6428571428571429
+          },
+          "rejected_draft_rate": 0.3,
+          "target_verification_passes": 84,
+          "committed_tokens_per_target_pass": 4.5,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 390,
+            "total_tokens": 768,
+            "completion_tokens": 378
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```",
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```",
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```",
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```",
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```",
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\n}\n```"
+          ],
+          "content_preview": "```json\\n{\\n  \"path\": \"src/cache.rs\",\\n  \"operation\": \"replace\",\\n  \"line_start\": 41,\\n  \"line_end\": 47,\\n  \"rationale\": \"Remove a redundant copy of the cached entry that duplicates data already stored elsewhere in the cache.\"\\n}\\n```",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "multilingual",
+      "category": "multilingual",
+      "median_batch_window_decode_tokens_per_second": 53.59808669028928,
+      "median_request_tokens_per_second": 52.62160692910154,
+      "median_decode_tokens_per_second": 57.9019851794704,
+      "min_decode_tokens_per_second": 57.9019851794704,
+      "max_decode_tokens_per_second": 57.9019851794704,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.2711051930758988,
+      "median_committed_tokens_per_target_pass": 2.3555259653794938,
+      "draft_tokens": 3755,
+      "accepted_draft_tokens": 1018,
+      "rejected_draft_tokens": 2737,
+      "target_verification_passes": 751,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 6,
+          "prompt_tokens": 62,
+          "completion_tokens": 1770,
+          "completion_tokens_by_sequence": [
+            311,
+            301,
+            266,
+            308,
+            308,
+            276
+          ],
+          "decode_tokens": 1764,
+          "decode_seconds": 32.911622576997615,
+          "decode_tokens_per_second": 57.9019851794704,
+          "batch_window_decode_seconds": 32.911622576997615,
+          "batch_window_decode_tokens_per_second": 53.59808669028928,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            9.61938119675691,
+            10.01528829551904,
+            9.416423536379405,
+            9.4647267415389,
+            9.328050136766842,
+            10.058115272509303
+          ],
+          "ttft_ms": 724.5620579997194,
+          "request_seconds": 33.63637302799907,
+          "started_epoch_seconds": 1788614846.284845,
+          "sequence_ttft_ms": [
+            724.6437709982274,
+            724.6773509978084,
+            724.7151179981302,
+            724.5620579997194,
+            724.6977219983819,
+            724.731463000353
+          ],
+          "sequence_decode_seconds": [
+            32.226605190000555,
+            29.95420512599958,
+            28.142319530998066,
+            32.436224349999975,
+            32.91148691299895,
+            27.34110641499865
+          ],
+          "sequence_finish_offset_seconds": [
+            32.95124896099878,
+            30.678882476997387,
+            28.867034648996196,
+            33.160786407999694,
+            33.636184634997335,
+            28.065837877999
+          ],
+          "draft_tokens": 3755,
+          "accepted_draft_tokens": 1018,
+          "rejected_draft_tokens": 2737,
+          "accepted_draft_rate": 0.2711051930758988,
+          "per_position_acceptance": {
+            "0": 0.6351531291611185,
+            "1": 0.37017310252996005,
+            "2": 0.20372836218375498,
+            "3": 0.10386151797603196,
+            "4": 0.0426098535286285
+          },
+          "rejected_draft_rate": 0.7288948069241012,
+          "target_verification_passes": 751,
+          "committed_tokens_per_target_pass": 2.3555259653794938,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 372,
+            "total_tokens": 2142,
+            "completion_tokens": 1770
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            },
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 會觸發頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者擁有自己的私有副本。\n\n- **例子**：行程 A fork 出行程 B，兩者共享頁面 P（唯讀）。當 B 執行 `x = 5` 而變數 x 位於頁面 P 時，發生保護錯誤，核心便複製 P 為 P'，將 P' 指派給 B 並改為可寫，B 修改 P' 不影響 A 繼續讀取原頁面 P 的內容。\n\n- **優點**：大幅降低 fork 的開銷（僅複製頁表而非整個位址空間），並讓只有真正被修改的頁面才佔用額外記憶體，提高效率。",
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 產生頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者拿到自己的私有副本。\n\n- **例子**：行程 A fork 出子行程 B，兩者共享頁面 P（內含變數 x = 100）。當 B 執行 `x = 200` 時觸發 page fault，核心複製 P 為 P'，B 改寫 P'（x = 200），A 仍讀取原頁面 P（x = 100），兩者資料互不干擾。\n\n- **優點**：大幅降低 fork 的開銷、節省記憶體（只有被修改的頁面才真正複製），並常用於 fork 後立即 exec 的情境，此時多數共享頁面根本不會被寫入。",
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 會產生頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者擁有自己的私有副本。\n\n- **例子**：行程 A fork 出子行程 B 後，兩者共享頁面 P（唯讀）。當 B 執行 `counter++` 而寫入 P 時觸發 page fault，核心便複製 P 為 P'，B 改寫 P'，A 仍使用原頁面 P。\n\n- **優點**：大幅降低 fork 的開銷，適合父子行程多數時間只讀取資料的情境（如 Redis 的 RDB 快照也利用此機制）。",
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 會觸發頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者擁有自己的私有副本。\n\n- **例子**：行程 A fork 出行程 B，兩者共享頁面 P（唯讀）。當 B 執行 `x = 5` 而變數 x 位於頁面 P 時，觸發 page fault，核心複製 P 為 P'，將 B 的頁表指向 P'（可寫），B 修改 P' 不影響 A 原本看到的 P 內容。\n\n- **優點**：大幅降低 fork 的開銷（僅複製頁表而非整個記憶體空間），並避免浪費——若子行程 fork 後馬上 exec 載入新程式，多數共享頁面根本不需複製。",
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 會產生頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者擁有自己的私有副本。\n\n- **範例**：行程 A fork 出子行程 B，兩者共享頁面 P（唯讀）。當 B 執行 `x = 100` 修改位於 P 的變數時，觸發 page fault，核心複製 P 為 P'，B 改指向 P' 並寫入成功；A 仍使用原頁面 P，資料不受影響。\n\n- **優點**：大幅降低 fork 的開銷（僅複製頁表而非整個記憶體），並讓只有真正被修改的頁面才佔用額外記憶體，常用於 fork+exec 模式與 Redis 等系統的快照機制。",
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\n\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 產生頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者拿到自己的私有副本。\n\n- **範例**：行程 A fork 出子行程 B，兩者共享頁面 P（唯讀）。當 B 寫入 P 時觸發 page fault，核心複製 P 為 P'，將 B 的頁表指向 P'（可寫），A 仍指向原頁面 P；之後兩者各自修改互不影響。\n\n- **優點**：fork 速度快、記憶體用量低；若子行程只讀資料（如 exec 換新程式），幾乎不需複製任何頁面，效率極高。"
+          ],
+          "content_preview": "# 寫入時複製（Copy-on-Write, COW）\\n\\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，且頁面被標記為唯讀，不立即複製記憶體，以節省時間與記憶體資源。\\n\\n- **觸發時機**：當任一行程嘗試「寫入」共享頁面時，CPU 會觸發頁面保護錯誤（page fault），作業系統才在此時複製該頁面，讓寫入者擁有自己的私有副本。\\n\\n- **例子**：行程 A fork 出行程 B，兩者共享頁面 P（唯讀）。當 B 執行 `x = 5` 而變數 x 位",
+          "repeat": 1
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "decode_tokens_per_second": 67.17065051158302,
+    "decode_timing_resolved_runs": 7,
+    "decode_timing_unresolved_runs": 0,
+    "draft_tokens": 12480,
+    "accepted_draft_tokens": 4589,
+    "rejected_draft_tokens": 7891,
+    "accepted_draft_rate": 0.36770833333333336,
+    "rejected_draft_rate": 0.6322916666666667,
+    "target_verification_passes": 2496,
+    "committed_tokens_per_target_pass": 2.838541666666667,
+    "quality_passed": false
+  }
+}

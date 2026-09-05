@@ -1,0 +1,50 @@
+{
+  "complete_final_answer": true,
+  "content": "NEEDLE-ReplaySSM-32768-739184\n\nArchive replay-ssm-32768 was audited.",
+  "error": null,
+  "exact_prompt_usage": true,
+  "final_marker_found": true,
+  "finish_reason": "stop",
+  "fixture_sha256": "f06ea17c34cc585b3e02cc1d4f272972b3bc60230176c9084f5eccf660c4c768",
+  "fixture_tokens": 32768,
+  "index": 5,
+  "loop": {
+    "character": null,
+    "detected": false,
+    "ngram": null,
+    "ngram_count": 0,
+    "ngram_dominance": 0.0,
+    "subword": null
+  },
+  "marker": "NEEDLE-ReplaySSM-32768-739184",
+  "marker_found": true,
+  "passed": true,
+  "phase": "thinking-low-shared-prefix",
+  "raw_sse": [
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"The\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" user wants me to state\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" the\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" marker \\\"\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"NEEDLE-Re\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"playSSM-327\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"68-739184\\\"\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" and then say that archive replay\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"-ssm-327\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"68 was audited.\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"NEEDLE-ReplaySS\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"M-32768-\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"739184\\n\\nArchive replay\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"-ssm-327\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"68 was audited.\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":154827,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-8028bcc982272dd9\",\"object\":\"chat.completion.chunk\",\"created\":1788612557,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[],\"usage\":{\"prompt_tokens\":32768,\"total_tokens\":32841,\"completion_tokens\":73},\"system_fingerprint\":\"vllm-0.1.dev20051+g487ecf187-a89ecf24\"}",
+    "data: [DONE]"
+  ],
+  "reasoning": "The user wants me to state the marker \"NEEDLE-ReplaySSM-32768-739184\" and then say that archive replay-ssm-32768 was audited.",
+  "seconds": 131.127,
+  "usage": {
+    "completion_tokens": 73,
+    "prompt_tokens": 32768,
+    "total_tokens": 32841
+  }
+}

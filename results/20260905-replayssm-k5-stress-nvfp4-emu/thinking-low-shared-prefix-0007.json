@@ -1,0 +1,53 @@
+{
+  "content": "NEEDLE-ReplaySSM-32768-739184\n\nArchive replay-ssm-32768 was audited.",
+  "error": null,
+  "exact_prompt_usage": true,
+  "final_marker_found": true,
+  "finish_reason": "stop",
+  "fixture_sha256": "f06ea17c34cc585b3e02cc1d4f272972b3bc60230176c9084f5eccf660c4c768",
+  "fixture_tokens": 32768,
+  "index": 7,
+  "loop": {
+    "character": null,
+    "detected": false,
+    "ngram": null,
+    "ngram_count": 0,
+    "ngram_dominance": 0.0,
+    "subword": null
+  },
+  "marker": "NEEDLE-ReplaySSM-32768-739184",
+  "marker_found": true,
+  "passed": true,
+  "phase": "thinking-low-shared-prefix",
+  "raw_sse": [
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"The\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" user wants me to state\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" the\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" marker and say\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" the archive\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" was audited. This is\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" a simple\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" retrieval\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" task\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\",\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" no\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" harmful content.\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"NE\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"EDLE-Re\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"playSSM-327\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"68-739184\\n\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"Archive replay-ssm-\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"32768 was audited\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\".\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":154827,\"token_ids\":null}]}",
+    "data: {\"id\":\"chatcmpl-a7998f1faf05bf5b\",\"object\":\"chat.completion.chunk\",\"created\":1788610779,\"model\":\"vcruz305/GLM-5.3-Flash-EXL3-K2\",\"choices\":[],\"usage\":{\"prompt_tokens\":32768,\"total_tokens\":32826,\"completion_tokens\":58},\"system_fingerprint\":\"vllm-0.1.dev20051+g487ecf187-a89ecf24\"}",
+    "data: [DONE]"
+  ],
+  "reasoning": "The user wants me to state the marker and say the archive was audited. This is a simple retrieval task, no harmful content.",
+  "seconds": 353.691,
+  "usage": {
+    "completion_tokens": 58,
+    "prompt_tokens": 32768,
+    "total_tokens": 32826
+  }
+}

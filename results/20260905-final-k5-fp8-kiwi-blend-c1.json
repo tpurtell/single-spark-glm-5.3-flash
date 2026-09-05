@@ -1,0 +1,607 @@
+{
+  "schema": "glm53-serving-benchmark.v5",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "kv_cache": "fp8_ds_mla",
+  "speculative_method": "dflash2",
+  "draft_tokens_per_step": 5,
+  "dflash_tokens": 5,
+  "mtp_tokens": null,
+  "suite": "blend",
+  "primary_metric": "median_batch_window_decode_tokens_per_second",
+  "method": "primary aggregate decode is total post-first tokens divided by the first-any to last-any batch window; end-to-end request throughput includes TTFT. Legacy median_decode_tokens_per_second is the sum of per-sequence rates and must not be treated as aggregate serving capacity when requests are staggered or queued. Acceptance is the matching Prometheus counter delta; target-pass efficiency is one target bonus token plus accepted drafts per verification pass",
+  "glmrt_standard_seven_case_blend": true,
+  "concurrency": 1,
+  "batch_scope": "Each batch contains n completions of one content prompt; seven prompt types across batches",
+  "repeats_per_case": 1,
+  "cases": [
+    {
+      "case": "code",
+      "category": "code",
+      "median_batch_window_decode_tokens_per_second": 29.46890461623804,
+      "median_request_tokens_per_second": 28.17742753324679,
+      "median_decode_tokens_per_second": 29.46890461623804,
+      "min_decode_tokens_per_second": 29.46890461623804,
+      "max_decode_tokens_per_second": 29.46890461623804,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.7142857142857143,
+      "median_committed_tokens_per_target_pass": 4.571428571428571,
+      "draft_tokens": 280,
+      "accepted_draft_tokens": 200,
+      "rejected_draft_tokens": 80,
+      "target_verification_passes": 56,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 50,
+          "completion_tokens": 256,
+          "completion_tokens_by_sequence": [
+            256
+          ],
+          "decode_tokens": 255,
+          "decode_seconds": 8.653188956996019,
+          "decode_tokens_per_second": 29.46890461623804,
+          "batch_window_decode_seconds": 8.653188956996019,
+          "batch_window_decode_tokens_per_second": 29.46890461623804,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            29.46890461623804
+          ],
+          "ttft_ms": 431.92457300028764,
+          "request_seconds": 9.085286429995904,
+          "started_epoch_seconds": 1788616572.0850759,
+          "sequence_ttft_ms": [
+            431.92457300028764
+          ],
+          "sequence_decode_seconds": [
+            8.653188956996019
+          ],
+          "sequence_finish_offset_seconds": [
+            9.085113529996306
+          ],
+          "draft_tokens": 280,
+          "accepted_draft_tokens": 200,
+          "rejected_draft_tokens": 80,
+          "accepted_draft_rate": 0.7142857142857143,
+          "per_position_acceptance": {
+            "0": 0.8928571428571429,
+            "1": 0.8392857142857143,
+            "2": 0.6785714285714286,
+            "3": 0.5892857142857143,
+            "4": 0.5714285714285714
+          },
+          "rejected_draft_rate": 0.2857142857142857,
+          "target_verification_passes": 56,
+          "committed_tokens_per_target_pass": 4.571428571428571,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 50,
+            "total_tokens": 306,
+            "completion_tokens": 256
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "```python\nfrom typing import List, Tuple\n\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\n    \"\"\"Merge overlapping or adjacent integer intervals into non-overlapping ranges.\n\n    Args:\n        intervals: A list of (start, end) tuples.\n\n    Returns:\n        A sorted list of merged (start, end) tuples.\n    \"\"\"\n    if not intervals:\n        return []\n    sorted_ivs = sorted(intervals)\n    merged = [sorted_ivs[0]]\n    for start, end in sorted_ivs[1:]:\n        last_start, last_end = merged[-1]\n        if start <= last_end:\n            merged[-1] = (last_start, max(last_end, end))\n        else:\n            merged.append((start, end))\n    return merged\n\n\nassert merge_intervals([(1, 3), (2, 6), (8, 10), (15, 18)]) == [(1, 6), (8, 10), (15, 18)]\nassert merge_intervals([(5, 5), (1, 2), (2, 3)]) == [(1, 3), (5, 5)]\nassert merge_intervals([]) == []\n```"
+          ],
+          "content_preview": "```python\\nfrom typing import List, Tuple\\n\\ndef merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:\\n    \"\"\"Merge overlapping or adjacent integer intervals into non-overlapping ranges.\\n\\n    Args:\\n        intervals: A li",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "math",
+      "category": "reasoning",
+      "median_batch_window_decode_tokens_per_second": 29.599724759297906,
+      "median_request_tokens_per_second": 24.170446366242356,
+      "median_decode_tokens_per_second": 29.599724759297906,
+      "min_decode_tokens_per_second": 29.599724759297906,
+      "max_decode_tokens_per_second": 29.599724759297906,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.7076923076923077,
+      "median_committed_tokens_per_target_pass": 4.538461538461538,
+      "draft_tokens": 65,
+      "accepted_draft_tokens": 46,
+      "rejected_draft_tokens": 19,
+      "target_verification_passes": 13,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 47,
+          "completion_tokens": 59,
+          "completion_tokens_by_sequence": [
+            59
+          ],
+          "decode_tokens": 58,
+          "decode_seconds": 1.9594776800004183,
+          "decode_tokens_per_second": 29.599724759297906,
+          "batch_window_decode_seconds": 1.9594776800004183,
+          "batch_window_decode_tokens_per_second": 29.599724759297906,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            29.599724759297906
+          ],
+          "ttft_ms": 481.36029500165023,
+          "request_seconds": 2.4409975350063178,
+          "started_epoch_seconds": 1788616581.2053733,
+          "sequence_ttft_ms": [
+            481.36029500165023
+          ],
+          "sequence_decode_seconds": [
+            1.9594776800004183
+          ],
+          "sequence_finish_offset_seconds": [
+            2.4408379750020686
+          ],
+          "draft_tokens": 65,
+          "accepted_draft_tokens": 46,
+          "rejected_draft_tokens": 19,
+          "accepted_draft_rate": 0.7076923076923077,
+          "per_position_acceptance": {
+            "0": 0.9230769230769231,
+            "1": 0.9230769230769231,
+            "2": 0.6923076923076923,
+            "3": 0.5384615384615384,
+            "4": 0.46153846153846156
+          },
+          "rejected_draft_rate": 0.2923076923076923,
+          "target_verification_passes": 13,
+          "committed_tokens_per_target_pass": 4.538461538461538,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 47,
+            "total_tokens": 106,
+            "completion_tokens": 59
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "**Discount:** $240 × 25% = $60 off → $240 − $60 = **$180**\n\n**Tax:** $180 × 8% = $14.40\n\n**Final price:** $180 + $14.40 = **$194.40**"
+          ],
+          "content_preview": "**Discount:** $240 × 25% = $60 off → $240 − $60 = **$180**\\n\\n**Tax:** $180 × 8% = $14.40\\n\\n**Final price:** $180 + $14.40 = **$194.40**",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "fable",
+      "category": "creative-prose",
+      "median_batch_window_decode_tokens_per_second": 13.960543358371647,
+      "median_request_tokens_per_second": 13.62538871477894,
+      "median_decode_tokens_per_second": 13.960543358371647,
+      "min_decode_tokens_per_second": 13.960543358371647,
+      "max_decode_tokens_per_second": 13.960543358371647,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.21869158878504674,
+      "median_committed_tokens_per_target_pass": 2.093457943925234,
+      "draft_tokens": 535,
+      "accepted_draft_tokens": 117,
+      "rejected_draft_tokens": 418,
+      "target_verification_passes": 107,
+      "quality_passed": false,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 44,
+          "completion_tokens": 224,
+          "completion_tokens_by_sequence": [
+            224
+          ],
+          "decode_tokens": 223,
+          "decode_seconds": 15.973590302004595,
+          "decode_tokens_per_second": 13.960543358371647,
+          "batch_window_decode_seconds": 15.973590302004595,
+          "batch_window_decode_tokens_per_second": 13.960543358371647,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            13.960543358371647
+          ],
+          "ttft_ms": 466.1574819983798,
+          "request_seconds": 16.43989794999652,
+          "started_epoch_seconds": 1788616583.6858022,
+          "sequence_ttft_ms": [
+            466.1574819983798
+          ],
+          "sequence_decode_seconds": [
+            15.973590302004595
+          ],
+          "sequence_finish_offset_seconds": [
+            16.439747784002975
+          ],
+          "draft_tokens": 535,
+          "accepted_draft_tokens": 117,
+          "rejected_draft_tokens": 418,
+          "accepted_draft_rate": 0.21869158878504674,
+          "per_position_acceptance": {
+            "0": 0.5887850467289719,
+            "1": 0.32710280373831774,
+            "2": 0.1308411214953271,
+            "3": 0.037383177570093455,
+            "4": 0.009345794392523364
+          },
+          "rejected_draft_rate": 0.7813084112149533,
+          "target_verification_passes": 107,
+          "committed_tokens_per_target_pass": 2.093457943925234,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 44,
+            "total_tokens": 268,
+            "completion_tokens": 224
+          },
+          "quality_contract_passed": false,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": false,
+              "quality_contract_issues": [
+                "fable has 179 words, outside 140..170"
+              ]
+            }
+          ],
+          "content": [
+            "**The Two Parrots of the Mango Tree**\n\nIn a village square lived two parrots, Ruby and Sage, who had taught themselves to sing a song so lovely that travelers stopped to listen. When a merchant offered a reward for the melody, Ruby declared, \"I found the tune first—half the prize is mine!\" Sage shook her head. \"I shaped it into song. Without my voice, it was mere whistling.\"\n\nThey argued for days, each claiming the larger share, until their bickering grew so loud that no one could hear the beautiful song anymore. The merchant, weary of their quarrel, walked away, and the reward vanished.\n\nAn old tortoise watching from below said quietly, \"You spent so long dividing the glory that you lost the thing worth sharing.\"\n\nThe parrots fell silent, ashamed. They sang together again that evening—not for prizes, but for the joy of the melody itself, which sounded sweeter than ever when neither claimed it alone.\n\n**Moral:** Those who fight over credit for a shared achievement often destroy the very thing that made it worth achieving."
+          ],
+          "content_preview": "**The Two Parrots of the Mango Tree**\\n\\nIn a village square lived two parrots, Ruby and Sage, who had taught themselves to sing a song so lovely that travelers stopped to listen. When a merchant offered a reward for the melody, Ruby declared",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "hello",
+      "category": "short-response",
+      "median_batch_window_decode_tokens_per_second": 30.57663331213785,
+      "median_request_tokens_per_second": 16.275871808402194,
+      "median_decode_tokens_per_second": 30.57663331213785,
+      "min_decode_tokens_per_second": 30.57663331213785,
+      "max_decode_tokens_per_second": 30.57663331213785,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.8,
+      "median_committed_tokens_per_target_pass": 5.0,
+      "draft_tokens": 10,
+      "accepted_draft_tokens": 8,
+      "rejected_draft_tokens": 2,
+      "target_verification_passes": 2,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 14,
+          "completion_tokens": 10,
+          "completion_tokens_by_sequence": [
+            10
+          ],
+          "decode_tokens": 9,
+          "decode_seconds": 0.29434241200215183,
+          "decode_tokens_per_second": 30.57663331213785,
+          "batch_window_decode_seconds": 0.29434241200215183,
+          "batch_window_decode_tokens_per_second": 30.57663331213785,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            30.57663331213785
+          ],
+          "ttft_ms": 319.89444499777164,
+          "request_seconds": 0.6144064120016992,
+          "started_epoch_seconds": 1788616600.157159,
+          "sequence_ttft_ms": [
+            319.89444499777164
+          ],
+          "sequence_decode_seconds": [
+            0.29434241200215183
+          ],
+          "sequence_finish_offset_seconds": [
+            0.6142368569999235
+          ],
+          "draft_tokens": 10,
+          "accepted_draft_tokens": 8,
+          "rejected_draft_tokens": 2,
+          "accepted_draft_rate": 0.8,
+          "per_position_acceptance": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "3": 0.5,
+            "4": 0.5
+          },
+          "rejected_draft_rate": 0.2,
+          "target_verification_passes": 2,
+          "committed_tokens_per_target_pass": 5.0,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 14,
+            "total_tokens": 24,
+            "completion_tokens": 10
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "Hi! How can I help you today?"
+          ],
+          "content_preview": "Hi! How can I help you today?",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "topic",
+      "category": "exposition",
+      "median_batch_window_decode_tokens_per_second": 16.20502586650464,
+      "median_request_tokens_per_second": 15.923477126878614,
+      "median_decode_tokens_per_second": 16.20502586650464,
+      "min_decode_tokens_per_second": 16.20502586650464,
+      "max_decode_tokens_per_second": 16.20502586650464,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.288,
+      "median_committed_tokens_per_target_pass": 2.44,
+      "draft_tokens": 750,
+      "accepted_draft_tokens": 216,
+      "rejected_draft_tokens": 534,
+      "target_verification_passes": 150,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 41,
+          "completion_tokens": 366,
+          "completion_tokens_by_sequence": [
+            366
+          ],
+          "decode_tokens": 365,
+          "decode_seconds": 22.523876419996668,
+          "decode_tokens_per_second": 16.20502586650464,
+          "batch_window_decode_seconds": 22.523876419996668,
+          "batch_window_decode_tokens_per_second": 16.20502586650464,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            16.20502586650464
+          ],
+          "ttft_ms": 460.8255709972582,
+          "request_seconds": 22.98492955299298,
+          "started_epoch_seconds": 1788616600.8085325,
+          "sequence_ttft_ms": [
+            460.8255709972582
+          ],
+          "sequence_decode_seconds": [
+            22.523876419996668
+          ],
+          "sequence_finish_offset_seconds": [
+            22.984701990993926
+          ],
+          "draft_tokens": 750,
+          "accepted_draft_tokens": 216,
+          "rejected_draft_tokens": 534,
+          "accepted_draft_rate": 0.288,
+          "per_position_acceptance": {
+            "0": 0.6533333333333333,
+            "1": 0.3466666666666667,
+            "2": 0.22666666666666666,
+            "3": 0.12666666666666668,
+            "4": 0.08666666666666667
+          },
+          "rejected_draft_rate": 0.712,
+          "target_verification_passes": 150,
+          "committed_tokens_per_target_pass": 2.44,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 41,
+            "total_tokens": 407,
+            "completion_tokens": 366
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "# Virtual Memory in 5 Bullet Points\n\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use addresses 0 to 2⁶⁴\"), decoupled from the physical RAM actually installed. The OS and hardware (MMU) translate virtual addresses to real physical addresses on the fly.\n\n- **Paging:** Virtual address space is split into fixed-size chunks called *pages* (typically 4 KB); physical RAM is divided into matching *frames*. A page table maps each virtual page to a frame (or marks it \"not in memory\"). This lets pages be scattered anywhere in RAM and enables memory protection between processes.\n\n- **Page faults:** When your program accesses a page not currently in RAM, the MMU raises a *page fault*. The OS pauses your thread, loads the page from disk (swap file or file-backed storage), updates the page table, and restarts the instruction. This is why memory can exceed physical RAM — but frequent faults to disk are slow, so the OS tries to keep hot pages resident.\n\n- **TLB (Translation Lookaside Buffer):** A small, ultra-fast cache in the CPU that stores recent virtual→physical translations. Without it, every memory access would need a page table lookup (possibly multiple, since page tables are themselves hierarchical). A TLB hit takes ~1 cycle; a miss can cost dozens to hundreds of cycles.\n\n- **Why you care as a programmer:** Locality matters — accessing memory sequentially or reusing recently-touched data keeps TLB/page caches happy. Big sparse jumps across huge arrays can trigger a storm of page faults and TLB misses. Also, allocation failures and swapping can make your program stall unpredictably, so watch memory usage in performance profiling."
+          ],
+          "content_preview": "# Virtual Memory in 5 Bullet Points\\n\\n- **What it is:** Virtual memory gives each process its own large, private address space (e.g., \"your program can use addresses 0 to 2⁶⁴\"), decoupled from the physical RAM actually installed. The OS and ",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "structured-json",
+      "category": "structured-output",
+      "median_batch_window_decode_tokens_per_second": 31.02837155175472,
+      "median_request_tokens_per_second": 24.81338362260852,
+      "median_decode_tokens_per_second": 31.02837155175472,
+      "min_decode_tokens_per_second": 31.02837155175472,
+      "max_decode_tokens_per_second": 31.02837155175472,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.7692307692307693,
+      "median_committed_tokens_per_target_pass": 4.846153846153847,
+      "draft_tokens": 65,
+      "accepted_draft_tokens": 50,
+      "rejected_draft_tokens": 15,
+      "target_verification_passes": 13,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 65,
+          "completion_tokens": 63,
+          "completion_tokens_by_sequence": [
+            63
+          ],
+          "decode_tokens": 62,
+          "decode_seconds": 1.9981712509979843,
+          "decode_tokens_per_second": 31.02837155175472,
+          "batch_window_decode_seconds": 1.9981712509979843,
+          "batch_window_decode_tokens_per_second": 31.02837155175472,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            31.02837155175472
+          ],
+          "ttft_ms": 540.6481030004215,
+          "request_seconds": 2.538952404000156,
+          "started_epoch_seconds": 1788616623.834761,
+          "sequence_ttft_ms": [
+            540.6481030004215
+          ],
+          "sequence_decode_seconds": [
+            1.9981712509979843
+          ],
+          "sequence_finish_offset_seconds": [
+            2.538819353998406
+          ],
+          "draft_tokens": 65,
+          "accepted_draft_tokens": 50,
+          "rejected_draft_tokens": 15,
+          "accepted_draft_rate": 0.7692307692307693,
+          "per_position_acceptance": {
+            "0": 0.9230769230769231,
+            "1": 0.8461538461538461,
+            "2": 0.7692307692307693,
+            "3": 0.6923076923076923,
+            "4": 0.6153846153846154
+          },
+          "rejected_draft_rate": 0.23076923076923078,
+          "target_verification_passes": 13,
+          "committed_tokens_per_target_pass": 4.846153846153847,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 65,
+            "total_tokens": 128,
+            "completion_tokens": 63
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "```json\n{\n  \"path\": \"src/cache.rs\",\n  \"operation\": \"replace\",\n  \"line_start\": 41,\n  \"line_end\": 47,\n  \"rationale\": \"Remove a redundant copy of the cached value that duplicates data already stored in the cache entry.\"\n}\n```"
+          ],
+          "content_preview": "```json\\n{\\n  \"path\": \"src/cache.rs\",\\n  \"operation\": \"replace\",\\n  \"line_start\": 41,\\n  \"line_end\": 47,\\n  \"rationale\": \"Remove a redundant copy of the cached value that duplicates data already stored in the cache entry.\"\\n}\\n```",
+          "repeat": 1
+        }
+      ]
+    },
+    {
+      "case": "multilingual",
+      "category": "multilingual",
+      "median_batch_window_decode_tokens_per_second": 15.439034186664708,
+      "median_request_tokens_per_second": 15.108588586791413,
+      "median_decode_tokens_per_second": 15.439034186664708,
+      "min_decode_tokens_per_second": 15.439034186664708,
+      "max_decode_tokens_per_second": 15.439034186664708,
+      "decode_timing_resolved_runs": 1,
+      "median_accepted_draft_rate": 0.25588235294117645,
+      "median_committed_tokens_per_target_pass": 2.2794117647058822,
+      "draft_tokens": 680,
+      "accepted_draft_tokens": 174,
+      "rejected_draft_tokens": 506,
+      "target_verification_passes": 136,
+      "quality_passed": true,
+      "runs": [
+        {
+          "concurrency": 1,
+          "prompt_tokens": 62,
+          "completion_tokens": 310,
+          "completion_tokens_by_sequence": [
+            310
+          ],
+          "decode_tokens": 309,
+          "decode_seconds": 20.014205309998943,
+          "decode_tokens_per_second": 15.439034186664708,
+          "batch_window_decode_seconds": 20.014205309998943,
+          "batch_window_decode_tokens_per_second": 15.439034186664708,
+          "decode_timing_resolved": true,
+          "sequence_decode_tokens_per_second": [
+            15.439034186664708
+          ],
+          "ttft_ms": 503.77281100372784,
+          "request_seconds": 20.518131010001525,
+          "started_epoch_seconds": 1788616626.407742,
+          "sequence_ttft_ms": [
+            503.77281100372784
+          ],
+          "sequence_decode_seconds": [
+            20.014205309998943
+          ],
+          "sequence_finish_offset_seconds": [
+            20.51797812100267
+          ],
+          "draft_tokens": 680,
+          "accepted_draft_tokens": 174,
+          "rejected_draft_tokens": 506,
+          "accepted_draft_rate": 0.25588235294117645,
+          "per_position_acceptance": {
+            "0": 0.6470588235294118,
+            "1": 0.35294117647058826,
+            "2": 0.15441176470588236,
+            "3": 0.08088235294117647,
+            "4": 0.04411764705882353
+          },
+          "rejected_draft_rate": 0.7441176470588236,
+          "target_verification_passes": 136,
+          "committed_tokens_per_target_pass": 2.2794117647058822,
+          "finish_reasons": [
+            "stop"
+          ],
+          "usage": {
+            "prompt_tokens": 62,
+            "total_tokens": 372,
+            "completion_tokens": 310
+          },
+          "quality_contract_passed": true,
+          "quality_by_sequence": [
+            {
+              "quality_contract_passed": true,
+              "quality_contract_issues": []
+            }
+          ],
+          "content": [
+            "# 寫入時複製（Copy-on-Write, COW）\n\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，作業系統只複製頁表（虛擬位址對應），不實際複製記憶體內容，因此 fork 速度快、省記憶體。\n\n- **共享頁面標記為唯讀**：作業系統將這些共享頁面在兩個行程的頁表中都標記為「唯讀」，並記錄引用計數。\n\n- **寫入時觸發複製**：當任一行程嘗試寫入唯讀頁面時，CPU 產生保護錯誤（page fault），作業系統攔截後才真正複製該頁面，讓寫入的行程拿到自己的私有副本並改為可寫。\n\n- **例子**：行程 A fork 出行程 B，兩者共享頁面 P（內容為 100）。B 執行 `x = 200` 時觸發 page fault，核心複製 P 為 P'，B 的頁表改指向 P' 並寫入 200；A 仍指向 P，讀到的還是 100，兩行程從此各自擁有獨立資料。"
+          ],
+          "content_preview": "# 寫入時複製（Copy-on-Write, COW）\\n\\n- **基本概念**：fork 時父子行程共享相同的實體記憶體頁面，作業系統只複製頁表（虛擬位址對應），不實際複製記憶體內容，因此 fork 速度快、省記憶體。\\n\\n- **共享頁面標記為唯讀**：作業系統將這些共享頁面在兩個行程的頁表中都標記為「唯讀」，並記錄引用計數。\\n\\n- **寫入時觸發複製**：當任一行程嘗試寫入唯讀頁面時，CPU 產生保護錯誤（page fault），作業系統攔截後才真正複製該頁面，讓寫入的行程",
+          "repeat": 1
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "decode_tokens_per_second": 17.936942866719928,
+    "decode_timing_resolved_runs": 7,
+    "decode_timing_unresolved_runs": 0,
+    "draft_tokens": 2385,
+    "accepted_draft_tokens": 811,
+    "rejected_draft_tokens": 1574,
+    "accepted_draft_rate": 0.340041928721174,
+    "rejected_draft_rate": 0.659958071278826,
+    "target_verification_passes": 477,
+    "committed_tokens_per_target_pass": 2.70020964360587,
+    "quality_passed": false
+  }
+}

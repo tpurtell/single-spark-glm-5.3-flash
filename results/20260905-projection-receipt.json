@@ -1,0 +1,26 @@
+{
+  "date_utc": "2026-09-05",
+  "image": "sha256:f2bf37f4570b03678eb7a73fd33d1394bcf2b840ec1a5f528e47b71f542119e5",
+  "b12x_commit": "c90cd0080274b90da4721f8ab7536bca29cae720",
+  "script": "scripts/qualify-projection-mixed.py",
+  "script_sha256": "528651526b055f24cf2781828d2c0d075625e2282b24642548e2b1a6a5695420",
+  "image_private_patch_sha256": {
+    "patches/port-b12x-glm-expert-capacity.py": "9cbe22abcfb64d583557bc81efba75b9c47568c482688ccc1657289c744dd5d8",
+    "patches/port-b12x-projection-capacity.py": "cce3d4460bbacb4c2329ed293cb2c48f43e24cfff45a8715f4730b7ee6babb85"
+  },
+  "runs": [
+    {
+      "host": "emu",
+      "command": "docker run --rm --name glm53-kernel-checks --gpus all --ipc=host -e CUTE_DSL_ARCH=sm_121a -v /home/tj/Developer/single-spark-glm-5.3-flash:/recipe:ro --entrypoint python3 ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev /recipe/scripts/qualify-projection-mixed.py --glm-geometry",
+      "stdout": "20260905-projection-glm-geometry-emu.log",
+      "stderr": "20260905-projection-glm-geometry-emu.stderr"
+    },
+    {
+      "host": "dodo",
+      "command": "docker run --rm --name glm53-kernel-checks --gpus all --ipc=host -e CUTE_DSL_ARCH=sm_121a -v /home/tj/Developer/single-spark-glm-5.3-flash:/recipe:ro --entrypoint python3 ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev /recipe/scripts/qualify-projection-mixed.py --bits 4 5",
+      "stdout": "20260905-projection-high-tiers-dodo.log",
+      "stderr": "20260905-projection-high-tiers-dodo.stderr"
+    }
+  ],
+  "scope": "Synthetic GLM adapter preparation and real B12x execution; independent dense MCG oracle, CUDA graph replay, stable allocated bytes. Not complete checkpoint loading, model quality, or performance qualification."
+}

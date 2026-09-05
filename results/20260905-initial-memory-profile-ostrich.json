@@ -1,0 +1,3478 @@
+{
+  "total_active_bytes": 103097350500,
+  "active_by_stack": [
+    {
+      "bytes": 97325074948,
+      "count": 38365,
+      "stack": []
+    },
+    {
+      "bytes": 5537529856,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py:176:_ensure_workspace_size",
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py:110:get_simultaneous",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:300:sparse_attn_indexer_kpool",
+        "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py:97:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:1165:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 146894112,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2885:_plan_with_scratch",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2913:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared"
+      ]
+    },
+    {
+      "bytes": 33554432,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/utils/deep_gemm.py:669:tf32_hc_prenorm_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:195:mhc_pre_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:66:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:525:hc_pre"
+      ]
+    },
+    {
+      "bytes": 33554432,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:343:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 13905968,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2885:_plan_with_scratch",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2901:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared"
+      ]
+    },
+    {
+      "bytes": 5767168,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:335:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py:225:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:625:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/flashinfer/utils.py:236:_get_cache_buf",
+        "/usr/local/lib/python3.12/dist-packages/flashinfer/topk.py:624:top_k",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/logits_processor.py:52:_topk",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/logits_processor.py:271:get_top_k_tokens",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/qwen3_dflash2.py:285:compute_candidates",
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/spec_decode/dflash2/speculator.py:199:_generate_draft",
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/spec_decode/dflash/speculator.py:364:propose",
+        "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py:124:decorate_context"
+      ]
+    },
+    {
+      "bytes": 8192,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3016:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__"
+      ]
+    },
+    {
+      "bytes": 8192,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3017:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__"
+      ]
+    },
+    {
+      "bytes": 2312,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2992:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__"
+      ]
+    },
+    {
+      "bytes": 2312,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2997:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__"
+      ]
+    }
+  ],
+  "profile_allocation_churn_by_stack": [
+    {
+      "bytes": 54257516544,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py:761:forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py:1360:unified_mla_attention_with_output",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py:40:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py:97:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py:711:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl"
+      ]
+    },
+    {
+      "bytes": 5905580032,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:342:sparse_attn_indexer_kpool",
+        "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py:97:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:1165:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:403:forward"
+      ]
+    },
+    {
+      "bytes": 5537529856,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py:176:_ensure_workspace_size",
+        "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py:110:get_simultaneous",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:300:sparse_attn_indexer_kpool",
+        "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py:97:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py:1165:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 900333568,
+      "count": 35,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:343:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 754974720,
+      "count": 45,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:547:mhc_fused_post_pre_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:458:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:561:hc_fused_post_pre",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:488:forward"
+      ]
+    },
+    {
+      "bytes": 738197504,
+      "count": 44,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:547:mhc_fused_post_pre_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:458:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:561:hc_fused_post_pre",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:462:forward"
+      ]
+    },
+    {
+      "bytes": 285212672,
+      "count": 34,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:360:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 285212672,
+      "count": 34,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:363:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 285212672,
+      "count": 34,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:367:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:479:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:711:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 251658240,
+      "count": 45,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:148:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 188743680,
+      "count": 45,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:560:mhc_fused_post_pre_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:458:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:561:hc_fused_post_pre",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:488:forward"
+      ]
+    },
+    {
+      "bytes": 188743680,
+      "count": 45,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:1651:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:150:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 184549376,
+      "count": 44,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:560:mhc_fused_post_pre_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:458:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:561:hc_fused_post_pre",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:462:forward"
+      ]
+    },
+    {
+      "bytes": 184549376,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:576:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py:213:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 184549376,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py:710:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py:234:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:625:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 176160768,
+      "count": 42,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:765:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:268:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:502:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 146894112,
+      "count": 1,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2885:_plan_with_scratch",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:2913:_rank_sliced_runtime",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3097:_apply_rank_sliced",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py:3297:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/routed_experts.py:1224:forward_modular",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:603:_apply_quant_method",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:874:_forward_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/moe_runner.py:158:_moe_forward_shared"
+      ]
+    },
+    {
+      "bytes": 142606336,
+      "count": 34,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:1651:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/kda.py:387:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 125829120,
+      "count": 5,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:875:__call__",
+        "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py:432:__torch_dispatch__",
+        "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:1446:_fn",
+        "/usr/local/lib/python3.12/dist-packages/torch/_compile.py:54:inner",
+        "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py:649:benchmark_gpu",
+        "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py:85:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py:189:wrapper",
+        "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py:387:_default_cuda_bench"
+      ]
+    },
+    {
+      "bytes": 92995584,
+      "count": 22,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:337:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py:225:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:625:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 88080384,
+      "count": 42,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/activation.py:245:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:149:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/runner/shared_experts.py:182:forward"
+      ]
+    },
+    {
+      "bytes": 83886080,
+      "count": 5,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/mhc/tilelang.py:420:mhc_post_tilelang",
+        "/usr/local/lib/python3.12/dist-packages/torch/_ops.py:1279:__call__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mhc.py:217:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:547:hc_post",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:720:forward"
+      ]
+    },
+    {
+      "bytes": 46137344,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:385:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py:319:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 46137344,
+      "count": 11,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/parameter.py:126:__torch_function__",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/utils.py:92:default_unquantized_gemm",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:212:apply",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/linear.py:1651:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py:245:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl"
+      ]
+    },
+    {
+      "bytes": 37748736,
+      "count": 3,
+      "stack": [
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/activation.py:245:forward_cuda",
+        "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py:136:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:149:forward",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1789:_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1778:_wrapped_call_impl",
+        "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py:504:forward"
+      ]
+    }
+  ],
+  "largest_profile_allocations": [
+    {
+      "action": "alloc",
+      "addr": 264734701568,
+      "size": 5537529856,
+      "stream": 0,
+      "time_us": 1788607690316627,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "_ensure_workspace_size",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py",
+          "line": 176
+        },
+        {
+          "name": "get_simultaneous",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/workspace.py",
+          "line": 110
+        },
+        {
+          "name": "sparse_attn_indexer_kpool",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py",
+          "line": 300
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward_cuda",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer_kpool.py",
+          "line": 1165
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/custom_op.py",
+          "line": 136
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 403
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 225
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270272231424,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607690563980,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696789205,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696798559,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696804686,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696810719,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696816074,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696822066,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696827651,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696833026,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696838869,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "action": "alloc",
+      "addr": 270289008640,
+      "size": 4932501504,
+      "stream": 0,
+      "time_us": 1788607696844419,
+      "compile_context": "N/A",
+      "user_metadata": "",
+      "pool_id": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "name": "forward_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 761
+        },
+        {
+          "name": "unified_mla_attention_with_output",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 1360
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/kv_transfer_utils.py",
+          "line": 40
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/compilation/breakable_cudagraph.py",
+          "line": 97
+        },
+        {
+          "name": "__call__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_ops.py",
+          "line": 1279
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/attention/mla_attention.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla.py",
+          "line": 234
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/attention.py",
+          "line": 625
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 479
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/models/glm5next/nvidia/model.py",
+          "line": 711
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "forward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/glm4_1v.py",
+          "line": 2327
+        },
+        {
+          "name": "_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1789
+        },
+        {
+          "name": "_wrapped_call_impl",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py",
+          "line": 1778
+        },
+        {
+          "name": "execute_model",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 1763
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "_dummy_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 691
+        },
+        {
+          "name": "wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/eplb_utils.py",
+          "line": 27
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "profile_run",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_runner.py",
+          "line": 808
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py",
+          "line": 510
+        },
+        {
+          "name": "decorate_context",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+          "line": 124
+        },
+        {
+          "name": "run_method",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/serial_utils.py",
+          "line": 510
+        },
+        {
+          "name": "collective_rpc",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py",
+          "line": 103
+        },
+        {
+          "name": "determine_available_memory",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py",
+          "line": 147
+        },
+        {
+          "name": "_initialize_kv_caches",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 294
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 144
+        },
+        {
+          "name": "__init__",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1082
+        },
+        {
+          "name": "sync_wrapper",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/tracing/otel.py",
+          "line": 178
+        },
+        {
+          "name": "run_engine_core",
+          "filename": "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py",
+          "line": 1324
+        },
+        {
+          "name": "run",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 108
+        },
+        {
+          "name": "_bootstrap",
+          "filename": "/usr/lib/python3.12/multiprocessing/process.py",
+          "line": 314
+        },
+        {
+          "name": "_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 135
+        },
+        {
+          "name": "spawn_main",
+          "filename": "/usr/lib/python3.12/multiprocessing/spawn.py",
+          "line": 122
+        },
+        {
+          "name": "<module>",
+          "filename": "<string>",
+          "line": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "concurrency": 1,
+  "prompt_tokens": 148,
+  "completion_tokens": 128,
+  "completion_tokens_by_sequence": [
+    128
+  ],
+  "decode_tokens": 127,
+  "decode_seconds": 4.766973986996163,
+  "decode_tokens_per_second": 26.641638982390827,
+  "batch_window_decode_seconds": 4.766973986996163,
+  "batch_window_decode_tokens_per_second": 26.641638982390827,
+  "sequence_decode_tokens_per_second": [
+    26.641638982390827
+  ],
+  "ttft_ms": 560.1686490044813,
+  "request_seconds": 5.327248966001207,
+  "started_epoch_seconds": 1788609552.2979763,
+  "sequence_ttft_ms": [
+    560.1686490044813
+  ],
+  "sequence_decode_seconds": [
+    4.766973986996163
+  ],
+  "sequence_finish_offset_seconds": [
+    5.327142636000644
+  ],
+  "draft_tokens": 155,
+  "accepted_draft_tokens": 98,
+  "rejected_draft_tokens": 57,
+  "accepted_draft_rate": 0.632258064516129,
+  "per_position_acceptance": {
+    "0": 0.8387096774193549,
+    "1": 0.7096774193548387,
+    "2": 0.6451612903225806,
+    "3": 0.5806451612903226,
+    "4": 0.3870967741935484
+  },
+  "rejected_draft_rate": 0.36774193548387096,
+  "target_verification_passes": 31,
+  "committed_tokens_per_target_pass": 4.161290322580645,
+  "finish_reasons": [
+    "length"
+  ],
+  "content": [
+    "```python\nimport asyncio\nfrom collections.abc import Awaitable, Callable, Sequence\nfrom typing import Any, TypeVar\n\nT = TypeVar(\"T\")\n\nasync def run_all(\n    factories: Sequence[Callable[[], Awaitable[T]]],\n    limit: int = 8,\n) -> list[T]:\n    \"\"\"Run each factory concurrently, capped at `limit` simultaneous tasks.\n\n    Preserves the input ordering in the returned results. On the first\n    exception, cancels all remaining tasks and re-raises.\n    \"\"\"\n    if limit <= 0:\n        raise ValueError(\"limit must be a positive integer\")\n\n   "
+  ],
+  "usage": {
+    "prompt_tokens": 148,
+    "total_tokens": 276,
+    "completion_tokens": 128
+  },
+  "scope": "Diagnostic run with Torch profiling overhead; not throughput qualification"
+}

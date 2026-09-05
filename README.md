@@ -148,6 +148,21 @@ The default NVFP4 MLA record uses FP8 RoPE and occupies 368 bytes, compared
 with 656 bytes for FP8 MLA; this is **not** a 44% reduction in total model,
 recurrent-state, or draft-cache memory.
 
+Observed memory admission for the measured sessions (all utilization 0.85):
+
+| Profile / host | Model-load allocation | Available KV pool | Token-equivalent capacity | Request equivalents |
+| --- | ---: | ---: | ---: | ---: |
+| NVFP4 262K / ostrich | 90.93 GiB | 8.10 GiB | 424,259 | 1.62x |
+| FP8 262K / kiwi | 90.93 GiB | 9.86 GiB | 453,597 | 1.73x |
+| NVFP4 1M / dodo, qualified runtime | 90.76 GiB | 7.87 GiB | 1,221,641 | 1.17x |
+| NVFP4 1M / emu, published defaults | 90.76 GiB | 6.85 GiB | 1,058,756 | 1.01x |
+
+These are hybrid-cache planner token-equivalents, not pure MLA byte division.
+Host baseline memory and runtime reservations affect admission; the unequal
+pool sizes do **not** isolate cache-format savings. The model-load allocation
+also excludes later profiling/graph overhead. Fresh starts can admit less
+memory, including the failed 1M attempt described above.
+
 Five-repeat C1 content medians on fresh matched 262K starts, same runtime:
 
 | Content | NVFP4 tok/s | FP8 tok/s |
@@ -215,6 +230,13 @@ were TC-34, TC-43, and TC-61; the safety gate still fails. This startup used
 diagnostic `GLM53_MEMORY_TRACE=1` and had 1.03 request-equivalents of cache;
 it is not another matched 262K cache-format measurement.
 [Full deployment-profile trace](results/tool-eval-reports/2026/09/2026-09-05T15-07-22.307025Z_b6f0ea50.md).
+That session subsequently passed all 36 rolling C6 requests across low/max
+thinking and shared/unique prefixes, then all 12 cancellation/recovery pairs.
+There were no loops, truncations, OOMs, or restarts, and no net swap growth
+between snapshots. One post-ready `_kpool_softmax_rotate_write_cache_kernel`
+compilation occurred during tools: the startup warmup does not cover every
+serving shape. [Stress receipt](results/20260905-published-default-dodo-stress/summary.json),
+[JIT audit (fails the strict zero-JIT check)](results/20260905-published-default-dodo-jit.json).
 
 Prefix reuse is coarse with the current hybrid cache layout and speculative
 lookback: K5 NVFP4 uses 15,360-token allocator blocks; K7 uses 18,432. A 32K K7

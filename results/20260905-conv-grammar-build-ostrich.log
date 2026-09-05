@@ -1,0 +1,273 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 25.53kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 1.5s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/vllm/vllm-openai:glm53-flash-arm64-cu130@sha256:905c02933be6021301db2dc284e24e3727467aa3a0f63b41d609885778a07bce
+#4 DONE 0.0s
+
+#5 [internal] load metadata for ghcr.io/tpurtell/deepseek-v4-flash-0731-exl3-k2-spark@sha256:86c8c1054f9c24454949e37031ce6165c007963aa0c0ef30fa884f6d4170af32
+#5 ...
+
+#6 [auth] tpurtell/deepseek-v4-flash-0731-exl3-k2-spark:pull token for ghcr.io
+#6 DONE 0.0s
+
+#5 [internal] load metadata for ghcr.io/tpurtell/deepseek-v4-flash-0731-exl3-k2-spark@sha256:86c8c1054f9c24454949e37031ce6165c007963aa0c0ef30fa884f6d4170af32
+#5 DONE 1.0s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 86B done
+#7 DONE 0.0s
+
+#8 [exl3_source 1/1] FROM ghcr.io/tpurtell/deepseek-v4-flash-0731-exl3-k2-spark@sha256:86c8c1054f9c24454949e37031ce6165c007963aa0c0ef30fa884f6d4170af32
+#8 DONE 0.0s
+
+#9 [stage-1  1/68] FROM docker.io/vllm/vllm-openai:glm53-flash-arm64-cu130@sha256:905c02933be6021301db2dc284e24e3727467aa3a0f63b41d609885778a07bce
+#9 DONE 0.0s
+
+#10 [internal] load build context
+#10 transferring context: 17.60kB done
+#10 DONE 0.0s
+
+#11 [stage-1 14/68] COPY patches/port-b12x-kpool-glm53.py /tmp/port-b12x-kpool-glm53.py
+#11 CACHED
+
+#12 [stage-1  4/68] RUN python3 -m pip install --no-cache-dir --no-deps -e /opt/b12x
+#12 CACHED
+
+#13 [stage-1 21/68] COPY patches/port-glm53-mhc-warmup.py /tmp/port-glm53-mhc-warmup.py
+#13 CACHED
+
+#14 [stage-1 32/68] COPY patches/port-adaptive-mtp-glm53.py /tmp/port-adaptive-mtp-glm53.py
+#14 CACHED
+
+#15 [stage-1  2/68] RUN test "$(uname -m)" = aarch64
+#15 CACHED
+
+#16 [stage-1 27/68] COPY patches/vllm-replayssm-spec.patch /tmp/vllm-replayssm-spec.patch
+#16 CACHED
+
+#17 [stage-1 15/68] COPY patches/b12x_dcp_topk.py     /usr/local/lib/python3.12/dist-packages/vllm/v1/attention/backends/mla/b12x_dcp_topk.py
+#17 CACHED
+
+#18 [stage-1  6/68] COPY --from=exl3_source     /opt/vllm/vllm/v1/attention/backends/mla/b12x_mla_sparse.py     /usr/local/lib/python3.12/dist-packages/vllm/v1/attention/backends/mla/b12x_mla_sparse.py
+#18 CACHED
+
+#19 [stage-1 16/68] COPY patches/port-b12x-dcp-glm53.py /tmp/port-b12x-dcp-glm53.py
+#19 CACHED
+
+#20 [stage-1 35/68] COPY patches/port-dflash2-glm-kv.py /tmp/port-dflash2-glm-kv.py
+#20 CACHED
+
+#21 [stage-1 30/68] COPY patches/port-glm53-mtp-prefix-cache.py /tmp/port-glm53-mtp-prefix-cache.py
+#21 CACHED
+
+#22 [stage-1 23/68] COPY patches/b12x_pcie_all_reduce.py     /usr/local/lib/python3.12/dist-packages/vllm/distributed/device_communicators/b12x_pcie_all_reduce.py
+#22 CACHED
+
+#23 [stage-1 18/68] COPY patches/port-b12x-nvfp4-glm53.py /tmp/port-b12x-nvfp4-glm53.py
+#23 CACHED
+
+#24 [stage-1 41/68] RUN python3 - <<'PY'
+#24 CACHED
+
+#25 [stage-1 13/68] COPY patches/port-b12x-glm53.py /tmp/port-b12x-glm53.py
+#25 CACHED
+
+#26 [stage-1 19/68] COPY patches/port-b12x-glm-h64-query.py /tmp/port-b12x-glm-h64-query.py
+#26 CACHED
+
+#27 [stage-1 22/68] COPY patches/port-glm53-sm12-stability.py /tmp/port-glm53-sm12-stability.py
+#27 CACHED
+
+#28 [stage-1 31/68] COPY patches/adaptive_mtp.py     /usr/local/lib/python3.12/dist-packages/vllm/v1/spec_decode/dynamic/adaptive_mtp.py
+#28 CACHED
+
+#29 [stage-1 10/68] COPY patches/port-exl3-ep-glm53.py /tmp/port-exl3-ep-glm53.py
+#29 CACHED
+
+#30 [stage-1 36/68] COPY patches/port-dflash2-replicated-dcp.py /tmp/port-dflash2-replicated-dcp.py
+#30 CACHED
+
+#31 [stage-1 11/68] COPY patches/port-exl3-mtp-glm53.py /tmp/port-exl3-mtp-glm53.py
+#31 CACHED
+
+#32 [stage-1 25/68] COPY patches/b12x_dcp_a2a.py     /usr/local/lib/python3.12/dist-packages/vllm/distributed/device_communicators/b12x_dcp_a2a.py
+#32 CACHED
+
+#33 [stage-1 38/68] RUN cd /usr/local/lib/python3.12/dist-packages  && patch --batch --forward -p1 < /tmp/vllm-replayssm-spec.patch  && patch --batch --forward -p1 < /tmp/vllm-dynamic-sd-cudagraph.patch  && python3 /tmp/port-replayssm-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-glm53-mtp-prefix-cache.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-adaptive-mtp-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 -m compileall -q /usr/local/lib/python3.12/dist-packages/vllm
+#33 CACHED
+
+#34 [stage-1  9/68] COPY patches/port-exl3-glm53.py /tmp/port-exl3-glm53.py
+#34 CACHED
+
+#35 [stage-1 20/68] COPY patches/port-b12x-mhc-glm53.py /tmp/port-b12x-mhc-glm53.py
+#35 CACHED
+
+#36 [stage-1 24/68] COPY patches/port-b12x-pcie-glm53.py /tmp/port-b12x-pcie-glm53.py
+#36 CACHED
+
+#37 [stage-1  5/68] COPY --from=exl3_source     /opt/vllm/vllm/model_executor/layers/quantization/exl3.py     /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/quantization/exl3.py
+#37 CACHED
+
+#38 [stage-1 33/68] COPY patches/port-dflash2-glm53.py /tmp/port-dflash2-glm53.py
+#38 CACHED
+
+#39 [stage-1 29/68] COPY patches/port-replayssm-glm53.py /tmp/port-replayssm-glm53.py
+#39 CACHED
+
+#40 [stage-1  7/68] COPY --from=exl3_source     /opt/vllm/vllm/model_executor/layers/sparse_attn_indexer.py     /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/sparse_attn_indexer.py
+#40 CACHED
+
+#41 [stage-1 28/68] COPY patches/vllm-dynamic-sd-cudagraph.patch /tmp/vllm-dynamic-sd-cudagraph.patch
+#41 CACHED
+
+#42 [stage-1 37/68] RUN python3 /tmp/port-exl3-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-exl3-ep-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-exl3-mtp-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-exl3-projection-mixed-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-kpool-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-dcp-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-dcp-owner-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-nvfp4-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-glm-h64-query.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-mhc-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-glm53-mhc-warmup.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-glm53-sm12-stability.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-pcie-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-b12x-dcp-a2a-glm53.py     /usr/local/lib/python3.12/dist-packages/vllm
+#42 CACHED
+
+#43 [stage-1  3/68] RUN B12X_REPOSITORY="https://github.com/tpurtell/sparkinfer-glmrt" B12X_COMMIT="c90cd0080274b90da4721f8ab7536bca29cae720"     python3 - <<'PY'
+#43 CACHED
+
+#44 [stage-1 12/68] COPY patches/port-exl3-projection-mixed-glm53.py /tmp/port-exl3-projection-mixed-glm53.py
+#44 CACHED
+
+#45 [stage-1 17/68] COPY patches/port-b12x-dcp-owner-glm53.py /tmp/port-b12x-dcp-owner-glm53.py
+#45 CACHED
+
+#46 [stage-1 40/68] RUN python3 /tmp/port-dflash2-glm53.py       /usr/local/lib/python3.12/dist-packages/vllm       /tmp/vllm-dflash2.patch  && python3 /tmp/port-dflash2-glm-eagle3.py       /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-dflash2-glm-kv.py       /usr/local/lib/python3.12/dist-packages/vllm  && python3 /tmp/port-dflash2-replicated-dcp.py       /usr/local/lib/python3.12/dist-packages/vllm  && python3 -m compileall -q /usr/local/lib/python3.12/dist-packages/vllm
+#46 CACHED
+
+#47 [stage-1 34/68] COPY patches/port-dflash2-glm-eagle3.py /tmp/port-dflash2-glm-eagle3.py
+#47 CACHED
+
+#48 [stage-1 39/68] RUN DFLASH2_VLLM_COMMIT="b389ac29465b33f9e9c534df221ea3c129e9793f" python3 - <<'PY'
+#48 CACHED
+
+#49 [stage-1  8/68] COPY --from=exl3_source     /opt/vllm/vllm/model_executor/layers/mla_cache_format.py     /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/mla_cache_format.py
+#49 CACHED
+
+#50 [stage-1 26/68] COPY patches/port-b12x-dcp-a2a-glm53.py /tmp/port-b12x-dcp-a2a-glm53.py
+#50 CACHED
+
+#51 [stage-1 42/68] COPY container/glm53-entrypoint.sh /usr/local/bin/glm53-entrypoint
+#51 CACHED
+
+#52 [stage-1 43/68] COPY container/glm53-release-warmup.py /usr/local/bin/glm53-release-warmup.py
+#52 DONE 0.0s
+
+#53 [stage-1 44/68] COPY scripts/prepare-model.py /usr/local/bin/glm53-prepare-model.py
+#53 DONE 0.0s
+
+#54 [stage-1 45/68] COPY scripts/refresh-chat-template.py /usr/local/bin/glm53-refresh-chat-template.py
+#54 DONE 0.0s
+
+#55 [stage-1 46/68] COPY data/chat_template.jinja /opt/glm53/data/chat_template.jinja
+#55 DONE 0.0s
+
+#56 [stage-1 47/68] COPY patches/port-b12x-glm-wide-topk.py /tmp/port-b12x-glm-wide-topk.py
+#56 DONE 0.0s
+
+#57 [stage-1 48/68] RUN python3 /tmp/port-b12x-glm-wide-topk.py /opt/b12x
+#57 0.123 B12x GLM 2176-wide prefill capacity admitted
+#57 DONE 0.1s
+
+#58 [stage-1 49/68] COPY patches/port-b12x-projection-capacity.py /tmp/port-b12x-projection-capacity.py
+#58 DONE 0.0s
+
+#59 [stage-1 50/68] RUN python3 /tmp/port-b12x-projection-capacity.py /opt/b12x
+#59 0.213 Mixed-Trellis direct-route workspace capacity repaired
+#59 DONE 0.2s
+
+#60 [stage-1 51/68] RUN python3 -m pip install --no-cache-dir --no-deps 'instanttensor==0.1.9'
+#60 0.781 Collecting instanttensor==0.1.9
+#60 1.029   Downloading instanttensor-0.1.9.tar.gz (9.6 MB)
+#60 1.441      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 30.7 MB/s  0:00:00
+#60 2.663   Installing build dependencies: started
+#60 3.517   Installing build dependencies: finished with status 'done'
+#60 3.518   Getting requirements to build wheel: started
+#60 4.089   Getting requirements to build wheel: finished with status 'done'
+#60 4.090   Preparing metadata (pyproject.toml): started
+#60 4.530   Preparing metadata (pyproject.toml): finished with status 'done'
+#60 4.534 Building wheels for collected packages: instanttensor
+#60 4.534   Building wheel for instanttensor (pyproject.toml): started
+#60 33.02   Building wheel for instanttensor (pyproject.toml): finished with status 'done'
+#60 33.03   Created wheel for instanttensor: filename=instanttensor-0.1.9-cp312-cp312-linux_aarch64.whl size=5732466 sha256=433614a4f5a21002ea45b29cd1176138930f56645a008a938e47ec946f38ef43
+#60 33.03   Stored in directory: /tmp/pip-ephem-wheel-cache-lxn8kxir/wheels/80/04/14/4b6aa3a9687f910bd4160d63ce6fffd43c82822da9e06a6b2d
+#60 33.03 Successfully built instanttensor
+#60 33.04 Installing collected packages: instanttensor
+#60 33.12 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#60 33.12 Successfully installed instanttensor-0.1.9
+#60 DONE 33.3s
+
+#61 [stage-1 52/68] COPY patches/port-streaming-loader.py /tmp/port-streaming-loader.py
+#61 DONE 0.0s
+
+#62 [stage-1 53/68] RUN python3 /tmp/port-streaming-loader.py /usr/local/lib/python3.12/dist-packages/vllm  && python3 -c 'import inspect, instanttensor; assert "copy" in inspect.signature(instanttensor.safe_open).parameters'
+#62 0.152 InstantTensor pressure-triggered allocator trim enabled
+#62 DONE 1.8s
+
+#63 [stage-1 54/68] COPY patches/port-exl3-prepared-dtype.py /tmp/port-exl3-prepared-dtype.py
+#63 DONE 0.0s
+
+#64 [stage-1 55/68] RUN python3 /tmp/port-exl3-prepared-dtype.py /usr/local/lib/python3.12/dist-packages/vllm
+#64 0.160 Uniform Trellis FP16 prepared-weight contract restored; mixed BF16 unchanged
+#64 DONE 0.2s
+
+#65 [stage-1 56/68] COPY patches/port-b12x-glm-expert-capacity.py /tmp/port-b12x-glm-expert-capacity.py
+#65 DONE 0.0s
+
+#66 [stage-1 57/68] RUN python3 /tmp/port-b12x-glm-expert-capacity.py /opt/b12x
+#66 0.194 GLM mixed-Trellis descriptors: nine-bit local slots, up to 512 experts
+#66 DONE 0.2s
+
+#67 [stage-1 58/68] COPY patches/port-b12x-glm-index-width.py /tmp/port-b12x-glm-index-width.py
+#67 DONE 0.0s
+
+#68 [stage-1 59/68] RUN python3 /tmp/port-b12x-glm-index-width.py /usr/local/lib/python3.12/dist-packages/vllm
+#68 0.172 GLM graph metadata uses the complete model-owned top-k buffer width
+#68 DONE 0.2s
+
+#69 [stage-1 60/68] COPY patches/port-memory-report.py /tmp/port-memory-report.py
+#69 DONE 0.0s
+
+#70 [stage-1 61/68] RUN python3 /tmp/port-memory-report.py /usr/local/lib/python3.12/dist-packages/vllm
+#70 0.161 Single-Spark memory accounting receipt enabled
+#70 DONE 0.2s
+
+#71 [stage-1 62/68] COPY patches/port-glm-sparse-memory.py /tmp/port-glm-sparse-memory.py
+#71 DONE 0.0s
+
+#72 [stage-1 63/68] RUN python3 /tmp/port-glm-sparse-memory.py /usr/local/lib/python3.12/dist-packages/vllm
+#72 0.168 GLM gather capacity and B12x sparse-only memory profiling applied
+#72 DONE 0.2s
+
+#73 [stage-1 64/68] COPY patches/port-glm-replayssm-conv-window.py /tmp/port-glm-replayssm-conv-window.py
+#73 DONE 0.0s
+
+#74 [stage-1 65/68] RUN python3 /tmp/port-glm-replayssm-conv-window.py /usr/local/lib/python3.12/dist-packages/vllm
+#74 0.177 [ok] GLM ReplaySSM convolution uses K+1 tokens, not compact state columns
+#74 DONE 0.2s
+
+#75 [stage-1 66/68] COPY patches/port-xgrammar-termination.py /tmp/port-xgrammar-termination.py
+#75 DONE 0.0s
+
+#76 [stage-1 67/68] RUN python3 /tmp/port-xgrammar-termination.py /usr/local/lib/python3.12/dist-packages/vllm
+#76 0.187 [ok] GLM XGrammar accept/validate/reset termination backport
+#76 DONE 0.2s
+
+#77 [stage-1 68/68] RUN chmod 0755 /usr/local/bin/glm53-entrypoint
+#77 DONE 0.2s
+
+#78 exporting to image
+#78 exporting layers 0.1s done
+#78 writing image sha256:94711456c8e9f17b849a9294fbb021245fc8a65b55d9e76a67fa8a0c77309095 done
+#78 naming to ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev done
+#78 DONE 0.1s
+Built sha256:94711456c8e9f17b849a9294fbb021245fc8a65b55d9e76a67fa8a0c77309095 (arm64, 20734499862 bytes)
