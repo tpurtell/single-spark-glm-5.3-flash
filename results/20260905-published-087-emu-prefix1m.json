@@ -1,7 +1,3 @@
-{"pass": "cold", "passed": true, "prefix_cache_hit_delta": 0.0, "ttft_seconds": 1387.215914364002, "request_seconds": 1389.7703865000003}
-{"pass": "replay", "passed": true, "prefix_cache_hit_delta": 1029120.0, "ttft_seconds": 29.819675257997005, "request_seconds": 32.57597301500209}
-{"pass": "changed-tail", "passed": true, "prefix_cache_hit_delta": 1013760.0, "ttft_seconds": 52.370373969002685, "request_seconds": 55.1387482909995}
-{"pass": "original-after-changed-tail", "passed": true, "prefix_cache_hit_delta": 1029120.0, "ttft_seconds": 30.114873842001543, "request_seconds": 32.946407368996006}
 {
   "schema": "glm53-prefix-replay.v4",
   "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",

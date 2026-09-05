@@ -1,0 +1,4 @@
+ostrich exited unhealthy 0
+dodo exited unhealthy 0
+kiwi exited unhealthy 0
+emu running healthy 0

@@ -292,9 +292,26 @@ count was zero, no OOM/restart occurred, available host memory was 9.885 GB,
 and swap usage decreased 8 KiB. Dodo was then stopped. Receipts:
 `20260905-published-086-dodo-*`, especially `changed-tail-abort.md`.
 
-The explicit 0.87 upper-bound fallback is now running on emu, with otherwise
+The explicit 0.87 upper-bound fallback ran on emu, with otherwise
 identical published-image defaults. Its prefix checker is v4: positive cache
 hits are required independently on each of the three warm passes, plus zero
-cold hits and all four exact answers/clean stops. Four CPU scoring regressions
-pass. Older v3 receipts retain their original scoring and are not overwritten.
+cold hits and all four exact answers/clean stops. Five CPU scoring regressions
+pass, including main-loop counter accounting and failed-report retention.
+Older v3 receipts retain their original scoring and are not overwritten.
 The .85 default and .87 hard ceiling remain unchanged.
+
+At 9.17 GiB KV / 1,415,068 token-equivalents / 1.35x, **all four v4 passes
+succeeded**. TTFT: 1,387.216 / 29.820 / 52.370 / 30.115 seconds; per-pass hits:
+0 / 1,029,120 / 1,013,760 / 1,029,120. Each prompt was exactly 1,048,320 tokens,
+each answer contained the exact six records, and each stopped after 74 output
+tokens. Post-long cancellation/recovery passed all 12 pairs. Final grammar
+passed 145/145. Three-run code-agent medians were C1 26.2015 / C6 84.5537
+batch-window tok/s; median draft acceptance 62.54% / 61.98%. This C1 result
+is lower than the earlier .85 measurements and is retained without substitution.
+Available host memory was 8.307 GB before / 7.488 GB after; swap usage stayed
+at 233,562,112 bytes. No OOM/restart occurred. One post-ready
+`_kpool_softmax_rotate_write_cache_kernel` compilation occurred during grammar.
+The pipeline exited successfully after its final environment/serving-log
+capture at 17:07 UTC. The qualified explicit-fallback server remains on emu;
+the launcher default remains .85.
+Receipts: `20260905-published-087-emu-*`.

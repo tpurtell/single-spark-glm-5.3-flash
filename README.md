@@ -1,30 +1,26 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
-Release qualification is finishing: the ARM64 image is published to GHCR;
-the explicit 0.87 long-context fallback check is still running. Measurements
-are in [the qualification log](results/QUALIFICATION-20260905.md); they are not
-frozen-release guarantees.
+The ARM64 image is published to GHCR and pull-validated on a second Spark.
+The explicit 0.87 fallback passed all four near-1M retrieval/replay/isolation
+checks and post-long-context grammar, recovery, and throughput checks.
+Measured limits and failures are retained in [the qualification log](results/QUALIFICATION-20260905.md)
+and [release scope audit](results/RELEASE-AUDIT-20260905.md).
 
 **Startup qualification caveat:** one clean 1M/0.85 restart was rejected by
 the KV admission check (6.72 GiB available versus 6.75 GiB required), despite
-the identical command/environment passing earlier. A diagnostic retry fits
-at 0.85; a fresh registry pull on emu also starts with unmodified defaults,
-but with only 1.01 request-equivalents of cache. Its 128K/512K retrieval and
-cancellation checks passed. Its cold near-1M answer also passed, but the
-identical replay recorded **zero cache hits** and recomputed the prompt;
-the probe was interrupted after documenting that miss. This tight-fit startup
-is not qualified for fast 1M replay. The earlier
-1.17x-capacity run did reuse the prefix. The launcher does not silently
-raise utilization or reduce context after a failed admission.
+the identical command/environment passing earlier. Successful startup also
+does not guarantee useful 1M prefix reuse: the tightest fit missed replay.
+See the measured headroom table below. The launcher does not silently raise
+utilization or reduce context after a failed admission.
 
 Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
 Draft: [incoai/GLM-5.3-Flash-DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2).
-The production profile uses NVFP4 MLA cache, one GB10 GPU, six scheduler
+The default profile uses NVFP4 MLA cache, one GB10 GPU, six scheduler
 slots, and 0.85 GPU memory utilization. The launcher rejects utilization above
 0.87. A text-only 1,048,576-token model limit has passed near-1M six-record
 retrieval, identical replay, and changed-prefix isolation at 0.85 with prefix
-caching on. Post-long-context qualification and the complete release matrix
-are still running.
+caching on. Startup memory admission varies; the explicit 0.87 fallback also
+passes this long-context test without changing the 0.85 default.
 
 The runtime starts from the official vLLM GLM ARM64 image and carries the
 GLM/EXL3/DFlash2 patch stack from Brandon's two-RTX recipe. B12x/SparkInfer
@@ -61,7 +57,8 @@ Published image: `ghcr.io/tpurtell/single-spark-glm-5.3-flash:20260905-k2-dflash
 The launcher pins its immutable registry digest:
 `sha256:1e91406e6c9520bf0e102bd0ead3b43426740671f308ca81c948ad6010136009`.
 GHCR visibility may remain private until the owner changes it; authenticate
-with `docker login ghcr.io` if required. The API port is 8001. Models use the standard
+with `docker login ghcr.io` if required. The API port is 8001 and has no
+authentication by default; keep it on a trusted network. Models use the standard
 `$HF_HOME/hub` cache, defaulting to `$HOME/.cache/huggingface/hub`.
 
 For a source build on a Spark, use `./build.sh`, then
@@ -73,16 +70,37 @@ slots, and **0.85 utilization**. Batch and EXL3 prefill capacities are 512.
 This does not imply six concurrent million-token requests: the measured shared
 cache capacity was 1.17 request-equivalents at the 1M limit.
 
-The current image passed all four near-1M retrieval/replay/isolation requests,
+The frozen runtime at 0.85/1.17x capacity passed all four near-1M requests,
 then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
 identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
-before/after snapshots. Published-image stress passed; the tight-fit emu
-startup failed the replay-reuse probe as described above.
-The explicit 0.86 comparison restored fast identical replay (29.44 s), but
-changed-tail reuse still missed at its 1.13x capacity. The allowed 0.87
-upper-bound fallback is now being tested; it is not the default or a
-qualified recommendation yet. See the [cache-headroom analysis](results/20260905-cache-headroom-analysis.md).
+before/after snapshots. Published-image stress also passed.
+
+| 1M profile / observed cache capacity | Identical replay | Changed-tail reuse / original replay |
+| --- | --- | --- |
+| 0.85, dodo, 1.17x (frozen runtime) | Passed, 28.83 s TTFT | Both passed, 50.79 / 28.90 s |
+| 0.85, emu, 1.01x (published) | Zero hits; probe interrupted | Unscored |
+| 0.86, dodo, 1.13x (published) | Passed, 29.44 s | Changed-tail zero hits; probe interrupted |
+| 0.87, emu, 1.35x (published) | Passed, 29.82 s | Both passed, 52.37 / 30.11 s |
+
+The 0.87 run had 9.17 GiB KV and passed the stronger v4 gate: cold retrieval
+had zero hits; each warm pass had positive hits and the exact six-record
+answer with a clean stop. Total hits were 3,072,000. Cold TTFT was 23.12 min.
+[Full four-pass receipt](results/20260905-published-087-emu-prefix1m.json).
+Post-long cancellation/recovery and all 145 grammar cases also passed, with
+no OOM/restart or net swap growth between snapshots. One post-ready
+`_kpool_softmax_rotate_write_cache_kernel` compile occurred during grammar;
+warmup does not cover every serving shape. If 1M admission fails or replay
+headroom is insufficient at 0.85, the explicit upper-bound fallback is:
+
+```bash
+./stop.sh
+GPU_MEMORY_UTILIZATION=0.87 ./start.sh
+```
+
+This is not an automatic retry or a new default. The observations do not
+prove a universal minimum replay-headroom percentage, and six slots still
+share one finite cache pool. See the [cache-headroom analysis](results/20260905-cache-headroom-analysis.md).
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context
@@ -112,12 +130,18 @@ C2/C4/C6 rates use the batch's first-any to last-any token window, **not the sum
 of individual stream rates**. Host-to-host differences are not isolated kernel
 effects.
 
-| Code-agent decode, tok/s | NVFP4, 262K (ostrich) | FP8, 262K (kiwi) | NVFP4, 1M default (dodo) |
-| --- | ---: | ---: | ---: |
-| C1 | 29.25 | 28.03 | 29.04 |
-| C2 aggregate | 45.26 | 47.67 | — |
-| C4 aggregate | 72.55 | 70.11 | — |
-| C6 aggregate | 85.03 | 83.96 | 84.15 |
+| Code-agent decode, tok/s | NVFP4, 262K (ostrich) | FP8, 262K (kiwi) | NVFP4, 1M/.85 (dodo) | NVFP4, 1M/.87 fallback (emu) |
+| --- | ---: | ---: | ---: | ---: |
+| C1 | 29.25 | 28.03 | 29.04 | 26.20 |
+| C2 aggregate | 45.26 | 47.67 | — | — |
+| C4 aggregate | 72.55 | 70.11 | — | — |
+| C6 aggregate | 85.03 | 83.96 | 84.15 | 84.55 |
+
+The published .87 fallback was measured after its 1M/grammar checks, and
+its lower C1 result is retained. C1 draft acceptance was 62.5%, versus
+69.8% in the matched .85 NVFP4 short-profile run. These cross-host/session
+results do not isolate a causal effect of the utilization setting.
+[Fallback throughput receipt](results/20260905-published-087-emu-code-agent.json).
 
 Native MTP with fixed 3/5/7 drafts measured C1 **19.86/20.74/18.63** and C6
 **78.29/71.11/59.48** tok/s on emu (two runs, prior image before the grammar-only
@@ -165,6 +189,11 @@ Observed memory admission for the measured sessions (all utilization 0.85):
 | FP8 262K / kiwi | 90.93 GiB | 9.86 GiB | 453,597 | 1.73x |
 | NVFP4 1M / dodo, qualified runtime | 90.76 GiB | 7.87 GiB | 1,221,641 | 1.17x |
 | NVFP4 1M / emu, published defaults | 90.76 GiB | 6.85 GiB | 1,058,756 | 1.01x |
+
+The explicit .87 fallback on emu admitted 9.17 GiB KV / 1,415,068 token-
+equivalents / 1.35x. Host available memory was 8.31 GB before / 7.49 GB after
+its complete long-context, grammar, and throughput session; swap usage was
+unchanged at 233,562,112 bytes. This is not part of the all-.85 table above.
 
 These are hybrid-cache planner token-equivalents, not pure MLA byte division.
 Host baseline memory and runtime reservations affect admission; the unequal

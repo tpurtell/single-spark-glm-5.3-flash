@@ -29,7 +29,13 @@ Observed serving evidence:
 - The .86 comparison admitted 1.13x capacity on dodo and restored identical
   replay (29.437 s, 1,029,120 cached tokens). Changed-tail reuse still missed;
   the probe was interrupted after documenting that miss. Its separate
-  cancellation/recovery test passed. The .87 comparison is now running.
+  cancellation/recovery test passed.
+- The .87 comparison admitted 1.35x capacity on emu and passed all four
+  requests under the stronger v4 gate: 0 cold hits and 1,029,120 / 1,013,760 /
+  1,029,120 warm-pass hits. TTFT was 1,387.216 / 29.820 / 52.370 / 30.115 s.
+  Cancellation/recovery and 145/145 grammar cases passed. Final C1/C6
+  throughput was 26.20/84.55 tok/s; no OOM/restart or net swap growth occurred.
+  One post-ready kernel compilation remains a documented warmup limitation.
 
 Inference: the near-zero spare capacity is a plausible reason that active
 1M serving succeeded while replay failed. We have not captured per-group
