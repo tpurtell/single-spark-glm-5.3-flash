@@ -8,7 +8,9 @@ frozen-release guarantees.
 **Startup qualification caveat:** one clean 1M/0.85 restart was rejected by
 the KV admission check (6.72 GiB available versus 6.75 GiB required), despite
 the identical command/environment passing earlier. A diagnostic retry fits
-at 0.85; cross-host validation is still underway. The launcher does not silently
+at 0.85; a fresh registry pull on emu also starts with unmodified defaults,
+but with only 1.01 request-equivalents of cache. Its 128K/512K retrieval and
+cancellation checks passed; the near-1M repeat is still underway. The launcher does not silently
 raise utilization or reduce context after a failed admission.
 
 Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
@@ -117,6 +119,23 @@ On the current image, target-only measured 10.36/48.46 tok/s at C1/C6;
 the five-draft 1M profile is 2.80x/1.74x faster. Seven DFlash2 drafts measured
 29.65/85.27 at C1/C6 in the 262K profile, giving little gain over five here.
 
+Five-draft acceptance in the matched code-agent runs (three-run medians):
+
+| Cache / concurrency | Drafts accepted | Committed tokens / verification | Acceptance by draft position 1–5 |
+| --- | ---: | ---: | --- |
+| NVFP4 C1 | 69.8% | 4.49 | 87.7 / 82.5 / 70.2 / 61.4 / 47.4% |
+| FP8 C1 | 67.1% | 4.36 | 84.7 / 78.0 / 69.5 / 57.6 / 45.8% |
+| NVFP4 C6 | 63.9% | 4.20 | 82.8 / 74.1 / 64.9 / 53.7 / 44.9% |
+| FP8 C6 | 64.1% | 4.20 | 85.0 / 75.7 / 64.2 / 52.5 / 43.5% |
+
+C1 decode-window time divided by verification count is approximately
+153 ms (NVFP4) / 154 ms (FP8). This is an end-to-end speculative-cycle proxy,
+including draft work and streaming, **not isolated target-kernel latency**.
+C6 verification counters sum across requests and must not be interpreted as
+serial GPU passes. Raw counts and timings:
+[NVFP4](results/20260905-final-k5-nvfp4-ostrich-code-agent.json),
+[FP8](results/20260905-final-k5-fp8-kiwi-code-agent.json).
+
 | Cold prefill, exact prompt tokens | NVFP4 tok/s / TTFT | FP8 tok/s / TTFT |
 | --- | ---: | ---: |
 | 2,048 | 855 / 2.40 s | 859 / 2.38 s |
@@ -128,6 +147,34 @@ Prefill medians use two cold runs at each depth in the matched 262K profiles.
 The default NVFP4 MLA record uses FP8 RoPE and occupies 368 bytes, compared
 with 656 bytes for FP8 MLA; this is **not** a 44% reduction in total model,
 recurrent-state, or draft-cache memory.
+
+Five-repeat C1 content medians on fresh matched 262K starts, same runtime:
+
+| Content | NVFP4 tok/s | FP8 tok/s |
+| --- | ---: | ---: |
+| Code | 31.96 | 29.55 |
+| Math | 25.45 | 29.67 |
+| Fable | 15.37 | 13.96 |
+| Short response | 31.19 | 30.81 |
+| Exposition | 18.78 | 16.49 |
+| JSON | 25.79 | 30.94 |
+| Multilingual | 16.66 | 15.41 |
+
+Both passed 30/35 structural contracts. NVFP4 failed the inherited math
+input-literal check five times despite the correct numeric calculation;
+FP8's five fables had 179 words, above the 170-word maximum. These are
+additional runs, not replacements for the single-repeat C1/C6 results below.
+Both sessions had zero post-ready JIT events and zero restarts.
+Receipts: [NVFP4](results/20260905-content-repeat-nvfp4-ostrich-blend-c1.json),
+[FP8](results/20260905-content-repeat-fp8-kiwi-blend-c1.json).
+
+The separate low-entropy repeated-word diagnostic measured **44.20 / 43.32
+tok/s** for NVFP4 / FP8 (five timed runs after one warmup, unique prompt
+nonces). Both produced 101 occurrences instead of the requested 100 in all
+five timed runs, so exact-count quality was **0/5** for both, with clean stops.
+These speeds are not normal-prose or code-agent throughput.
+Receipts: [NVFP4](results/20260905-content-repeat-nvfp4-ostrich-orchid.json),
+[FP8](results/20260905-content-repeat-fp8-kiwi-orchid.json).
 
 | Serving/quality check | NVFP4 K5 | FP8 K5 |
 | --- | --- | --- |
@@ -161,6 +208,13 @@ Serial traces:
 [FP8](results/tool-eval-reports/2026/09/2026-09-05T14-47-55.230999Z_806f8187.md).
 NVFP4's three serial failures match its C6 failures; FP8's fourth serial
 failure was TC-08's conditional weather/reminder flow, not TC-68.
+
+Separately, the published **1M deployment profile** on dodo scored
+122/138 points (88), with 56 pass / 10 partial / 3 fail at C6. Its failures
+were TC-34, TC-43, and TC-61; the safety gate still fails. This startup used
+diagnostic `GLM53_MEMORY_TRACE=1` and had 1.03 request-equivalents of cache;
+it is not another matched 262K cache-format measurement.
+[Full deployment-profile trace](results/tool-eval-reports/2026/09/2026-09-05T15-07-22.307025Z_b6f0ea50.md).
 
 Prefix reuse is coarse with the current hybrid cache layout and speculative
 lookback: K5 NVFP4 uses 15,360-token allocator blocks; K7 uses 18,432. A 32K K7
