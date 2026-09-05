@@ -25,7 +25,7 @@ else
   MODEL_MOUNT_TARGET=/model-repo
   MODEL_CONTAINER_DIR="/model-repo/snapshots/${MODEL_REVISION}"
 fi
-IMAGE="${IMAGE:-ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev}"
+IMAGE="${IMAGE:-ghcr.io/tpurtell/single-spark-glm-5.3-flash@sha256:1e91406e6c9520bf0e102bd0ead3b43426740671f308ca81c948ad6010136009}"
 CONTAINER_NAME="${CONTAINER_NAME:-glm53-spark}"
 SERVED_MODEL_NAME="${SERVED_MODEL_NAME:-${MODEL_ID}}"
 PORT="${PORT:-8001}"

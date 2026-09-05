@@ -1,13 +1,13 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
-Work in progress: the ARM64 image is built and serving on the Sparks. Release
-qualification and container publication are unfinished. Initial measurements
+Release qualification is finishing: the ARM64 image is published to GHCR;
+clean pull/start validation and serial tool scoring are still running. Measurements
 are in [the qualification log](results/QUALIFICATION-20260905.md); they are not
 frozen-release guarantees.
 
 Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
 Draft: [incoai/GLM-5.3-Flash-DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2).
-The production profile will use NVFP4 MLA cache, one GB10 GPU, six scheduler
+The production profile uses NVFP4 MLA cache, one GB10 GPU, six scheduler
 slots, and 0.85 GPU memory utilization. The launcher rejects utilization above
 0.87. A text-only 1,048,576-token model limit has passed near-1M six-record
 retrieval, identical replay, and changed-prefix isolation at 0.85 with prefix
@@ -35,20 +35,25 @@ Weights are not bundled in the container. The draft model card specifies
 CC BY-NC-ND 4.0 for research/evaluation; its restrictions apply independently
 of this recipe's Apache-2.0 license. See [PROVENANCE.md](PROVENANCE.md).
 
-## Development commands
+## Run
 
 Run Docker and GPU work on a DGX Spark:
 
 ```bash
-./build.sh
 ./download.sh  # omit when the pinned snapshots are already installed
-./start.sh
+./start.sh     # automatically pulls the pinned release if missing
 docker logs -f glm53-spark
 ```
 
-The development image is `ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev`;
-it is not published yet. The API port is 8001. Models use the standard
+Published image: `ghcr.io/tpurtell/single-spark-glm-5.3-flash:20260905-k2-dflash2`.
+The launcher pins its immutable registry digest:
+`sha256:1e91406e6c9520bf0e102bd0ead3b43426740671f308ca81c948ad6010136009`.
+GHCR visibility may remain private until the owner changes it; authenticate
+with `docker login ghcr.io` if required. The API port is 8001. Models use the standard
 `$HF_HOME/hub` cache, defaulting to `$HOME/.cache/huggingface/hub`.
+
+For a source build on a Spark, use `./build.sh`, then
+`IMAGE=ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev ./start.sh`.
 
 The default is text-only, NVFP4 MLA, **1,048,576 tokens**, DFlash2 with five
 draft tokens, compact recurrent rollback, **prefix caching on**, six scheduler
@@ -60,7 +65,7 @@ The current image passed all four near-1M retrieval/replay/isolation requests,
 then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
 identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
-before/after snapshots. Full tool-quality scoring and publication remain open.
+before/after snapshots. Serial tool scoring and clean pull/start validation remain open.
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context
@@ -102,6 +107,9 @@ Native MTP with fixed 3/5/7 drafts measured C1 **19.86/20.74/18.63** and C6
 fix). DFlash2's 1M profile is about 40% faster at C1 and 7.5% faster at C6 than
 the best respective native-MTP depth in that sweep. The original one-draft
 row was an untuned control, not the best MTP baseline.
+On the current image, target-only measured 10.36/48.46 tok/s at C1/C6;
+the five-draft 1M profile is 2.80x/1.74x faster. Seven DFlash2 drafts measured
+29.65/85.27 at C1/C6 in the 262K profile, giving little gain over five here.
 
 | Cold prefill, exact prompt tokens | NVFP4 tok/s / TTFT | FP8 tok/s / TTFT |
 | --- | ---: | ---: |
@@ -124,7 +132,8 @@ recurrent-state, or draft-cache memory.
 | Seven-content contracts, C1 | 6/7 | 6/7 |
 | Seven-content contracts, C6 | 29/42 | 34/42 |
 | Seven-content blend decode, C1 / C6 | 19.20 / 66.64 tok/s | 17.94 / 64.41 tok/s |
-| Tool Eval Bench, C6 and serial | Running | Running |
+| Tool Eval Bench, C6 | 124/138 points (90), 58 pass / 8 partial / 3 fail | 121/138 points (88), 56 pass / 9 partial / 4 fail |
+| Tool Eval Bench, serial | Running | Running |
 
 These quality scores are scoped: RULER-lite checks gold inclusion and clean
 termination in synthetic tasks, not official RULER. Some correct common-word
@@ -132,6 +141,14 @@ sets were accompanied by incorrect unrequested counts. Content contracts are
 structural, not execution-based code tests. Failures include the inherited
 math input-literal check, fable word counts, six NVFP4 C6 exposition truncations,
 and one FP8 C6 code truncation. Full outputs and failures are retained.
+The standard tool suite uses its fixed March reference date, temperature 0,
+low reasoning effort, 2,048 output tokens per turn, and seed 20260905.
+Both C6 runs failed the benchmark's safety gate: injected text was reproduced
+(TC-34) and an empty required search query was submitted (TC-43). Both also
+failed TC-61; FP8 additionally failed TC-68. These are measured limitations,
+not a claim of perfect agent reliability. Full traces:
+[NVFP4 C6](results/tool-eval-reports/2026/09/2026-09-05T14-36-53.630358Z_1b157d06.md),
+[FP8 C6](results/tool-eval-reports/2026/09/2026-09-05T14-36-53.671390Z_1fa68821.md).
 
 Prefix reuse is coarse with the current hybrid cache layout and speculative
 lookback: K5 NVFP4 uses 15,360-token allocator blocks; K7 uses 18,432. A 32K K7
@@ -139,6 +156,9 @@ probe answered correctly but had zero hits; the 64K probe passed all four
 retrieval/isolation checks with 110,592 hits. Do not infer short-prefix reuse
 merely from `--enable-prefix-caching`. Seven drafts remain a tuning profile,
 not the 1M deployment default.
+The K7 varied-content blend measured 17.46/62.71 tok/s at C1/C6, with
+6/7 and 36/42 structural contracts passing. It also triggered one post-ready
+`_kpool_tail_seed_kernel` compilation, unlike the qualified K5 1M run.
 
 See [EVAL.md](EVAL.md) for qualification requirements and
 [PROVENANCE.md](PROVENANCE.md) for source pins and adaptation evidence.

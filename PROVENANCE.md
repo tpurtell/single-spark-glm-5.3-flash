@@ -22,6 +22,25 @@ The MIA DeepSeek recipe is the quality/evaluation reference. The newer
 `ds4fv-vllm-28-sm12x` recipe is an implementation reference, not a quality baseline:
 its README records a model-quality regression relative to the MIA derivative.
 
+## Published runtime identity
+
+Runtime source freeze: `3b90e9055b8bb67e84c89fbf3172270a661a7204` in this recipe.
+The qualified development image is
+`sha256:94711456c8e9f17b849a9294fbb021245fc8a65b55d9e76a67fa8a0c77309095`.
+The versioned release is
+`ghcr.io/tpurtell/single-spark-glm-5.3-flash:20260905-k2-dflash2`, with registry
+manifest digest `sha256:1e91406e6c9520bf0e102bd0ead3b43426740671f308ca81c948ad6010136009`
+and local image/config ID
+`sha256:b5ae51f7229f51d0afbb217461811411f9ea39f0cd167b893e5e59843139c3e9`.
+
+`Dockerfile.release` promotes the already-tested runtime without rebuilding
+its files. `scripts/verify-image-equivalence.py` verified every RootFS layer,
+the platform, and all non-label container configuration as identical. Only
+the source-revision label changed. The full receipt is
+`results/20260905-release-equivalence.json`; the registry push receipt is
+`results/20260905-release-push-dodo.log`. Clean pull/start qualification is
+recorded separately, not inferred merely from successful upload.
+
 ## K2 manifest repair
 
 The pinned K2 snapshot contains 120 shards totalling 97,728,721,536 bytes,

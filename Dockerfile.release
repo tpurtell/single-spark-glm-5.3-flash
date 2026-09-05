@@ -1,0 +1,6 @@
+# Metadata-only promotion of a locally qualified image. Build the runtime with
+# Dockerfile first; verify identical RootFS and non-label config before pushing.
+ARG QUALIFIED_IMAGE=ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev
+FROM ${QUALIFIED_IMAGE}
+ARG SOURCE_REVISION
+LABEL org.opencontainers.image.revision="${SOURCE_REVISION}"
