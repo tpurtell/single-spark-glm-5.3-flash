@@ -56,6 +56,7 @@ python3 scripts/benchmark-repetition.py --base-url "$GLM_EVAL_URL" \
   --kv-cache nvfp4_ds_mla --repeats 5 --output "$GLM_EVAL_OUT/orchid.json"
 python3 scripts/benchmark-prefill.py --base-url "$GLM_EVAL_URL/v1" \
   --model "$GLM_EVAL_MODEL" --profile nvfp4 --runs 2 \
+  --prompt-tokens 2048 8192 32768 131072 \
   --output "$GLM_EVAL_OUT/prefill.json"
 python3 scripts/ruler-lite.py --base-url "$GLM_EVAL_URL/v1" \
   --lengths 8192,32768,131072 --output "$GLM_EVAL_OUT/ruler.json"
