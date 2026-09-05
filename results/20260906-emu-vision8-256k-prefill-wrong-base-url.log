@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/benchmark-prefill.py", line 206, in <module>
+    main()
+    ~~~~^^
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/benchmark-prefill.py", line 146, in main
+    time_to_first_token(args.base_url, args.model, warmup)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/benchmark-prefill.py", line 98, in time_to_first_token
+    raise RuntimeError(f"HTTP {response.status}: {error}")
+RuntimeError: HTTP 404: {"detail":"Not Found"}

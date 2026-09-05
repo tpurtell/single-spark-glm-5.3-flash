@@ -1,0 +1,10 @@
+Validated 120 checkpoint shards
+Validated DFlash2 K5 draft checkpoint
+62c93a963dd8df9a547994b8a987c3078e3dfb32bec5159c9bfb64f763fd6ea2
+Started glm53-spark on http://127.0.0.1:8001/v1. Initial B12x/CuTe compilation can take several minutes.
+Target: k2 profile, vcruz305/GLM-5.3-Flash-EXL3-K2@ca0bcdae265f7df1e346c57a2b53b8b8f632ee0b
+Profile: nvfp4, KV cache: nvfp4_ds_mla, max length: 262144, max sequences: 6, GPU memory utilization: 0.87
+MoE topology: TP1, EP1
+Speculation: DFlash2 K5, bfloat16 draft KV, from incoai/GLM-5.3-Flash-DFlash2@bf582e4eacc1810f76656d1811693ff6c6737d2a
+Vision: enabled with per-prompt limits {"image":8,"video":0}
+Follow startup: docker logs -f glm53-spark

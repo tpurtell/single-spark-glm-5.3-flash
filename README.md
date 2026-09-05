@@ -1,47 +1,21 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
-The ARM64 image is published to GHCR and pull-validated on a second Spark.
-The explicit 0.87 fallback passed all four near-1M retrieval/replay/isolation
-checks and post-long-context grammar, recovery, and throughput checks.
-Measured limits and failures are retained in [the qualification log](results/QUALIFICATION-20260905.md)
-and [release scope audit](results/RELEASE-AUDIT-20260905.md).
+Run [GLM-5.3 Flash EXL3 K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2)
+with [Inco DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2) on one
+DGX Spark, with **256K context and up to eight images per prompt**.
+The ready-to-run ARM64 image uses NVFP4 cache, prefix caching, and B12x/SparkInfer
+kernels, with six concurrent-request slots.
 
-**Startup qualification caveat:** one clean 1M/0.85 restart was rejected by
-the KV admission check (6.72 GiB available versus 6.75 GiB required), despite
-the identical command/environment passing earlier. Successful startup also
-does not guarantee useful 1M prefix reuse: the tightest fit missed replay.
-See the measured headroom table below. The launcher does not silently raise
-utilization or reduce context after a failed admission.
+| Performance on one Spark | Default profile |
+| --- | ---: |
+| Decode, one request | 26.15 tok/s |
+| Decode, six requests combined | 86.49 tok/s |
+| Cold prefill, 32K prompt | 961 tok/s |
+| Time to first token, cold 32K prompt | 34.11 s |
 
-Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
-Draft: [incoai/GLM-5.3-Flash-DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2).
-The default profile uses NVFP4 MLA cache, one GB10 GPU, six scheduler
-slots, and 0.85 GPU memory utilization. The launcher rejects utilization above
-0.87. A text-only 1,048,576-token model limit has passed near-1M six-record
-retrieval, identical replay, and changed-prefix isolation at 0.85 with prefix
-caching on. Startup memory admission varies; the explicit 0.87 fallback also
-passes this long-context test without changing the 0.85 default.
-
-The runtime starts from the official vLLM GLM ARM64 image and carries the
-GLM/EXL3/DFlash2 patch stack from Brandon's two-RTX recipe. B12x/SparkInfer
-supplies Trellis MoE, sparse attention/indexing, and admitted dense primitives.
-FP8 is retained for controlled cache-format comparisons, and native MTP for
-the performance floor.
-
-Per-projection EXL3 is included: gate, up, and down are independently assigned
-within one adjacent pair of MCG Trellis tiers per MoE layer (K2/K3, K3/K4,
-K4/K5, or K5/K6). The checkpoint-wide
-average does not override tensor bit widths. Qualification of the GPU adapter
-is separate from model-quality testing of a future mixed-bitrate GLM quant.
-
-For the current vcruz checkpoint, startup automatically resolves the latest
-official `zai-org/GLM-5.3-Flash` revision and fetches its chat template. A verified
-bundled copy supports first boot offline; a verified cache is reused if the
-network is unavailable. Set `GLM53_TEMPLATE_REFRESH=0` to disable fetching.
-The downloaded weights remain read-only; overrides live in `.cache/vllm/glm53`.
-Weights are not bundled in the container. The draft model card specifies
-CC BY-NC-ND 4.0 for research/evaluation; its restrictions apply independently
-of this recipe's Apache-2.0 license. See [PROVENANCE.md](PROVENANCE.md).
+Measured on EMU with vision enabled and text prompts; medians of three decode
+runs and two cold prefill runs. [Decode](results/20260906-emu-vision8-256k-code-agent.json)
+and [prefill](results/20260906-emu-vision8-256k-prefill.json) results.
 
 ## Run
 
@@ -64,65 +38,58 @@ authentication by default; keep it on a trusted network. Models use the standard
 For a source build on a Spark, use `./build.sh`, then
 `IMAGE=ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev ./start.sh`.
 
-The default is text-only, NVFP4 MLA, **1,048,576 tokens**, DFlash2 with five
+The default is vision enabled, NVFP4 MLA, **262,144 tokens**, DFlash2 with five
 draft tokens, compact recurrent rollback, **prefix caching on**, six scheduler
-slots, and **0.85 utilization**. Batch and EXL3 prefill capacities are 512.
-This does not imply six concurrent million-token requests: the measured shared
-cache capacity was 1.17 request-equivalents at the 1M limit.
-
-The frozen runtime at 0.85/1.17x capacity passed all four near-1M requests,
-then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
-identical replay was 28.8 seconds. No post-ready JIT compilations or engine
-restarts were observed in that run; host swap usage did not grow between the
-before/after snapshots. Published-image stress also passed.
-
-| 1M profile / observed cache capacity | Identical replay | Changed-tail reuse / original replay |
-| --- | --- | --- |
-| 0.85, dodo, 1.17x (frozen runtime) | Passed, 28.83 s TTFT | Both passed, 50.79 / 28.90 s |
-| 0.85, emu, 1.01x (published) | Zero hits; probe interrupted | Unscored |
-| 0.86, dodo, 1.13x (published) | Passed, 29.44 s | Changed-tail zero hits; probe interrupted |
-| 0.87, emu, 1.35x (published) | Passed, 29.82 s | Both passed, 52.37 / 30.11 s |
-
-The 0.87 run had 9.17 GiB KV and passed the stronger v4 gate: cold retrieval
-had zero hits; each warm pass had positive hits and the exact six-record
-answer with a clean stop. Total hits were 3,072,000. Cold TTFT was 23.12 min.
-[Full four-pass receipt](results/20260905-published-087-emu-prefix1m.json).
-Post-long cancellation/recovery and all 145 grammar cases also passed, with
-no OOM/restart or net swap growth between snapshots. One post-ready
-`_kpool_softmax_rotate_write_cache_kernel` compile occurred during grammar;
-warmup does not cover every serving shape. If 1M admission fails or replay
-headroom is insufficient at 0.85, the explicit upper-bound fallback is:
-
-```bash
-./stop.sh
-GPU_MEMORY_UTILIZATION=0.87 ./start.sh
-```
-
-This is not an automatic retry or a new default. The observations do not
-prove a universal minimum replay-headroom percentage, and six slots still
-share one finite cache pool. See the [cache-headroom analysis](results/20260905-cache-headroom-analysis.md).
+slots, and **0.87 utilization** (also the hard maximum). The scheduler prefill batch
+is 2048 tokens; EXL3's internal prefill capacity is 1024, as in the larger-batch
+benchmarks below. The context limit is per request, including output; six
+active requests share one cache pool, not six dedicated 256K caches.
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context
-NVFP4/FP8 comparison, explicitly use the same capacities:
+NVFP4/FP8 comparison, explicitly use the same capacities and disable vision
+to reproduce the historical measurements below:
 
 ```bash
-MAX_MODEL_LEN=262144 MAX_NUM_BATCHED_TOKENS=2048 \
+LANGUAGE_MODEL_ONLY=1 GPU_MEMORY_UTILIZATION=0.85 \
+  MAX_MODEL_LEN=262144 MAX_NUM_BATCHED_TOKENS=2048 \
   VLLM_EXL3_PREFILL_CAPACITY=1024 KV_CACHE_PROFILE=nvfp4 ./start.sh
 # Stop the owned server before starting another profile on the same Spark.
 ./stop.sh
-KV_CACHE_PROFILE=fp8 ./start.sh
+LANGUAGE_MODEL_ONLY=1 GPU_MEMORY_UTILIZATION=0.85 KV_CACHE_PROFILE=fp8 ./start.sh
 ```
 
-Vision is opt-in with `LANGUAGE_MODEL_ONLY=0`; its memory/quality profile is not
-yet qualified, and it defaults to one image per prompt.
+Vision defaults to eight images per prompt, with video disabled. Set
+`LANGUAGE_MODEL_ONLY=1` to disable vision.
+Single-image and eight-image color/position smoke checks passed on EMU;
+these are basic image-input checks, not a broad vision-quality benchmark.
+[Vision results](results/20260906-emu-vision8-256k-vision.json).
+See the [current release checks](results/RELEASE-20260906.md) for prefix reuse,
+recovery, and the remaining warmup limitations.
 `USE_REPLAYSSM=0` selects the full-rollback diagnostic path. The compact default
-includes the GLM convolution-window fix: its serving retest passed 36/36 rolling
-requests without loops or truncation. Historical failures remain in the log.
+includes the GLM convolution-window fix.
+
+## Runtime and model support
+
+The runtime starts from the official vLLM GLM ARM64 image with Brandon's
+GLM/EXL3/DFlash2 ports and B12x/SparkInfer kernels. Per-projection EXL3 supports
+independent gate/up/down assignments within one adjacent Trellis tier pair per
+MoE layer: K2/K3, K3/K4, K4/K5, or K5/K6. The adapter is tested; a future mixed
+GLM checkpoint still needs model-quality testing.
+
+Startup fetches the latest official `zai-org/GLM-5.3-Flash` chat template, with
+verified cached/bundled copies for offline use. Set `GLM53_TEMPLATE_REFRESH=0`
+to disable fetching. Weights remain read-only; overrides live in
+`.cache/vllm/glm53`. Weights are not bundled in the image. The draft model's
+CC BY-NC-ND 4.0 research/evaluation restrictions apply independently of this
+recipe's Apache-2.0 license; see [PROVENANCE.md](PROVENANCE.md).
 
 ## Measured performance and quality
 
-Current qualification image: `sha256:94711456c8e9f17b849a9294fbb021245fc8a65b55d9e76a67fa8a0c77309095`.
+Measurements below use the published runtime with vision disabled; the 262K
+comparisons use 0.85. They are historical tuning results, not measurements of
+the new 256K vision default. Historical table labels use “262K” for the same
+262,144-token context limit.
 One Spark per endpoint; no image transfers during measurements. NVFP4 and FP8
 used identical target/draft revisions, prompts, settings, and runtime image.
 Code-agent results are medians of three runs, 256 output tokens per sequence.
@@ -130,26 +97,26 @@ C2/C4/C6 rates use the batch's first-any to last-any token window, **not the sum
 of individual stream rates**. Host-to-host differences are not isolated kernel
 effects.
 
-| Code-agent decode, tok/s | NVFP4, 262K (ostrich) | FP8, 262K (kiwi) | NVFP4, 1M/.85 (dodo) | NVFP4, 1M/.87 fallback (emu) |
+| Code-agent decode, tok/s | NVFP4, 262K/.85 (ostrich) | FP8, 262K/.85 (kiwi) | NVFP4, 1M/.85 (dodo) | NVFP4, 1M/.87 (emu) |
 | --- | ---: | ---: | ---: | ---: |
 | C1 | 29.25 | 28.03 | 29.04 | 26.20 |
 | C2 aggregate | 45.26 | 47.67 | — | — |
 | C4 aggregate | 72.55 | 70.11 | — | — |
 | C6 aggregate | 85.03 | 83.96 | 84.15 | 84.55 |
 
-The published .87 fallback was measured after its 1M/grammar checks, and
+The published .87 profile was measured after its 1M/grammar checks, and
 its lower C1 result is retained. C1 draft acceptance was 62.5%, versus
 69.8% in the matched .85 NVFP4 short-profile run. These cross-host/session
 results do not isolate a causal effect of the utilization setting.
-[Fallback throughput receipt](results/20260905-published-087-emu-code-agent.json).
+[1M throughput receipt](results/20260905-published-087-emu-code-agent.json).
 
 Native MTP with fixed 3/5/7 drafts measured C1 **19.86/20.74/18.63** and C6
 **78.29/71.11/59.48** tok/s on emu (two runs, prior image before the grammar-only
-fix). DFlash2's 1M profile is about 40% faster at C1 and 7.5% faster at C6 than
-the best respective native-MTP depth in that sweep. The original one-draft
+fix). The earlier .85 DFlash2 1M run was about 40% faster at C1 and 7.5% faster
+at C6 than the best respective native-MTP depth in that sweep. The original one-draft
 row was an untuned control, not the best MTP baseline.
 On the current image, target-only measured 10.36/48.46 tok/s at C1/C6;
-the five-draft 1M profile is 2.80x/1.74x faster. Seven DFlash2 drafts measured
+that .85 five-draft 1M run was 2.80x/1.74x faster. Seven DFlash2 drafts measured
 29.65/85.27 at C1/C6 in the 262K profile, giving little gain over five here.
 
 Five-draft acceptance in the matched code-agent runs (three-run medians):
@@ -181,25 +148,42 @@ The default NVFP4 MLA record uses FP8 RoPE and occupies 368 bytes, compared
 with 656 bytes for FP8 MLA; this is **not** a 44% reduction in total model,
 recurrent-state, or draft-cache memory.
 
-Observed memory admission for the measured sessions (all utilization 0.85):
+### Long context and memory
 
-| Profile / host | Model-load allocation | Available KV pool | Token-equivalent capacity | Request equivalents |
-| --- | ---: | ---: | ---: | ---: |
-| NVFP4 262K / ostrich | 90.93 GiB | 8.10 GiB | 424,259 | 1.62x |
-| FP8 262K / kiwi | 90.93 GiB | 9.86 GiB | 453,597 | 1.73x |
-| NVFP4 1M / dodo, qualified runtime | 90.76 GiB | 7.87 GiB | 1,221,641 | 1.17x |
-| NVFP4 1M / emu, published defaults | 90.76 GiB | 6.85 GiB | 1,058,756 | 1.01x |
+The tested text-only 1M/.87 profile on emu allocated 90.76 GiB during model loading and
+admitted a 9.17 GiB cache pool. All four near-1M retrieval/replay/isolation
+checks passed: cold TTFT was 23.12 minutes; identical replay was 29.82 seconds,
+changed-tail reuse 52.37 seconds, and replay of the original 30.11 seconds.
+[Four-pass receipt](results/20260905-published-087-emu-prefix1m.json).
+Post-long cancellation/recovery and all 145 grammar cases passed, with no
+OOM, restart, or net swap growth. One kernel compiled after startup during
+grammar testing, so warmup does not cover every serving shape.
 
-The explicit .87 fallback on emu admitted 9.17 GiB KV / 1,415,068 token-
-equivalents / 1.35x. Host available memory was 8.31 GB before / 7.49 GB after
-its complete long-context, grammar, and throughput session; swap usage was
-unchanged at 233,562,112 bytes. This is not part of the all-.85 table above.
+**262K and 1M in the performance tables are configured context limits, not cache
+sizes.** The shorter benchmark profile also uses larger prefill batches. vLLM's
+diagnostic “request equivalents” estimate how many maximum-length active
+requests fit under each profile's hybrid attention/recurrent-state planner.
+They are neither measured concurrency nor a guarantee of retained prefix reuse,
+and should not be compared as a simple token-storage capacity across profiles.
 
-These are hybrid-cache planner token-equivalents, not pure MLA byte division.
-Host baseline memory and runtime reservations affect admission; the unequal
-pool sizes do **not** isolate cache-format savings. The model-load allocation
-also excludes later profiling/graph overhead. Fresh starts can admit less
-memory, including the failed 1M attempt described above.
+The 1M tests used smaller prefill batches and, for consistent prefix reuse,
+0.87 utilization. To reproduce that profile instead of the 256K vision default:
+
+```bash
+./stop.sh
+LANGUAGE_MODEL_ONLY=1 MAX_MODEL_LEN=1048576 MAX_NUM_BATCHED_TOKENS=512 \
+  VLLM_EXL3_PREFILL_CAPACITY=512 GPU_MEMORY_UTILIZATION=0.87 ./start.sh
+```
+
+The measurements and failed lower-headroom trials remain in the
+[cache-headroom analysis](results/20260905-cache-headroom-analysis.md) and
+[qualification log](results/QUALIFICATION-20260905.md). Available cache varies
+with host memory and runtime reservations; model-load allocation excludes later
+profiling/graph overhead. At 262K/.85, NVFP4 and FP8 model loads were both
+90.93 GiB, with 8.10 and 9.86 GiB admitted cache respectively on different
+hosts; those unequal pools do not isolate cache-format savings.
+
+### Varied content and tools
 
 Five-repeat C1 content medians on fresh matched 262K starts, same runtime:
 
@@ -265,8 +249,8 @@ failure was TC-08's conditional weather/reminder flow, not TC-68.
 Separately, the published **1M deployment profile** on dodo scored
 122/138 points (88), with 56 pass / 10 partial / 3 fail at C6. Its failures
 were TC-34, TC-43, and TC-61; the safety gate still fails. This startup used
-diagnostic `GLM53_MEMORY_TRACE=1` and had 1.03 request-equivalents of cache;
-it is not another matched 262K cache-format measurement.
+0.85 utilization and diagnostic `GLM53_MEMORY_TRACE=1`; it is neither a test of
+the new 256K vision default nor another matched 262K cache-format measurement.
 [Full deployment-profile trace](results/tool-eval-reports/2026/09/2026-09-05T15-07-22.307025Z_b6f0ea50.md).
 That session subsequently passed all 36 rolling C6 requests across low/max
 thinking and shared/unique prefixes, then all 12 cancellation/recovery pairs.
@@ -281,10 +265,12 @@ lookback: K5 NVFP4 uses 15,360-token allocator blocks; K7 uses 18,432. A 32K K7
 probe answered correctly but had zero hits; the 64K probe passed all four
 retrieval/isolation checks with 110,592 hits. Do not infer short-prefix reuse
 merely from `--enable-prefix-caching`. Seven drafts remain a tuning profile,
-not the 1M deployment default.
+not the five-draft deployment default.
 The K7 varied-content blend measured 17.46/62.71 tok/s at C1/C6, with
 6/7 and 36/42 structural contracts passing. It also triggered one post-ready
-`_kpool_tail_seed_kernel` compilation, unlike the qualified K5 1M run.
+`_kpool_tail_seed_kernel` compilation.
 
 See [EVAL.md](EVAL.md) for qualification requirements and
 [PROVENANCE.md](PROVENANCE.md) for source pins and adaptation evidence.
+The [release audit](results/RELEASE-AUDIT-20260905.md) records the original
+release's scope and limitations; its historical default was 0.85.

@@ -42,11 +42,12 @@ docker() {
 }
 ''')
         self.env = {k: v for k, v in os.environ.items()
-                    if not k.startswith(('GLM53_', 'VLLM_', 'MODEL_', 'DFLASH_', 'KV_CACHE_'))}
+                    if not k.startswith(('GLM53_', 'VLLM_', 'MODEL_', 'DFLASH_', 'KV_CACHE_'))
+                    and k not in ('GPU_MEMORY_UTILIZATION', 'LANGUAGE_MODEL_ONLY',
+                                  'LIMIT_MM_PER_PROMPT')}
         self.env.update(BASH_ENV=str(hooks), GLM53_TEST_ARGUMENTS=str(self.invocation),
                         MODEL_DIR_OVERRIDE=str(target), DFLASH_REPO_DIR=str(base / 'draft'),
-                        CACHE_DIR=str(base / 'cache'), GPU_MEMORY_UTILIZATION='0.85',
-                        LANGUAGE_MODEL_ONLY='1')
+                        CACHE_DIR=str(base / 'cache'))
 
     def launch(self, **overrides):
         return subprocess.run(['bash', str(ROOT / 'start.sh')],
@@ -61,9 +62,9 @@ docker() {
         self.assertEqual(result.returncode, 0, result.stderr)
         args = self.arguments()
         for flag, value in {'--load-format': 'instanttensor', '--block-size': '256',
-                            '--max-num-seqs': '6', '--max-model-len': '1048576',
-                            '--max-num-batched-tokens': '512',
-                            '--gpu-memory-utilization': '0.85',
+                            '--max-num-seqs': '6', '--max-model-len': '262144',
+                            '--max-num-batched-tokens': '2048',
+                            '--gpu-memory-utilization': '0.87',
                             '--kv-cache-dtype': 'nvfp4_ds_mla'}.items():
             self.assertEqual(args[args.index(flag) + 1], value)
         capture_start = args.index('--cudagraph-capture-sizes') + 1
@@ -72,9 +73,32 @@ docker() {
         self.assertEqual(max(captures), 36)
         self.assertTrue(set(range(6, 37, 6)).issubset(captures))
         self.assertIn('VLLM_EXL3_TRELLIS_MAX_M=36', args)
-        self.assertIn('VLLM_EXL3_PREFILL_CAPACITY=512', args)
+        self.assertIn('VLLM_EXL3_PREFILL_CAPACITY=1024', args)
         self.assertIn('--enable-prefix-caching', args)
         self.assertIn('--use-replayssm', args)
+        self.assertNotIn('--language-model-only', args)
+        self.assertEqual(json.loads(args[args.index('--limit-mm-per-prompt') + 1]),
+                         {'image': 8, 'video': 0})
+
+    def test_text_only_override_keeps_256k_profile(self):
+        result = self.launch(LANGUAGE_MODEL_ONLY='1')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        args = self.arguments()
+        self.assertIn('--language-model-only', args)
+        self.assertEqual(args[args.index('--max-model-len') + 1], '262144')
+
+    def test_historical_1m_profile_is_explicit(self):
+        result = self.launch(LANGUAGE_MODEL_ONLY='1', MAX_MODEL_LEN='1048576',
+                             MAX_NUM_BATCHED_TOKENS='512',
+                             VLLM_EXL3_PREFILL_CAPACITY='512',
+                             GPU_MEMORY_UTILIZATION='0.87')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        args = self.arguments()
+        for flag, value in {'--max-model-len': '1048576',
+                            '--max-num-batched-tokens': '512',
+                            '--gpu-memory-utilization': '0.87'}.items():
+            self.assertEqual(args[args.index(flag) + 1], value)
+        self.assertIn('VLLM_EXL3_PREFILL_CAPACITY=512', args)
         self.assertIn('--language-model-only', args)
 
     def test_native_mtp_is_fixed_when_adaptation_disabled(self):
@@ -96,6 +120,12 @@ docker() {
             with self.subTest(value=value):
                 self.assertNotEqual(self.launch(GPU_MEMORY_UTILIZATION=value).returncode, 0)
 
+    def test_lower_utilization_override(self):
+        result = self.launch(GPU_MEMORY_UTILIZATION='0.84')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        args = self.arguments()
+        self.assertEqual(args[args.index('--gpu-memory-utilization') + 1], '0.84')
+
     def test_full_rollback_uses_comparison_defaults(self):
         self.assertEqual(self.launch().returncode, 0)
         self.assertIn('--use-replayssm', self.arguments())
@@ -114,6 +144,7 @@ docker() {
             args = self.arguments()
             self.assertEqual(args[args.index('--max-model-len') + 1], '262144')
             self.assertEqual(args[args.index('--max-num-batched-tokens') + 1], '2048')
+            self.assertEqual(args[args.index('--gpu-memory-utilization') + 1], '0.87')
             self.assertIn('VLLM_EXL3_PREFILL_CAPACITY=1024', args)
             self.assertIn('--enable-prefix-caching', args)
 

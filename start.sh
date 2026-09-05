@@ -49,12 +49,14 @@ MTP_BATCH_SCHEDULE="${MTP_BATCH_SCHEDULE:-}"
 # window correction. USE_REPLAYSSM=0 retains the full-state diagnostic path.
 USE_REPLAYSSM="${USE_REPLAYSSM:-1}"
 REPLAYSSM_BUFFER_LEN="${REPLAYSSM_BUFFER_LEN:-10}"
-LANGUAGE_MODEL_ONLY="${LANGUAGE_MODEL_ONLY:-1}"
+LANGUAGE_MODEL_ONLY="${LANGUAGE_MODEL_ONLY:-0}"
 if [[ ! -v LIMIT_MM_PER_PROMPT ]]; then
   if [[ "${LANGUAGE_MODEL_ONLY}" == 1 ]]; then
     LIMIT_MM_PER_PROMPT='{"image":0}'
   else
-    LIMIT_MM_PER_PROMPT='{"image":1}'
+    # Unspecified modalities retain vLLM defaults; explicitly disable video
+    # so an image-only deployment does not profile a maximum-size video.
+    LIMIT_MM_PER_PROMPT='{"image":8,"video":0}'
   fi
 fi
 ENABLE_PREFIX_CACHING="${ENABLE_PREFIX_CACHING:-1}"
@@ -70,22 +72,14 @@ fi
 case "${KV_CACHE_PROFILE}" in
   nvfp4)
     PROFILE_KV_CACHE_DTYPE=nvfp4_ds_mla
-    PROFILE_GPU_MEMORY_UTILIZATION=0.85
+    PROFILE_GPU_MEMORY_UTILIZATION=0.87
     PROFILE_MAX_MODEL_LEN=262144
     PROFILE_MAX_NUM_BATCHED_TOKENS=2048
     PROFILE_PREFILL_CAPACITY=1024
-    # The measured 1M deployment profile is specifically text-only DFlash2
-    # K5 with compact rollback. Other configurations keep comparison defaults.
-    if [[ "${SPECULATIVE_METHOD}" == dflash2 && "${DFLASH_TOKENS}" == 5 &&
-          "${USE_REPLAYSSM}" == 1 && "${LANGUAGE_MODEL_ONLY}" == 1 ]]; then
-      PROFILE_MAX_MODEL_LEN=1048576
-      PROFILE_MAX_NUM_BATCHED_TOKENS=512
-      PROFILE_PREFILL_CAPACITY=512
-    fi
     ;;
   fp8)
     PROFILE_KV_CACHE_DTYPE=fp8_ds_mla
-    PROFILE_GPU_MEMORY_UTILIZATION=0.85
+    PROFILE_GPU_MEMORY_UTILIZATION=0.87
     PROFILE_MAX_MODEL_LEN=262144
     PROFILE_MAX_NUM_BATCHED_TOKENS=2048
     PROFILE_PREFILL_CAPACITY=1024
@@ -108,7 +102,7 @@ import math
 import sys
 value = float(sys.argv[1])
 if not math.isfinite(value) or not 0 < value <= 0.87:
-    raise SystemExit('GPU_MEMORY_UTILIZATION must be positive and at most 0.87; default is 0.85')
+    raise SystemExit('GPU_MEMORY_UTILIZATION must be positive and at most 0.87; default is 0.87')
 PY
 if [[ $(uname -m) != aarch64 ]]; then
   echo 'Run this launcher on a DGX Spark.' >&2

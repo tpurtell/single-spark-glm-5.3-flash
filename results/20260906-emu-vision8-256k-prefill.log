@@ -1,0 +1,2 @@
+nvfp4 32,768 run 1/2: 961.4 tok/s, TTFT 34.082 s
+nvfp4 32,768 run 2/2: 959.7 tok/s, TTFT 34.143 s

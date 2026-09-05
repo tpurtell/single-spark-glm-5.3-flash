@@ -1,0 +1,241 @@
+{
+  "schema": "glm53-vision-smoke.v2",
+  "base_url": "http://emu:8001",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "complete": true,
+  "passed": true,
+  "cases": [
+    {
+      "expected": {
+        "left": "red",
+        "right": "blue"
+      },
+      "image_count": 1,
+      "image_sha256": [
+        "1c8bed001809ffd620bec5e6907f12545a55322179f76e6129683de5b8598570"
+      ],
+      "passed": true,
+      "response": {
+        "id": "chatcmpl-aa93e6e9ac3400b9",
+        "object": "chat.completion",
+        "created": 1788631206,
+        "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"left\": \"red\", \"right\": \"blue\"}",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": "Left red, right blue."
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": 154827,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-93da68cb",
+        "usage": {
+          "prompt_tokens": 101,
+          "total_tokens": 121,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "ec_transfer_params": null,
+        "metrics": null
+      },
+      "parsed_answer": {
+        "left": "red",
+        "right": "blue"
+      },
+      "seconds": 1.1275813780084718
+    },
+    {
+      "expected": {
+        "left": "blue",
+        "right": "red"
+      },
+      "image_count": 1,
+      "image_sha256": [
+        "44ac5e8cbd0e05a3de90dbadbb3e38be455ff838fd30af2ee851280ffdbede31"
+      ],
+      "passed": true,
+      "response": {
+        "id": "chatcmpl-baa1e4cfed5b1e89",
+        "object": "chat.completion",
+        "created": 1788631207,
+        "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"left\": \"blue\", \"right\": \"red\"}",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": 154827,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-93da68cb",
+        "usage": {
+          "prompt_tokens": 101,
+          "total_tokens": 115,
+          "completion_tokens": 14,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "ec_transfer_params": null,
+        "metrics": null
+      },
+      "parsed_answer": {
+        "left": "blue",
+        "right": "red"
+      },
+      "seconds": 1.076280149995
+    },
+    {
+      "expected": [
+        {
+          "left": "red",
+          "right": "blue"
+        },
+        {
+          "left": "blue",
+          "right": "green"
+        },
+        {
+          "left": "green",
+          "right": "red"
+        },
+        {
+          "left": "yellow",
+          "right": "blue"
+        },
+        {
+          "left": "red",
+          "right": "green"
+        },
+        {
+          "left": "green",
+          "right": "yellow"
+        },
+        {
+          "left": "blue",
+          "right": "red"
+        },
+        {
+          "left": "yellow",
+          "right": "red"
+        }
+      ],
+      "image_count": 8,
+      "image_sha256": [
+        "1c8bed001809ffd620bec5e6907f12545a55322179f76e6129683de5b8598570",
+        "921d534a1119a0ed13aa7be52015128c395b4bd6c69b4e41ee15c2bec89cef99",
+        "570ee95a675e34afd18b5c77139c8d2ab657fe20d079d333234ebed516546446",
+        "131b9b02f9c58ac482db5325c5be2264869002790c11cb41c2872e2cfa92f9d4",
+        "cb7d04766ca9ecccce4535b7c8bac3b781091805b59b489cab4ae049e90d9212",
+        "08a23e4022e494d95158b632437733daf578f1092190b0c55d4d1d808793f6c3",
+        "44ac5e8cbd0e05a3de90dbadbb3e38be455ff838fd30af2ee851280ffdbede31",
+        "eb7d48d9ae8de586ead63febe30984f60b8c94f65b49615e7cfd52e67657fdd5"
+      ],
+      "passed": true,
+      "response": {
+        "id": "chatcmpl-b178ccc182a74f54",
+        "object": "chat.completion",
+        "created": 1788631208,
+        "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[\n  {\"left\": \"red\", \"right\": \"blue\"},\n  {\"left\": \"blue\", \"right\": \"green\"},\n  {\"left\": \"green\", \"right\": \"red\"},\n  {\"left\": \"yellow\", \"right\": \"blue\"},\n  {\"left\": \"red\", \"right\": \"green\"},\n  {\"left\": \"green\", \"right\": \"yellow\"},\n  {\"left\": \"blue\", \"right\": \"red\"},\n  {\"left\": \"yellow\", \"right\": \"red\"}\n]\n```",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": 154827,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-93da68cb",
+        "usage": {
+          "prompt_tokens": 475,
+          "total_tokens": 587,
+          "completion_tokens": 112,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "ec_transfer_params": null,
+        "metrics": null
+      },
+      "parsed_answer": [
+        {
+          "left": "red",
+          "right": "blue"
+        },
+        {
+          "left": "blue",
+          "right": "green"
+        },
+        {
+          "left": "green",
+          "right": "red"
+        },
+        {
+          "left": "yellow",
+          "right": "blue"
+        },
+        {
+          "left": "red",
+          "right": "green"
+        },
+        {
+          "left": "green",
+          "right": "yellow"
+        },
+        {
+          "left": "blue",
+          "right": "red"
+        },
+        {
+          "left": "yellow",
+          "right": "red"
+        }
+      ],
+      "seconds": 4.154474362992914
+    }
+  ]
+}
