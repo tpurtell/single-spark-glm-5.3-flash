@@ -207,7 +207,8 @@ launcher defaults reached healthy startup. Its KV capacity is 6.85 GiB,
 1,058,756 token-equivalents / 1.01x. It passed 145/145 grammar canaries,
 four strict 32K prefix passes, exact 128K and 512K six-record retrieval,
 and 12 cancellation/recovery pairs. The 512K cold TTFT was 652.520 seconds.
-The same process is now running four strict near-1M replay/isolation passes.
+The same process subsequently passed cold near-1M retrieval but missed
+identical prefix reuse; the deliberate interruption is recorded below.
 Receipts: `20260905-published-default-emu-*`.
 
 A preceding dodo restart with the same default command failed KV admission:
@@ -235,7 +236,7 @@ between snapshots. No OOM or restart occurred. The post-ready JIT audit
 tool suite. This is a documented warmup coverage gap, not a zero-JIT pass.
 See `20260905-published-default-dodo-{post-environment,jit,cancellation}.json`,
 the full serving log, and `20260905-published-default-dodo-stress/summary.json`.
-The completed dodo test server was stopped; the emu 1M job remains running.
+The completed dodo test server was stopped before the later 0.86 comparison.
 
 The five-repeat C1 content comparisons completed on fresh matched 262K
 starts (ostrich NVFP4 / kiwi FP8), with 30/35 structural contracts passing
@@ -259,11 +260,27 @@ exited successfully and removed their own temporary containers.
 
 The published emu 1.01x-capacity startup passed cold near-1M retrieval
 (TTFT 1,393.874 s), but the identical replay recorded zero additional prefix
-hits and is recomputing. This does not qualify tight-fit fast replay, unlike
-the earlier 1.17x-capacity run. The original four-pass client remains live;
-its partial JSON is explicitly `complete: false`. In-flight metrics and
+hits and recomputed. This does not qualify tight-fit fast replay, unlike
+the earlier 1.17x-capacity run. The original four-pass client was interrupted
+after the miss was established; its partial JSON is explicitly `complete: false`.
+The second answer and two unstarted isolation passes are unscored. In-flight metrics and
 serving state/logs are preserved as `20260905-published-default-emu-tight-replay-inflight.*`.
 Additional cache headroom is a hypothesis, not a proven root cause yet.
 An explicit 0.86 utilization fallback is being qualified on dodo, using the
 same published image and otherwise-default launch settings. It does not
 change the launcher default of 0.85 or bypass the 0.87 hard cap.
+
+The emu client exited 130 following SIGINT at 16:01:37 UTC, not an observation
+timeout. Its queue drained with zero preemptions; the separate post-abort
+cancellation/recovery test passed all 12 pairs. Final host available memory
+was 10.060 GB; swap usage decreased by 12 KiB from the pre-suite snapshot.
+There was no OOM/restart. One post-ready
+`_kpool_softmax_rotate_write_cache_kernel` compilation occurred during the
+earlier grammar suite. The emu server was then stopped. See
+`20260905-published-default-emu-tight-replay-abort.md`, the full serving log,
+and `20260905-published-default-emu-post-abort-cancellation.json`.
+
+The published 0.86 dodo start reached healthy status with 7.63 GiB KV,
+1,180,920 token-equivalents / 1.13x, and 10.557 GB host available memory.
+No default was changed. Its full four-pass near-1M test plus cancellation
+and post-run audit are still running (`20260905-published-086-dodo-*`).

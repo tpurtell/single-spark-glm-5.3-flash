@@ -1,9 +1,10 @@
 # Release scope audit, 2026-09-05
 
-Status: final cross-host near-1M replay is still running. Its cold request
-passed, but the identical replay has zero cache hits and is recomputing.
+Status: cross-host near-1M cold retrieval passed, but identical replay recorded
+zero cache hits. That probe was deliberately interrupted after the miss was
+established; its remaining answer/isolation passes are unscored.
 The tight 1.01x capacity therefore does not establish fast 1M replay.
-An explicit 0.86 fallback is under test; default remains 0.85.
+An explicit 0.86 fallback with 1.13x capacity is under test; default remains 0.85.
 This audit is not a blanket assertion that every quality,
 startup, or zero-JIT check passed.
 
@@ -16,7 +17,7 @@ startup, or zero-JIT check passed.
 | DFlash2 performance above controls | Final code-agent receipts: 1M DFlash2 29.04/84.15 tok/s at C1/C6 versus target-only 10.36/48.46. Native MTP fixed 3/5/7 sweep completed; best respective rates 20.74/78.29. Native tests precede the grammar-only fix and are labeled accordingly. |
 | NVFP4 default and FP8 comparison | README reports matched 262K C1/C2/C4/C6, prefill, varied content, acceptance, memory, RULER-lite, tools, and stability. Cache profiles share model/draft/image/settings; host effects and unequal admitted KV pools are disclosed. |
 | Memory utilization .85, hard maximum .87 | `start.sh` defaults .85 and rejects non-finite or >.87 values; seven CPU launcher tests pass. The serving command is present in each environment receipt. No automatic increase is implemented. |
-| Ideally 1M, six concurrency slots | Frozen runtime's four near-1M retrieval/replay/isolation requests passed at .85 with APC on (`20260905-final-1m-nvfp4-dodo-prefix.json`), followed by C6 stress/recovery. Exact prompt 1,048,320 plus 256 allowance reaches 1,048,576. Six slots share one pool, not six million-token requests. Published emu tight-fit repeat remains pending. |
+| Ideally 1M, six concurrency slots | Frozen runtime's four near-1M retrieval/replay/isolation requests passed at .85 with APC on (`20260905-final-1m-nvfp4-dodo-prefix.json`), followed by C6 stress/recovery. Exact prompt 1,048,320 plus 256 allowance reaches 1,048,576. Six slots share one pool, not six million-token requests. Published emu tight-fit cold retrieval passed but replay reuse failed; the .86 comparison is pending. |
 | Prefix caching enabled | Launcher default on; 32K and near-1M receipts prove cache hits and changed-prefix isolation. Coarse hybrid block granularity is disclosed; K7 32K zero-hit failure is retained alongside its passing 64K retest. |
 | Fresh official chat template | Auto-refresh resolves immutable official revision, validates template, and uses verified cache/bundle fallback. Environment records actual served hash and official revision. Template CPU tests pass; real tool/grammar tests use the override. |
 | MIA-style content and quality coverage | Seven content categories, five-repeat C1 diagnostic, separate repeated-word test, cold prefill, RULER-lite, context ladder, structured/tool canaries, Tool Eval Bench serial/C6, rolling stress and cancellation are reported with raw outputs. These are not execution-based code evaluation or official RULER. |

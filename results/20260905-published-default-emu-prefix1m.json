@@ -1,0 +1,40 @@
+{
+  "schema": "glm53-prefix-replay.v3",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "base_url": "http://emu:8001",
+  "passed": false,
+  "complete": false,
+  "target_prompt_tokens": 1048320,
+  "cache_salt": "c8089e11ba08468b83c37516b0499f2a",
+  "fixture_nonce": "prefix-replay-857ca43d844d4e89918924f3d28441f6",
+  "original_prompt_ids_sha256": "c7abe4399098a8447b120eb71ac054f6e92dc1816e50bb1f3664ccd7ddbe344a",
+  "changed_prompt_ids_sha256": "035a07187a51776e9503931e45452178ef1fde40c5f504357d6317d757d0e0ae",
+  "prefix_cache_hits_before": 46080.0,
+  "passes": [
+    {
+      "pass": 1,
+      "name": "cold",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 1396.6145839309975,
+      "ttft_seconds": 1393.874233761002,
+      "usage": {
+        "prompt_tokens": 1048320,
+        "total_tokens": 1048394,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    }
+  ],
+  "scope": "Strict exact-answer cold retrieval, identical replay, changed-tail isolation, then original replay",
+  "prefix_cache_hits_after": 46080.0,
+  "prefix_cache_hit_delta": 0.0
+}

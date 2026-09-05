@@ -1,0 +1,34 @@
+{"pass": "cold", "passed": true, "ttft_seconds": 1393.874233761002, "request_seconds": 1396.6145839309975}
+Traceback (most recent call last):
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/test-prefix-replay-vllm.py", line 142, in <module>
+    main()
+    ~~~~^^
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/test-prefix-replay-vllm.py", line 81, in main
+    output, usage, ttft, elapsed, finish_reason = long_context.stream_completion(
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        args.base_url,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        args.timeout,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/tj/Developer/single-spark-glm-5.3-flash/scripts/test-multi-needle-vllm.py", line 52, in stream_completion
+    for raw_line in response:
+                    ^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/http/client.py", line 727, in readline
+    return super().readline(limit)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/http/client.py", line 719, in peek
+    return self._peek_chunked(n)
+           ~~~~~~~~~~~~~~~~~~^^^
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/http/client.py", line 757, in _peek_chunked
+    chunk_left = self._get_chunk_left()
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/http/client.py", line 603, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/http/client.py", line 554, in _read_next_chunk_size
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/home/linuxbrew/.linuxbrew/Cellar/python@3.14/3.14.7/lib/python3.14/socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+KeyboardInterrupt

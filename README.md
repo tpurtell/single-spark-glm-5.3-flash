@@ -1,7 +1,7 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
 Release qualification is finishing: the ARM64 image is published to GHCR;
-the published-default stress/context checks are still running. Measurements
+the explicit 0.86 long-context fallback check is still running. Measurements
 are in [the qualification log](results/QUALIFICATION-20260905.md); they are not
 frozen-release guarantees.
 
@@ -11,8 +11,9 @@ the identical command/environment passing earlier. A diagnostic retry fits
 at 0.85; a fresh registry pull on emu also starts with unmodified defaults,
 but with only 1.01 request-equivalents of cache. Its 128K/512K retrieval and
 cancellation checks passed. Its cold near-1M answer also passed, but the
-identical replay has recorded **zero cache hits** and is recomputing the
-prompt; this tight-fit startup is not qualified for fast 1M replay. The earlier
+identical replay recorded **zero cache hits** and recomputed the prompt;
+the probe was interrupted after documenting that miss. This tight-fit startup
+is not qualified for fast 1M replay. The earlier
 1.17x-capacity run did reuse the prefix. The launcher does not silently
 raise utilization or reduce context after a failed admission.
 
@@ -76,7 +77,8 @@ The current image passed all four near-1M retrieval/replay/isolation requests,
 then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
 identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
-before/after snapshots. Published-default stress/context checks remain open.
+before/after snapshots. Published-image stress passed; the tight-fit emu
+startup failed the replay-reuse probe as described above.
 An explicit 0.86 fallback is being tested for additional 1M cache headroom;
 it is not the default or a qualified recommendation yet.
 
