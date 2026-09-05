@@ -85,7 +85,11 @@ On the 1M NVFP4 profile, additionally run `test-multi-needle-vllm.py` at
 `--tokens 1048320` (each with `--base-url` and a distinct `--output`). The latter
 reserves 256 output tokens within the 1,048,576 limit and performs four
 retrieval/replay/isolation passes. Repeat grammar/cancellation or rolling
-stress afterward. Cold near-1M prefill takes about 22 minutes; a quiet client
+stress afterward. The v4 prefix checker requires cache hits on each of the
+three warm passes, not merely somewhere in the run, as well as all four exact
+answers and clean stops. Older v3 receipts are retained with their original
+scoring; new runs use the stronger per-pass gate.
+Cold near-1M prefill takes about 22 minutes; a quiet client
 is not evidence that the job has stopped.
 
 Tool Eval Bench requires the separate `../tool-eval-bench` checkout and its

@@ -1,0 +1,62 @@
+{
+  "schema": "glm53-prefix-replay.v3",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "base_url": "http://dodo:8001",
+  "passed": false,
+  "complete": false,
+  "target_prompt_tokens": 1048320,
+  "cache_salt": "b7a43237a16744718892da1dc0815633",
+  "fixture_nonce": "prefix-replay-8c090380b988488891c051e1442da53f",
+  "original_prompt_ids_sha256": "283fe4a40e0fac6eb38776c63cd4b67167650350b666e6d9b25582fe7c9f412a",
+  "changed_prompt_ids_sha256": "02bd8d088ead765523e2e79ec2a60cfcfa82294c53ede5b900610e7a052e618b",
+  "prefix_cache_hits_before": 0.0,
+  "passes": [
+    {
+      "pass": 1,
+      "name": "cold",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 1355.5850307830042,
+      "ttft_seconds": 1353.015799588,
+      "usage": {
+        "prompt_tokens": 1048320,
+        "total_tokens": 1048394,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    },
+    {
+      "pass": 2,
+      "name": "replay",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 32.1727386249986,
+      "ttft_seconds": 29.43653156000073,
+      "usage": {
+        "prompt_tokens": 1048320,
+        "total_tokens": 1048394,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726"
+    }
+  ],
+  "scope": "Strict exact-answer cold retrieval, identical replay, changed-tail isolation, then original replay",
+  "prefix_cache_hits_after": 1029120.0,
+  "prefix_cache_hit_delta": 1029120.0
+}

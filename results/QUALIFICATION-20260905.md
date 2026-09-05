@@ -266,7 +266,7 @@ after the miss was established; its partial JSON is explicitly `complete: false`
 The second answer and two unstarted isolation passes are unscored. In-flight metrics and
 serving state/logs are preserved as `20260905-published-default-emu-tight-replay-inflight.*`.
 Additional cache headroom is a hypothesis, not a proven root cause yet.
-An explicit 0.86 utilization fallback is being qualified on dodo, using the
+An explicit 0.86 utilization comparison was run on dodo, using the
 same published image and otherwise-default launch settings. It does not
 change the launcher default of 0.85 or bypass the 0.87 hard cap.
 
@@ -282,5 +282,19 @@ and `20260905-published-default-emu-post-abort-cancellation.json`.
 
 The published 0.86 dodo start reached healthy status with 7.63 GiB KV,
 1,180,920 token-equivalents / 1.13x, and 10.557 GB host available memory.
-No default was changed. Its full four-pass near-1M test plus cancellation
-and post-run audit are still running (`20260905-published-086-dodo-*`).
+No default was changed. Cold and identical replay passed (TTFT 1,353.016 /
+29.437 s, 1,029,120 cached tokens), but changed-tail reuse missed. The owned
+client was deliberately interrupted after confirming that miss; its last
+two answers are unscored and its partial receipt remains incomplete. The
+follow-up grammar/throughput prerequisite guard correctly exited 1.
+The separate cancellation/recovery check passed 12 pairs; post-ready JIT
+count was zero, no OOM/restart occurred, available host memory was 9.885 GB,
+and swap usage decreased 8 KiB. Dodo was then stopped. Receipts:
+`20260905-published-086-dodo-*`, especially `changed-tail-abort.md`.
+
+The explicit 0.87 upper-bound fallback is now running on emu, with otherwise
+identical published-image defaults. Its prefix checker is v4: positive cache
+hits are required independently on each of the three warm passes, plus zero
+cold hits and all four exact answers/clean stops. Four CPU scoring regressions
+pass. Older v3 receipts retain their original scoring and are not overwritten.
+The .85 default and .87 hard ceiling remain unchanged.

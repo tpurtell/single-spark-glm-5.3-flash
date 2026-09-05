@@ -26,7 +26,10 @@ Observed serving evidence:
 - The published 1.01x-capacity .85 run passed cold retrieval but had zero
   additional hits on identical replay. It had zero preemptions, remained
   healthy, and recovered after the deliberate client interruption.
-- The .86 comparison admits 1.13x capacity on dodo; its full test is running.
+- The .86 comparison admitted 1.13x capacity on dodo and restored identical
+  replay (29.437 s, 1,029,120 cached tokens). Changed-tail reuse still missed;
+  the probe was interrupted after documenting that miss. Its separate
+  cancellation/recovery test passed. The .87 comparison is now running.
 
 Inference: the near-zero spare capacity is a plausible reason that active
 1M serving succeeded while replay failed. We have not captured per-group
@@ -38,4 +41,5 @@ The runtime also contains optional sparse-retention machinery, but it is
 **not enabled or qualified by this recipe**. Reducing retention would change
 which prefix boundaries remain reusable; it is not silently substituted for
 the tested dense-retention behavior. The explicit .86 comparison changes
-only the utilization override and stays below the .87 hard cap.
+only the utilization override. The new .87 comparison stays at the hard cap;
+neither changes the .85 launcher default.

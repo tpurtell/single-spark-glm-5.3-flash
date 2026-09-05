@@ -1,7 +1,7 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
 Release qualification is finishing: the ARM64 image is published to GHCR;
-the explicit 0.86 long-context fallback check is still running. Measurements
+the explicit 0.87 long-context fallback check is still running. Measurements
 are in [the qualification log](results/QUALIFICATION-20260905.md); they are not
 frozen-release guarantees.
 
@@ -79,8 +79,10 @@ identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
 before/after snapshots. Published-image stress passed; the tight-fit emu
 startup failed the replay-reuse probe as described above.
-An explicit 0.86 fallback is being tested for additional 1M cache headroom;
-it is not the default or a qualified recommendation yet.
+The explicit 0.86 comparison restored fast identical replay (29.44 s), but
+changed-tail reuse still missed at its 1.13x capacity. The allowed 0.87
+upper-bound fallback is now being tested; it is not the default or a
+qualified recommendation yet. See the [cache-headroom analysis](results/20260905-cache-headroom-analysis.md).
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context

@@ -1,0 +1,535 @@
+{
+  "schema": "glm53-cancellation.v1",
+  "base_url": "http://dodo:8001",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "concurrency": 6,
+  "nonce": "b84ba606a3f1425182f096997aa7272b",
+  "phases": [
+    {
+      "mode": "prefill",
+      "prompt_tokens": 32768,
+      "cancelled": [
+        {
+          "mode": "prefill",
+          "index": 0,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.562
+        },
+        {
+          "mode": "prefill",
+          "index": 1,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.559
+        },
+        {
+          "mode": "prefill",
+          "index": 2,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.557
+        },
+        {
+          "mode": "prefill",
+          "index": 3,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.556
+        },
+        {
+          "mode": "prefill",
+          "index": 4,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.554
+        },
+        {
+          "mode": "prefill",
+          "index": 5,
+          "ok": true,
+          "tokens_observed": 0,
+          "seconds_before_disconnect": 0.556
+        }
+      ],
+      "queues_after": {
+        "num_requests_running": 0.0,
+        "num_requests_waiting": 0.0
+      },
+      "recovery": [
+        {
+          "expected": "RECOVER-PREFILL-0",
+          "response": {
+            "id": "cmpl-88c18bc7e8f084a3",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-0",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-PREFILL-1",
+          "response": {
+            "id": "cmpl-9361d4834d31506d",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-1",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-PREFILL-2",
+          "response": {
+            "id": "cmpl-b40f627466953e11",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-2",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-PREFILL-3",
+          "response": {
+            "id": "cmpl-a9808974fa0f89c5",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-3",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-PREFILL-4",
+          "response": {
+            "id": "cmpl-85976eacfde23958",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-4",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-PREFILL-5",
+          "response": {
+            "id": "cmpl-be6bcb493a3f1a36",
+            "object": "text_completion",
+            "created": 1788625920,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-PREFILL-5",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        }
+      ],
+      "queues_after_recovery": {
+        "num_requests_running": 0.0,
+        "num_requests_waiting": 0.0
+      }
+    },
+    {
+      "mode": "decode",
+      "prompt_tokens": 256,
+      "cancelled": [
+        {
+          "mode": "decode",
+          "index": 0,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.36
+        },
+        {
+          "mode": "decode",
+          "index": 1,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.042
+        },
+        {
+          "mode": "decode",
+          "index": 2,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.145
+        },
+        {
+          "mode": "decode",
+          "index": 3,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.359
+        },
+        {
+          "mode": "decode",
+          "index": 4,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.145
+        },
+        {
+          "mode": "decode",
+          "index": 5,
+          "ok": true,
+          "tokens_observed": 13,
+          "seconds_before_disconnect": 2.552
+        }
+      ],
+      "queues_after": {
+        "num_requests_running": 0.0,
+        "num_requests_waiting": 0.0
+      },
+      "recovery": [
+        {
+          "expected": "RECOVER-DECODE-0",
+          "response": {
+            "id": "cmpl-ad5614e546bcdc7c",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-0",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-DECODE-1",
+          "response": {
+            "id": "cmpl-aa90f6bb2b09cc70",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-1",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-DECODE-2",
+          "response": {
+            "id": "cmpl-858d6df9f728b287",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-2",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-DECODE-3",
+          "response": {
+            "id": "cmpl-9b909cf1cabccdd4",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-3",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-DECODE-4",
+          "response": {
+            "id": "cmpl-8b1904321e49c7f4",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-4",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        },
+        {
+          "expected": "RECOVER-DECODE-5",
+          "response": {
+            "id": "cmpl-a51d5c501e0e2c85",
+            "object": "text_completion",
+            "created": 1788625925,
+            "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+            "choices": [
+              {
+                "index": 0,
+                "text": "RECOVER-DECODE-5",
+                "logprobs": null,
+                "finish_reason": "stop",
+                "stop_reason": 154827,
+                "token_ids": null,
+                "prompt_logprobs": null,
+                "prompt_token_ids": null,
+                "routed_experts": null
+              }
+            ],
+            "service_tier": null,
+            "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-ec201d94",
+            "usage": {
+              "prompt_tokens": 26,
+              "total_tokens": 34,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null
+            },
+            "kv_transfer_params": null,
+            "ec_transfer_params": null,
+            "metrics": null
+          },
+          "ok": true
+        }
+      ],
+      "queues_after_recovery": {
+        "num_requests_running": 0.0,
+        "num_requests_waiting": 0.0
+      }
+    }
+  ],
+  "passed": true,
+  "health_after": 200
+}

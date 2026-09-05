@@ -35,6 +35,13 @@ def prefix_hits(base_url: str) -> float:
     return total
 
 
+def passes_qualify(passes: list[dict]) -> bool:
+    """Correct answers alone do not prove cached-state isolation."""
+    return (len(passes) == 4 and all(item['passed'] for item in passes)
+            and passes[0]['prefix_cache_hit_delta'] == 0
+            and all(item['prefix_cache_hit_delta'] > 0 for item in passes[1:]))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default="http://127.0.0.1:8001")
@@ -65,19 +72,20 @@ def main() -> None:
     passes = []
     args.output.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        'schema': 'glm53-prefix-replay.v3', 'model': args.model, 'base_url': args.base_url,
+        'schema': 'glm53-prefix-replay.v4', 'model': args.model, 'base_url': args.base_url,
         'passed': False, 'complete': False, 'target_prompt_tokens': args.tokens,
         'cache_salt': cache_salt, 'fixture_nonce': nonce,
         'original_prompt_ids_sha256': hashlib.sha256(json.dumps(prompt).encode()).hexdigest(),
         'changed_prompt_ids_sha256': hashlib.sha256(json.dumps(changed_prompt).encode()).hexdigest(),
         'prefix_cache_hits_before': before_hits, 'passes': passes,
-        'scope': 'Strict exact-answer cold retrieval, identical replay, changed-tail isolation, then original replay',
+        'scope': 'Exact answers, zero-hit cold retrieval, then positive cache hits on each of three replay/isolation passes',
     }
     for pass_index, (name, tokens, facts) in enumerate((
         ('cold', prompt, original_facts), ('replay', prompt, original_facts),
         ('changed-tail', changed_prompt, changed_facts),
         ('original-after-changed-tail', prompt, original_facts),
     )):
+        pass_hits_before = prefix_hits(args.base_url)
         output, usage, ttft, elapsed, finish_reason = long_context.stream_completion(
             args.base_url,
             {
@@ -95,6 +103,7 @@ def main() -> None:
         expected_lines = [f"{key}={value}" for _, key, value in facts]
         actual_lines = [line.strip() for line in output.strip().splitlines() if line.strip()]
         usage = usage or {}
+        pass_hits_after = prefix_hits(args.base_url)
         passes.append(
             {
                 "pass": pass_index + 1,
@@ -107,16 +116,18 @@ def main() -> None:
                 'ttft_seconds': ttft,
                 "usage": usage,
                 "output": output,
+                "prefix_cache_hit_delta": pass_hits_after - pass_hits_before,
             }
         )
-        report['prefix_cache_hits_after'] = prefix_hits(args.base_url)
+        report['prefix_cache_hits_after'] = pass_hits_after
         report['prefix_cache_hit_delta'] = report['prefix_cache_hits_after'] - before_hits
         args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
         print(json.dumps({'pass': name, 'passed': passes[-1]['passed'],
+                          'prefix_cache_hit_delta': passes[-1]['prefix_cache_hit_delta'],
                           'ttft_seconds': ttft, 'request_seconds': elapsed}), flush=True)
     after_hits = prefix_hits(args.base_url)
     report.update({
-        "passed": all(item["passed"] for item in passes) and after_hits > before_hits,
+        "passed": passes_qualify(passes),
         'complete': True,
         "target_prompt_tokens": args.tokens,
         "cache_salt": cache_salt,
