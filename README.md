@@ -1,9 +1,15 @@
 # GLM-5.3 Flash EXL3 K2 + DFlash2 on one DGX Spark
 
 Release qualification is finishing: the ARM64 image is published to GHCR;
-clean pull/start validation and serial tool scoring are still running. Measurements
+the published-default stress/context checks are still running. Measurements
 are in [the qualification log](results/QUALIFICATION-20260905.md); they are not
 frozen-release guarantees.
+
+**Startup qualification caveat:** one clean 1M/0.85 restart was rejected by
+the KV admission check (6.72 GiB available versus 6.75 GiB required), despite
+the identical command/environment passing earlier. A diagnostic retry fits
+at 0.85; cross-host validation is still underway. The launcher does not silently
+raise utilization or reduce context after a failed admission.
 
 Target: [vcruz305/GLM-5.3-Flash-EXL3-K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2).
 Draft: [incoai/GLM-5.3-Flash-DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2).
@@ -65,7 +71,7 @@ The current image passed all four near-1M retrieval/replay/isolation requests,
 then C6 rolling stress and cancellation/recovery. Cold TTFT was 22.5 minutes;
 identical replay was 28.8 seconds. No post-ready JIT compilations or engine
 restarts were observed in that run; host swap usage did not grow between the
-before/after snapshots. Serial tool scoring and clean pull/start validation remain open.
+before/after snapshots. Published-default stress/context checks remain open.
 
 FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
 defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context
@@ -133,7 +139,8 @@ recurrent-state, or draft-cache memory.
 | Seven-content contracts, C6 | 29/42 | 34/42 |
 | Seven-content blend decode, C1 / C6 | 19.20 / 66.64 tok/s | 17.94 / 64.41 tok/s |
 | Tool Eval Bench, C6 | 124/138 points (90), 58 pass / 8 partial / 3 fail | 121/138 points (88), 56 pass / 9 partial / 4 fail |
-| Tool Eval Bench, serial | Running | Running |
+| Tool Eval Bench, serial | 124/138 points (90), 58 pass / 8 partial / 3 fail | 120/138 points (87), 55 pass / 10 partial / 4 fail |
+| Post-ready JIT events, complete 262K test session | 1 (`DSAFusedIndexerKernel`) | 1 (`DSAFusedIndexerKernel`) |
 
 These quality scores are scoped: RULER-lite checks gold inclusion and clean
 termination in synthetic tasks, not official RULER. Some correct common-word
@@ -149,6 +156,11 @@ failed TC-61; FP8 additionally failed TC-68. These are measured limitations,
 not a claim of perfect agent reliability. Full traces:
 [NVFP4 C6](results/tool-eval-reports/2026/09/2026-09-05T14-36-53.630358Z_1b157d06.md),
 [FP8 C6](results/tool-eval-reports/2026/09/2026-09-05T14-36-53.671390Z_1fa68821.md).
+Serial traces:
+[NVFP4](results/tool-eval-reports/2026/09/2026-09-05T14-47-50.859912Z_0a270491.md),
+[FP8](results/tool-eval-reports/2026/09/2026-09-05T14-47-55.230999Z_806f8187.md).
+NVFP4's three serial failures match its C6 failures; FP8's fourth serial
+failure was TC-08's conditional weather/reminder flow, not TC-68.
 
 Prefix reuse is coarse with the current hybrid cache layout and speculative
 lookback: K5 NVFP4 uses 15,360-token allocator blocks; K7 uses 18,432. A 32K K7
