@@ -1,0 +1,2 @@
+fp8 32,768 run 1/2: 956.8 tok/s, TTFT 34.247 s
+fp8 32,768 run 2/2: 967.0 tok/s, TTFT 33.887 s

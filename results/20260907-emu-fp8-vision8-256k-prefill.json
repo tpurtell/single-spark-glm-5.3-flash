@@ -1,0 +1,34 @@
+{
+  "schema": "glm53-prefill-depth.v1",
+  "method": "C1 exact-length unique prompts; client request to first streamed token; server tokenization and one-token handoff included; no prefix reuse",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "kv_cache_profile": "fp8",
+  "runs_per_point": 2,
+  "points": [
+    {
+      "prompt_tokens": 32768,
+      "effective_prompt_tokens_per_second": {
+        "median": 961.8945456727727,
+        "min": 956.8101526188418,
+        "max": 966.9789387267036
+      },
+      "ttft_seconds": {
+        "median": 34.067056211511954,
+        "min": 33.8869841810083,
+        "max": 34.247128242015606
+      },
+      "runs": [
+        {
+          "prompt_tokens": 32768,
+          "ttft_seconds": 34.247128242015606,
+          "effective_prompt_tokens_per_second": 956.8101526188418
+        },
+        {
+          "prompt_tokens": 32768,
+          "ttft_seconds": 33.8869841810083,
+          "effective_prompt_tokens_per_second": 966.9789387267036
+        }
+      ]
+    }
+  ]
+}

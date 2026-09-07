@@ -63,11 +63,18 @@ ENABLE_PREFIX_CACHING="${ENABLE_PREFIX_CACHING:-1}"
 MAX_CUDAGRAPH_CAPTURE_SIZE="${MAX_CUDAGRAPH_CAPTURE_SIZE:-}"
 if [[ -v KV_CACHE_PROFILE ]]; then
   KV_CACHE_PROFILE="${KV_CACHE_PROFILE}"
-elif [[ "${KV_CACHE_DTYPE:-}" == fp8_ds_mla ]]; then
-  # Preserve the original KV_CACHE_DTYPE override as a convenient shorthand.
-  KV_CACHE_PROFILE=fp8
+elif [[ -v KV_CACHE_DTYPE ]]; then
+  # Preserve KV_CACHE_DTYPE as a convenient shorthand for either profile.
+  case "${KV_CACHE_DTYPE}" in
+    fp8_ds_mla) KV_CACHE_PROFILE=fp8 ;;
+    nvfp4_ds_mla) KV_CACHE_PROFILE=nvfp4 ;;
+    *)
+      echo "KV_CACHE_DTYPE must be fp8_ds_mla or nvfp4_ds_mla; got: ${KV_CACHE_DTYPE}" >&2
+      exit 2
+      ;;
+  esac
 else
-  KV_CACHE_PROFILE=nvfp4
+  KV_CACHE_PROFILE=fp8
 fi
 case "${KV_CACHE_PROFILE}" in
   nvfp4)

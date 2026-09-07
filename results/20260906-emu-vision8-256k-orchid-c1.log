@@ -1,0 +1,6 @@
+{"timed": false, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.659991232100396, "finish_reasons": ["stop"]}
+{"timed": true, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.388333477421114, "finish_reasons": ["stop"]}
+{"timed": true, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.268530414478164, "finish_reasons": ["stop"]}
+{"timed": true, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.299636457971914, "finish_reasons": ["stop"]}
+{"timed": true, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.53059037332206, "finish_reasons": ["stop"]}
+{"timed": true, "observed_orchid_count": 101, "exact_contract_passed": false, "batch_window_decode_tokens_per_second": 43.00363639898894, "finish_reasons": ["stop"]}

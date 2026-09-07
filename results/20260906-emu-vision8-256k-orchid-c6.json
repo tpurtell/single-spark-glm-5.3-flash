@@ -1,0 +1,759 @@
+{
+  "schema": "glm53-repeated-word-c6-diagnostic.v1",
+  "complete": true,
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "base_url": "http://emu:8001",
+  "concurrency": 6,
+  "kv_cache": "nvfp4_ds_mla",
+  "speculative_method": "dflash2",
+  "draft_tokens": 5,
+  "requested_word": "orchid",
+  "requested_count": 100,
+  "max_tokens": 1500,
+  "temperature": 0,
+  "seed": 20260905,
+  "warmups": 1,
+  "repeats": 5,
+  "scope": "Low-entropy diagnostic, aggregate batch-window decode; not normal prose",
+  "runs": [
+    {
+      "concurrency": 6,
+      "prompt_tokens": 68,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.586548928011325,
+      "decode_tokens_per_second": 164.31860027029796,
+      "batch_window_decode_seconds": 7.586548928011325,
+      "batch_window_decode_tokens_per_second": 159.75643359064233,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        27.440497081360206,
+        27.440443545222138,
+        27.440767255038338,
+        27.440920583740294,
+        27.277993464908057,
+        27.277978340028923
+      ],
+      "ttft_ms": 872.3633539921138,
+      "request_seconds": 8.45919767099258,
+      "started_epoch_seconds": 1788631922.890553,
+      "sequence_ttft_ms": [
+        872.4536700028693,
+        872.3633539921138,
+        872.4992979987292,
+        872.5233540026238,
+        1053.6755200009793,
+        1053.6401769932127
+      ],
+      "sequence_decode_seconds": [
+        7.361382681992836,
+        7.361397044005571,
+        7.361310203996254,
+        7.361269071989227,
+        7.40523676200246,
+        7.405240867999964
+      ],
+      "sequence_finish_offset_seconds": [
+        8.233836351995706,
+        8.233760397997685,
+        8.233809501994983,
+        8.233792425991851,
+        8.458912282003439,
+        8.458881044993177
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1008,
+      "rejected_draft_tokens": 12,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.9705882352941176,
+        "4": 0.9705882352941176
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 408,
+        "total_tokens": 1626,
+        "completion_tokens": 1218
+      },
+      "timed": false,
+      "nonce": "9302ee8f4e1341ab93d32944953b9b43",
+      "prompt": "orchid 9302ee8f4e1341ab93d32944953b9b43\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "concurrency": 6,
+      "prompt_tokens": 69,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.129375236996566,
+      "decode_tokens_per_second": 170.00345780284155,
+      "batch_window_decode_seconds": 7.129375236996566,
+      "batch_window_decode_tokens_per_second": 170.00087100347187,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        28.333696259984038,
+        28.334115024817986,
+        28.33388046359957,
+        28.333754367516168,
+        28.33404739713336,
+        28.333964289790426
+      ],
+      "ttft_ms": 723.2026910060085,
+      "request_seconds": 7.852951157998177,
+      "started_epoch_seconds": 1788631931.38153,
+      "sequence_ttft_ms": [
+        723.2026910060085,
+        723.2734870049171,
+        723.2919550006045,
+        723.2481989922235,
+        723.3086699998239,
+        723.324924998451
+      ],
+      "sequence_decode_seconds": [
+        7.129320443986217,
+        7.129215075998218,
+        7.129274095001165,
+        7.1293058230075985,
+        7.129232092003804,
+        7.1292530030041235
+      ],
+      "sequence_finish_offset_seconds": [
+        7.852523134992225,
+        7.852488563003135,
+        7.852566050001769,
+        7.852554021999822,
+        7.852540762003628,
+        7.8525779280025745
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1008,
+      "rejected_draft_tokens": 12,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 414,
+        "total_tokens": 1632,
+        "completion_tokens": 1218
+      },
+      "timed": true,
+      "nonce": "f9b4b5b302364c41803ba6aa5eae1ef9",
+      "prompt": "orchid f9b4b5b302364c41803ba6aa5eae1ef9\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "concurrency": 6,
+      "prompt_tokens": 68,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.057023002998903,
+      "decode_tokens_per_second": 171.74648727573472,
+      "batch_window_decode_seconds": 7.057023002998903,
+      "batch_window_decode_tokens_per_second": 171.7438074787282,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        28.62474612892198,
+        28.624253205577464,
+        28.624430887558365,
+        28.624578798691026,
+        28.624400745726742,
+        28.624077509259156
+      ],
+      "ttft_ms": 779.9275709985523,
+      "request_seconds": 7.837316854987876,
+      "started_epoch_seconds": 1788631939.2743764,
+      "sequence_ttft_ms": [
+        780.0752129987814,
+        779.9919079989195,
+        780.0417120015481,
+        780.0592389976373,
+        780.0218529882841,
+        779.9275709985523
+      ],
+      "sequence_decode_seconds": [
+        7.056831144989701,
+        7.056952667000587,
+        7.0569088619959075,
+        7.056872396991821,
+        7.056916293004178,
+        7.056995983002707
+      ],
+      "sequence_finish_offset_seconds": [
+        7.836906357988482,
+        7.836944574999507,
+        7.836950573997456,
+        7.836931635989458,
+        7.8369381459924625,
+        7.83692355400126
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1009,
+      "rejected_draft_tokens": 11,
+      "accepted_draft_rate": 0.9892156862745098,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.946078431372549
+      },
+      "rejected_draft_rate": 0.010784313725490196,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.946078431372549,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 408,
+        "total_tokens": 1626,
+        "completion_tokens": 1218
+      },
+      "timed": true,
+      "nonce": "5a714392b95f4fd5bc42bcbcbe5532e2",
+      "prompt": "orchid 5a714392b95f4fd5bc42bcbcbe5532e2\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "concurrency": 6,
+      "prompt_tokens": 64,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.074216018998413,
+      "decode_tokens_per_second": 171.3294423591906,
+      "batch_window_decode_seconds": 7.074216018998413,
+      "batch_window_decode_tokens_per_second": 171.32640517974997,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        28.554800832214916,
+        28.55498480986145,
+        28.55493169271066,
+        28.555157636573693,
+        28.55506384610168,
+        28.554503541728213
+      ],
+      "ttft_ms": 778.5008670034586,
+      "request_seconds": 7.853019200003473,
+      "started_epoch_seconds": 1788631947.1506405,
+      "sequence_ttft_ms": [
+        778.5873370012268,
+        778.558393009007,
+        778.6323750042357,
+        778.6490699945716,
+        778.6093900067499,
+        778.5008670034586
+      ],
+      "sequence_decode_seconds": [
+        7.074116930001765,
+        7.0740713519917335,
+        7.074084510997636,
+        7.074028537012055,
+        7.074051771996892,
+        7.0741905809991295
+      ],
+      "sequence_finish_offset_seconds": [
+        7.852704267002991,
+        7.8526297450007405,
+        7.852716886001872,
+        7.852677607006626,
+        7.852661162003642,
+        7.852691448002588
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1010,
+      "rejected_draft_tokens": 10,
+      "accepted_draft_rate": 0.9901960784313726,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9509803921568627
+      },
+      "rejected_draft_rate": 0.00980392156862745,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.950980392156863,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 384,
+        "total_tokens": 1602,
+        "completion_tokens": 1218
+      },
+      "timed": true,
+      "nonce": "accf76cd2f2f48ba93ef06adb5fda33b",
+      "prompt": "orchid accf76cd2f2f48ba93ef06adb5fda33b\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "concurrency": 6,
+      "prompt_tokens": 67,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.130284032988129,
+      "decode_tokens_per_second": 169.98216286906361,
+      "batch_window_decode_seconds": 7.130284032988129,
+      "batch_window_decode_tokens_per_second": 169.97920340798544,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        28.33027021165205,
+        28.33033825842046,
+        28.33028736041686,
+        28.330917494987098,
+        28.33041951675915,
+        28.329930026827984
+      ],
+      "ttft_ms": 813.6116480018245,
+      "request_seconds": 7.944025004995638,
+      "started_epoch_seconds": 1788631955.044178,
+      "sequence_ttft_ms": [
+        813.6803419911303,
+        813.6546129971975,
+        813.717386990902,
+        813.7348640011624,
+        813.6997109977528,
+        813.6116480018245
+      ],
+      "sequence_decode_seconds": [
+        7.130182610009797,
+        7.130165483991732,
+        7.130178293999052,
+        7.13001970500045,
+        7.130145032992004,
+        7.130268228997011
+      ],
+      "sequence_finish_offset_seconds": [
+        7.943862952000927,
+        7.943820096988929,
+        7.943895680989954,
+        7.943754569001612,
+        7.943844743989757,
+        7.943879876998835
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1008,
+      "rejected_draft_tokens": 12,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 0.9411764705882353
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 402,
+        "total_tokens": 1620,
+        "completion_tokens": 1218
+      },
+      "timed": true,
+      "nonce": "0b244cea3ce84206a39198d8314f2fdf",
+      "prompt": "orchid 0b244cea3ce84206a39198d8314f2fdf\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "concurrency": 6,
+      "prompt_tokens": 70,
+      "completion_tokens": 1218,
+      "completion_tokens_by_sequence": [
+        203,
+        203,
+        203,
+        203,
+        203,
+        203
+      ],
+      "decode_tokens": 1212,
+      "decode_seconds": 7.109673700993881,
+      "decode_tokens_per_second": 170.47451648471912,
+      "batch_window_decode_seconds": 7.109673700993881,
+      "batch_window_decode_tokens_per_second": 170.47195848531996,
+      "decode_timing_resolved": true,
+      "sequence_decode_tokens_per_second": [
+        28.412229576602286,
+        28.412439176594518,
+        28.412404915761826,
+        28.41238734782108,
+        28.41273451939901,
+        28.41232094854041
+      ],
+      "ttft_ms": 825.0920900027268,
+      "request_seconds": 7.934985240994138,
+      "started_epoch_seconds": 1788631963.0224137,
+      "sequence_ttft_ms": [
+        825.0920900027268,
+        825.1635469932808,
+        825.1826359919505,
+        825.1907480007503,
+        825.1737529935781,
+        825.1481339975726
+      ],
+      "sequence_decode_seconds": [
+        7.109614521992626,
+        7.109562074008863,
+        7.109570647007786,
+        7.109575042995857,
+        7.109488172005513,
+        7.109591657994315
+      ],
+      "sequence_finish_offset_seconds": [
+        7.934706611995352,
+        7.934725621002144,
+        7.934753282999736,
+        7.934765790996607,
+        7.934661924999091,
+        7.934739791991888
+      ],
+      "draft_tokens": 1020,
+      "accepted_draft_tokens": 1008,
+      "rejected_draft_tokens": 12,
+      "accepted_draft_rate": 0.9882352941176471,
+      "per_position_acceptance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.9705882352941176,
+        "4": 0.9705882352941176
+      },
+      "rejected_draft_rate": 0.011764705882352941,
+      "target_verification_passes": 204,
+      "committed_tokens_per_target_pass": 5.9411764705882355,
+      "finish_reasons": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "content": [
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid",
+        "orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid orchid"
+      ],
+      "usage": {
+        "prompt_tokens": 420,
+        "total_tokens": 1638,
+        "completion_tokens": 1218
+      },
+      "timed": true,
+      "nonce": "c4d2a040ec3846fbaa8afda8250d5e5b",
+      "prompt": "orchid c4d2a040ec3846fbaa8afda8250d5e5b\nRepeat only the single word \"orchid\" exactly 100 times, separated by spaces. Do not repeat the nonce or add any other text.",
+      "observed_orchid_counts": [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      "exact_contract_passes": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "summary": {
+    "median_batch_window_decode_tokens_per_second": 170.47195848531996,
+    "resolved_runs": 5,
+    "total_runs": 5,
+    "exact_contract_passes": 0,
+    "total_sequences": 30,
+    "observed_counts": [
+      [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ],
+      [
+        101,
+        101,
+        101,
+        101,
+        101,
+        101
+      ]
+    ],
+    "finish_reasons": [
+      [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ]
+    ]
+  }
+}

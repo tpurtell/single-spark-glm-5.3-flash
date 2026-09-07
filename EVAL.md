@@ -56,18 +56,18 @@ GLM_EVAL_MODEL=vcruz305/GLM-5.3-Flash-EXL3-K2
 GLM_EVAL_OUT=$(mktemp -d results/recheck.XXXXXXXX)
 
 python3 scripts/benchmark-dflash2-vllm.py --base-url "$GLM_EVAL_URL" \
-  --suite code-agent --draft-tokens 5 --kv-cache nvfp4_ds_mla \
+  --suite code-agent --draft-tokens 5 --kv-cache fp8_ds_mla \
   --concurrency 1 2 4 6 --runs 3 --output "$GLM_EVAL_OUT/code-agent.json"
 python3 scripts/benchmark-dflash2-vllm.py --base-url "$GLM_EVAL_URL" \
-  --suite blend --draft-tokens 5 --kv-cache nvfp4_ds_mla \
+  --suite blend --draft-tokens 5 --kv-cache fp8_ds_mla \
   --concurrency 1 --runs 5 --output "$GLM_EVAL_OUT/content-c1.json"
 python3 scripts/benchmark-dflash2-vllm.py --base-url "$GLM_EVAL_URL" \
-  --suite blend --draft-tokens 5 --kv-cache nvfp4_ds_mla \
+  --suite blend --draft-tokens 5 --kv-cache fp8_ds_mla \
   --concurrency 6 --runs 1 --output "$GLM_EVAL_OUT/content-c6.json"
 python3 scripts/benchmark-repetition.py --base-url "$GLM_EVAL_URL" \
-  --kv-cache nvfp4_ds_mla --repeats 5 --output "$GLM_EVAL_OUT/orchid.json"
+  --kv-cache fp8_ds_mla --repeats 5 --output "$GLM_EVAL_OUT/orchid.json"
 python3 scripts/benchmark-prefill.py --base-url "$GLM_EVAL_URL/v1" \
-  --model "$GLM_EVAL_MODEL" --profile nvfp4 --runs 2 \
+  --model "$GLM_EVAL_MODEL" --profile fp8 --runs 2 \
   --prompt-tokens 2048 8192 32768 131072 \
   --output "$GLM_EVAL_OUT/prefill.json"
 python3 scripts/ruler-lite.py --base-url "$GLM_EVAL_URL/v1" \
@@ -84,8 +84,8 @@ python3 scripts/test-replayssm-stress.py --base-url "$GLM_EVAL_URL" \
   --output "$GLM_EVAL_OUT/stress"
 ```
 
-For FP8, change both the server profile and client cache labels (`fp8_ds_mla`,
-or `--profile fp8`). Keep the server capacities matched as shown in the README.
+For NVFP4, set `KV_CACHE_PROFILE=nvfp4` on the server and change the client
+cache labels (`nvfp4_ds_mla`, or `--profile nvfp4`). Keep capacities matched.
 Benchmark flags label the actual server; they do not reconfigure it. Native
 MTP controls need `SPECULATIVE_METHOD=mtp ADAPTIVE_MTP=0 MTP_TOKENS=3` at
 startup and `--speculative-method mtp --draft-tokens 3` in the client; repeat

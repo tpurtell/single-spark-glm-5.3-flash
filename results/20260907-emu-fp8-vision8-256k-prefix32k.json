@@ -1,0 +1,111 @@
+{
+  "schema": "glm53-prefix-replay.v4",
+  "model": "vcruz305/GLM-5.3-Flash-EXL3-K2",
+  "base_url": "http://emu:8001",
+  "passed": true,
+  "complete": true,
+  "target_prompt_tokens": 32768,
+  "cache_salt": "3da6df4c04e844569a5415cb02fb4b59",
+  "fixture_nonce": "prefix-replay-a47bed281b57413e87d41bae7de94aab",
+  "original_prompt_ids_sha256": "e4e1c128218d84a097337f294b16dbd2e4240c1808edcb75ee9c487fa5fe4b05",
+  "changed_prompt_ids_sha256": "7d21734faa9af141c7b466a32aae9722a28df34f10d9ed3d1630a8904089b13a",
+  "prefix_cache_hits_before": 0.0,
+  "passes": [
+    {
+      "pass": 1,
+      "name": "cold",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 38.64378658100031,
+      "ttft_seconds": 36.28222792199813,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726",
+      "prefix_cache_hit_delta": 0.0
+    },
+    {
+      "pass": 2,
+      "name": "replay",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 19.455409175978275,
+      "ttft_seconds": 16.919675029988866,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726",
+      "prefix_cache_hit_delta": 17408.0
+    },
+    {
+      "pass": 3,
+      "name": "changed-tail",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=amethyst-3926"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 19.456657695001923,
+      "ttft_seconds": 16.926560471008997,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=amethyst-3926",
+      "prefix_cache_hit_delta": 17408.0
+    },
+    {
+      "pass": 4,
+      "name": "original-after-changed-tail",
+      "passed": true,
+      "expected_lines": [
+        "CINDER-05=azurite-4831",
+        "JUNIPER-25=topaz-7614",
+        "LANTERN-50=cobalt-2097",
+        "MARBLE-75=saffron-6382",
+        "ORBIT-95=willow-1459",
+        "QUARTZ-99=indigo-8726"
+      ],
+      "finish_reason": "stop",
+      "request_seconds": 19.486871630011592,
+      "ttft_seconds": 16.968794154003263,
+      "usage": {
+        "prompt_tokens": 32768,
+        "total_tokens": 32842,
+        "completion_tokens": 74
+      },
+      "output": "CINDER-05=azurite-4831\nJUNIPER-25=topaz-7614\nLANTERN-50=cobalt-2097\nMARBLE-75=saffron-6382\nORBIT-95=willow-1459\nQUARTZ-99=indigo-8726",
+      "prefix_cache_hit_delta": 17408.0
+    }
+  ],
+  "scope": "Exact answers, zero-hit cold retrieval, then positive cache hits on each of three replay/isolation passes",
+  "prefix_cache_hits_after": 52224.0,
+  "prefix_cache_hit_delta": 52224.0,
+  "high_recycled_page_rationale": "The identical second pass exercises the production allocator/cache replay path that previously exposed 32-bit pool-offset overflow; focused B12x tests separately force page IDs past the exact 2^31/stride boundary."
+}

@@ -1,0 +1,6 @@
+dflash2 K5 C1 run 1/3: 27.98 batch-window tok/s, 67.1% accepted
+dflash2 K5 C1 run 2/3: 26.27 batch-window tok/s, 62.2% accepted
+dflash2 K5 C1 run 3/3: 27.99 batch-window tok/s, 67.1% accepted
+dflash2 K5 C6 run 1/3: 91.91 batch-window tok/s, 65.0% accepted
+dflash2 K5 C6 run 2/3: 86.45 batch-window tok/s, 63.2% accepted
+dflash2 K5 C6 run 3/3: 83.17 batch-window tok/s, 64.1% accepted

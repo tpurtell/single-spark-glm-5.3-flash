@@ -65,7 +65,7 @@ docker() {
                             '--max-num-seqs': '6', '--max-model-len': '262144',
                             '--max-num-batched-tokens': '2048',
                             '--gpu-memory-utilization': '0.87',
-                            '--kv-cache-dtype': 'nvfp4_ds_mla'}.items():
+                            '--kv-cache-dtype': 'fp8_ds_mla'}.items():
             self.assertEqual(args[args.index(flag) + 1], value)
         capture_start = args.index('--cudagraph-capture-sizes') + 1
         capture_end = args.index('--gpu-memory-utilization')
@@ -79,6 +79,24 @@ docker() {
         self.assertNotIn('--language-model-only', args)
         self.assertEqual(json.loads(args[args.index('--limit-mm-per-prompt') + 1]),
                          {'image': 8, 'video': 0})
+
+    def test_nvfp4_profile_override(self):
+        result = self.launch(KV_CACHE_PROFILE='nvfp4')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        args = self.arguments()
+        self.assertEqual(args[args.index('--kv-cache-dtype') + 1], 'nvfp4_ds_mla')
+
+    def test_nvfp4_dtype_shorthand(self):
+        result = self.launch(KV_CACHE_DTYPE='nvfp4_ds_mla')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        args = self.arguments()
+        self.assertEqual(args[args.index('--kv-cache-dtype') + 1], 'nvfp4_ds_mla')
+
+    def test_invalid_cache_dtype_shorthand(self):
+        result = self.launch(KV_CACHE_DTYPE='float16')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('KV_CACHE_DTYPE must be fp8_ds_mla or nvfp4_ds_mla',
+                      result.stderr)
 
     def test_text_only_override_keeps_256k_profile(self):
         result = self.launch(LANGUAGE_MODEL_ONLY='1')
@@ -136,8 +154,8 @@ docker() {
         self.assertEqual(args[args.index('--max-model-len') + 1], '262144')
         self.assertIn('VLLM_EXL3_PREFILL_CAPACITY=1024', args)
 
-    def test_fp8_and_seven_drafts_use_comparison_defaults(self):
-        for overrides in ({'KV_CACHE_PROFILE': 'fp8'}, {'DFLASH_TOKENS': '7'},
+    def test_alternate_profiles_use_comparison_defaults(self):
+        for overrides in ({'KV_CACHE_PROFILE': 'nvfp4'}, {'DFLASH_TOKENS': '7'},
                           {'SPECULATIVE_METHOD': 'none'}):
             result = self.launch(**overrides)
             self.assertEqual(result.returncode, 0, result.stderr)

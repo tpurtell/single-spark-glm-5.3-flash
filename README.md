@@ -3,19 +3,19 @@
 Run [GLM-5.3 Flash EXL3 K2](https://huggingface.co/vcruz305/GLM-5.3-Flash-EXL3-K2)
 with [Inco DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2) on one
 DGX Spark, with **256K context and up to eight images per prompt**.
-The ready-to-run ARM64 image uses NVFP4 cache, prefix caching, and B12x/SparkInfer
+The ready-to-run ARM64 image uses FP8 cache, prefix caching, and B12x/SparkInfer
 kernels, with six concurrent-request slots.
 
-| Performance on one Spark | Default profile |
+| Performance on one Spark | FP8 default |
 | --- | ---: |
-| Decode, one request | 26.15 tok/s |
-| Decode, six requests combined | 86.49 tok/s |
-| Cold prefill, 32K prompt | 961 tok/s |
-| Time to first token, cold 32K prompt | 34.11 s |
+| Decode, one request | 27.98 tok/s |
+| Decode, six requests combined | 86.45 tok/s |
+| Cold prefill, 32K prompt | 962 tok/s |
+| Time to first token, cold 32K prompt | 34.07 s |
 
 Measured on EMU with vision enabled and text prompts; medians of three decode
-runs and two cold prefill runs. [Decode](results/20260906-emu-vision8-256k-code-agent.json)
-and [prefill](results/20260906-emu-vision8-256k-prefill.json) results.
+runs and two cold prefill runs. [Decode](results/20260907-emu-fp8-vision8-256k-code-agent.json)
+and [prefill](results/20260907-emu-fp8-vision8-256k-prefill.json) results.
 
 ## Run
 
@@ -38,17 +38,16 @@ authentication by default; keep it on a trusted network. Models use the standard
 For a source build on a Spark, use `./build.sh`, then
 `IMAGE=ghcr.io/tpurtell/single-spark-glm-5.3-flash:dev ./start.sh`.
 
-The default is vision enabled, NVFP4 MLA, **262,144 tokens**, DFlash2 with five
+The default is vision enabled, FP8 MLA, **262,144 tokens**, DFlash2 with five
 draft tokens, compact recurrent rollback, **prefix caching on**, six scheduler
 slots, and **0.87 utilization** (also the hard maximum). The scheduler prefill batch
 is 2048 tokens; EXL3's internal prefill capacity is 1024, as in the larger-batch
 benchmarks below. The context limit is per request, including output; six
 active requests share one cache pool, not six dedicated 256K caches.
 
-FP8, native MTP, seven DFlash drafts, and full rollback use the 262K comparison
-defaults (batch 2048, EXL3 prefill capacity 1024). For a matched short-context
-NVFP4/FP8 comparison, explicitly use the same capacities and disable vision
-to reproduce the historical measurements below:
+Native MTP, seven DFlash drafts, and full rollback use the same 262K comparison
+defaults (batch 2048, EXL3 prefill capacity 1024). NVFP4 remains available as
+an explicit profile. To reproduce the historical text-only comparison below:
 
 ```bash
 LANGUAGE_MODEL_ONLY=1 GPU_MEMORY_UTILIZATION=0.85 \
@@ -63,9 +62,9 @@ Vision defaults to eight images per prompt, with video disabled. Set
 `LANGUAGE_MODEL_ONLY=1` to disable vision.
 Single-image and eight-image color/position smoke checks passed on EMU;
 these are basic image-input checks, not a broad vision-quality benchmark.
-[Vision results](results/20260906-emu-vision8-256k-vision.json).
-See the [current release checks](results/RELEASE-20260906.md) for prefix reuse,
-recovery, and the remaining warmup limitations.
+[Vision results](results/20260907-emu-fp8-vision8-256k-vision.json).
+See the [FP8 release checks](results/RELEASE-20260907-FP8.md) for prefix reuse,
+recovery, environment identity, and warmup limitations.
 `USE_REPLAYSSM=0` selects the full-rollback diagnostic path. The compact default
 includes the GLM convolution-window fix.
 
@@ -144,7 +143,7 @@ serial GPU passes. Raw counts and timings:
 | 131,072 | 967 / 135.48 s | 965 / 135.84 s |
 
 Prefill medians use two cold runs at each depth in the matched 262K profiles.
-The default NVFP4 MLA record uses FP8 RoPE and occupies 368 bytes, compared
+The NVFP4 MLA record uses FP8 RoPE and occupies 368 bytes, compared
 with 656 bytes for FP8 MLA; this is **not** a 44% reduction in total model,
 recurrent-state, or draft-cache memory.
 
@@ -212,6 +211,13 @@ five timed runs, so exact-count quality was **0/5** for both, with clean stops.
 These speeds are not normal-prose or code-agent throughput.
 Receipts: [NVFP4](results/20260905-content-repeat-nvfp4-ostrich-orchid.json),
 [FP8](results/20260905-content-repeat-fp8-kiwi-orchid.json).
+
+On the later vision-enabled 256K/.87 NVFP4 profile, the same diagnostic
+measured **43.30 tok/s at C1** and **170.47 tok/s aggregate at C6**. All 35
+timed sequences again stopped cleanly with 101 orchids, so exact-count quality
+remained 0/35. These runs preceded the switch to FP8 as the default.
+Receipts: [C1](results/20260906-emu-vision8-256k-orchid-c1.json) and
+[C6](results/20260906-emu-vision8-256k-orchid-c6.json).
 
 | Serving/quality check | NVFP4 K5 | FP8 K5 |
 | --- | --- | --- |
